@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Infi Way</title>
     <style>
       @font-face {
@@ -128,13 +129,23 @@
 
       .headline {
         padding: 2rem;
-        max-width: 400px;
+        max-width: 40%;
       }
 
       .details {
         font-size: 0.8rem;
         line-height: 1.2rem;
         padding: 2rem;
+      }
+
+      @media (max-width: 1024px) {
+        header, .headline, .details { padding: 1rem; }
+      }
+      @media (max-width: 720px) {
+        .headline, .details { padding: 0.75rem; }
+        .headline { max-width: none; }
+        .block { flex-direction: column; }
+        .block svg { display: none; }
       }
 
       .block:nth-child(7n + 1) { background: #D32F46; }
