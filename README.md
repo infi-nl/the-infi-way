@@ -13,7 +13,7 @@ Er zijn veel verschillende manieren om naar Infi te kijken.
 **The Infi Way** is één van de manieren, in een langere lijst:
 
 - **_Wie_ we zijn**, waar we in geloven, en wat we belangrijk vinden: dat lees je in [het Infi Manifest](https://infi.nl/manifest/).
-- **_Wie_ we _letterlijk_ zijn**, dat vindt je op [infi.nl/wij-zijn-infi](https://infi.nl/wij-zijn-infi/) en als jij daar bij wilt komtn ook op [werkenbij.infi.nl](https://werkenbij.infi.nl/).
+- **_Wie_ we _letterlijk_ zijn**, dat vindt je op [infi.nl/wij-zijn-infi](https://infi.nl/wij-zijn-infi/) en als jij daar bij wilt horen: [werkenbij.infi.nl](https://werkenbij.infi.nl/).
 - **_Wat_ we bouwen**, voor welke klanten, en het soort producten: dat vind je onder meer op [infi.nl/onze-klanten](https://infi.nl/onze-klanten/).
 - **_Hoe_ we dat _in algemene zin_ doen**, en hoe we graag samenwerken: dit lees je op [infi.nl/software](https://infi.nl/software/).
 - **_Hoe_ we dat _qua techniek_ doen**, dat [lees je in The Infi Way](https://infi-nl.github.io/the-infi-way): namelijk _hier_!
@@ -29,9 +29,9 @@ Jazeker!
 Ten eerste is het voor een enkeling wellicht interessant om te zien hoe we stap voor stap op de huidige versie zijn gekomen.
 En bovendien vinden we het zelf ook leuk om het "in the open" te regelen.
 
-Ten tweede willen we ook graag dat mensen deze opzet nog weer delen met anderen.
+Ten tweede willen we ook graag dat mensen deze opzet delen met anderen.
 En op termijn ook wijzigingen suggereren of remixes van deze content maken.
-Voor dat laatste moeten we nog wel de licensing iets vrijer maken, subscribe op issue #3 om dat te volgen.
+Voor dat laatste moeten we nog wel de licensing iets vrijer maken, subscribe op [issue #3](https://github.com/infi-nl/the-infi-way/issues/3) om dat te volgen.
 
 Hoe dan ook, als je dat fijn vindt: voel je vrij om [een issue te openen](https://github.com/infi-nl/the-infi-way/issues/new) en/of [een PR te submitten](https://github.com/infi-nl/the-infi-way/pulls)!
 We zijn altijd benieuwd naar nieuwe inzichten.
