@@ -4,7 +4,7 @@ Een (open source) overzicht van _hoe_ we graag software bouwen bij Infi: welke t
 
 ## Live versie
 
-Gelijk door? Lees [de online versie in je browser](TODO).
+Gelijk door? Lees [de online versie in je browser](https://infi-nl.github.io/the-infi-way).
 
 ## Context
 
