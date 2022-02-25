@@ -128,7 +128,7 @@ footer {
 .infi-test {
     padding: 1rem 2rem;
     margin: 1rem 0.5rem;
-    border: 10px solid rgba(0, 0, 0, 0.05);
+    background-color: var(--color-block);
     box-shadow: inset 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -150,9 +150,8 @@ footer {
     text-shadow: 2px 2px 3px rgba(50, 50, 50, 0.5);
     box-shadow: inset 5px 5px 20px rgba(0, 0, 0, 0.2);
     display: flex;
-    border: 10px solid rgba(0, 0, 0, 0.0);
     background-color: var(--color-block);
-    margin: 0 0.5rem;
+    margin: 2rem 0.5rem;
 }
 
 h2 a,
@@ -219,8 +218,8 @@ h2:hover a .anchor-hint {
     padding: 2rem;
 }
 
-.details li:hover {
-    color: #fff;
+.details p {
+    font-weight: bold;
 }
 
 .view-overview .details,
