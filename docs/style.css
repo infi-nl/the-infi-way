@@ -5,9 +5,9 @@
     --color-topic-principes: #a73276;
     --color-topic-broncode: #684084;
     --color-topic-technologie: #31406e;
-    --color-topic-proces-team: #1f3546;
+    --color-topic-proces-en-team: #1f3546;
     --color-topic-ambacht: #316e6d;
-    --color-topic-overig: #6eb542;
+    --color-topic-overigen: #6eb542;
 
     --color-background: #121212;
     --color-block: #212121;
@@ -173,13 +173,18 @@ h2:hover a .anchor-hint {
 }
 
 .headline {
-    padding: 2rem 2rem 1rem 2rem;
+    padding: 3rem 2rem 2rem;
     max-width: 40%;
 }
 
 .block-image {
-    text-align: center;
-    margin-top: 1rem;
+    margin: 2rem 0 0 -88px;
+    border-radius: 50%;
+    flex: 0 0 176px;
+    height: 176px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .details-toggle {
@@ -215,7 +220,7 @@ h2:hover a .anchor-hint {
 .details {
     font-size: 0.8rem;
     line-height: 1.2rem;
-    padding: 2rem;
+    padding: 3rem 1rem;
 }
 
 .details p {
@@ -245,6 +250,8 @@ h2:hover a .anchor-hint {
 .view-overview .blocks .block:last-child {
     grid-column: 1 / span 2;
 }
+
+/* Media queries */
 
 @media (max-width: 1024px) {
     header, .headline, .details {
@@ -307,6 +314,8 @@ h2:hover a .anchor-hint {
     }
 }
 
+/* Topic coloring */
+
 .infi-test ol .topic-gebruikers:before {
     background: var(--color-topic-gebruikers);
 }
@@ -324,7 +333,7 @@ h2:hover a .anchor-hint {
 }
 
 .infi-test ol .topic-proces-en-team:before {
-    background: var(--color-topic-proces-team);
+    background: var(--color-topic-proces-en-team);
 }
 
 .infi-test ol .topic-ambacht:before {
@@ -332,5 +341,33 @@ h2:hover a .anchor-hint {
 }
 
 .infi-test ol .topic-overigen:before {
-    background: var(--color-topic-overig);
+    background: var(--color-topic-overigen);
+}
+
+.block.topic-gebruikers .block-image {
+    background: var(--color-topic-gebruikers);
+}
+
+.block.topic-principes .block-image {
+    background: var(--color-topic-principes);
+}
+
+.block.topic-broncode .block-image {
+    background: var(--color-topic-broncode);
+}
+
+.block.topic-technologie .block-image {
+    background: var(--color-topic-technologie);
+}
+
+.block.topic-proces-en-team .block-image {
+    background: var(--color-topic-proces-en-team);
+}
+
+.block.topic-ambacht .block-image {
+    background: var(--color-topic-ambacht);
+}
+
+.block.topic-overigen .block-image {
+    background: var(--color-topic-overigen);
 }
