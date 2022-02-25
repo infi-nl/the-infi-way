@@ -1,3 +1,17 @@
+/* Colors */
+
+:root {
+    --way-color-1: #D32F46;
+    --way-color-2: #A73276;
+    --way-color-3: #684084;
+    --way-color-4: #31406E;
+    --way-color-5: #1f3546;
+    --way-color-6: #316E6D;
+    --way-color-7: #6EB542;
+}
+
+/* Fonts */
+
 @font-face {
     font-family: 'Gudea';
     font-style: normal;
@@ -21,6 +35,8 @@
     src: local('Gudea Italic'), local('Gudea-Italic'), url(https://fonts.gstatic.com/s/gudea/v4/kvCX_I6neb4EN5z031M87g.woff2) format('woff2'), url(https://fonts.gstatic.com/s/gudea/v4/7K8okIOV072GIwnptze9lg.woff) format('woff');
     font-display: swap;
 }
+
+/* Style */
 
 * {
     box-sizing: border-box;
@@ -288,29 +304,29 @@ h2:hover a .anchor-hint {
 }
 
 .block:nth-child(7n + 1), .infi-test ol .topic-gebruikers:before {
-    background: #D32F46;
+    background: var(--way-color-1);
 }
 
 .block:nth-child(7n + 2), .infi-test ol .topic-principes:before {
-    background: #A73276;
+    background: var(--way-color-2);
 }
 
 .block:nth-child(7n + 3), .infi-test ol .topic-broncode:before {
-    background: #684084;
+    background: var(--way-color-3);
 }
 
 .block:nth-child(7n + 4), .infi-test ol .topic-technologie:before {
-    background: #31406E;
+    background: var(--way-color-4);
 }
 
 .block:nth-child(7n + 5), .infi-test ol .topic-proces-en-team:before {
-    background: #1f3546;
+    background: var(--way-color-5);
 }
 
 .block:nth-child(7n + 6), .infi-test ol .topic-ambacht:before {
-    background: #316E6D;
+    background: var(--way-color-6);
 }
 
 .block:nth-child(7n + 7), .infi-test ol .topic-overigen:before {
-    background: #6EB542
+    background: var(--way-color-7);
 }
