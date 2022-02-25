@@ -180,6 +180,11 @@ footer a {
     margin: 2rem 0.5rem 2rem calc(0.5rem + 88px);
 }
 
+.block-content {
+    display: flex;
+    padding: 3rem 2rem;
+}
+
 h2 a,
 header a {
     text-decoration: none;
@@ -195,11 +200,10 @@ h2:hover a .anchor-hint {
 
 .block-anchor-with-offset {
     position: relative;
-    top: -200px;
+    top: -50px;
 }
 
 .headline {
-    padding: 3rem 2rem 2rem;
     max-width: 40%;
 }
 
@@ -246,7 +250,7 @@ h2:hover a .anchor-hint {
 .details {
     font-size: 0.8rem;
     line-height: 1.2rem;
-    padding: 3rem 1rem;
+    margin-left: 2rem;
 }
 
 .details p {
@@ -260,7 +264,6 @@ h2:hover a .anchor-hint {
 
 .view-overview .headline {
     max-width: none;
-    padding-top: 2rem;
 }
 
 .view-overview .blocks {
@@ -327,10 +330,6 @@ h2:hover a .anchor-hint {
         padding-left: 1.5rem;
     }
 
-    .headline, .details {
-        padding: 0.75rem 0.75rem 0 0.75rem;
-    }
-
     .headline {
         max-width: none;
     }
@@ -341,12 +340,17 @@ h2:hover a .anchor-hint {
         margin-right: 0;
     }
 
-    .block {
-        flex-direction: column;
-    }
-
     .block-image {
         display: none;
+    }
+
+    .block-content {
+        flex-direction: column;
+        padding: 0.5rem;
+    }
+
+    .details {
+        margin-left: 0;
     }
 
     .view-overview .blocks {
