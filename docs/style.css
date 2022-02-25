@@ -1,13 +1,17 @@
 /* Colors */
 
 :root {
-    --way-color-1: #D32F46;
-    --way-color-2: #A73276;
+    --way-color-1: #d32f46;
+    --way-color-2: #a73276;
     --way-color-3: #684084;
-    --way-color-4: #31406E;
+    --way-color-4: #31406e;
     --way-color-5: #1f3546;
-    --way-color-6: #316E6D;
-    --way-color-7: #6EB542;
+    --way-color-6: #316e6d;
+    --way-color-7: #6eb542;
+
+    --color-background: #121212;
+    --color-block: #212121;
+    --color-orange: #f67905;
 }
 
 /* Fonts */
@@ -45,10 +49,11 @@
 html, body {
     margin: 0;
     padding: 0;
-    color: rgba(255, 255, 255, 0.95);
     font-family: "Gudea", "Open Sans", Helvetica, Arial, sans-serif;
     font-size: 20px;
     line-height: 1.35rem;
+    color: rgba(255, 255, 255, 0.95);
+    background-color: var(--color-background);
 }
 
 h1, h2, h3, h4, h5, h6, p, ol, ul {
@@ -115,10 +120,8 @@ footer {
 }
 
 .infi-test {
-    color: rgba(0, 0, 0, 0.70);
     padding: 1rem 2rem;
     margin: 1rem 0.5rem;
-    background: rgba(0, 0, 0, 0.05);
     border: 10px solid rgba(0, 0, 0, 0.05);
     box-shadow: inset 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
@@ -136,17 +139,13 @@ footer {
     display: inline-block;
 }
 
-.infi-test ol li:hover {
-    color: #000;
-}
-
 .block {
     position: relative;
     text-shadow: 2px 2px 3px rgba(50, 50, 50, 0.5);
     box-shadow: inset 5px 5px 20px rgba(0, 0, 0, 0.2);
     display: flex;
     border: 10px solid rgba(0, 0, 0, 0.0);
-    background: #555;
+    background-color: var(--color-block);
     margin: 0 0.5rem;
 }
 
@@ -303,30 +302,30 @@ h2:hover a .anchor-hint {
     }
 }
 
-.block:nth-child(7n + 1), .infi-test ol .topic-gebruikers:before {
+.infi-test ol .topic-gebruikers:before {
     background: var(--way-color-1);
 }
 
-.block:nth-child(7n + 2), .infi-test ol .topic-principes:before {
+.infi-test ol .topic-principes:before {
     background: var(--way-color-2);
 }
 
-.block:nth-child(7n + 3), .infi-test ol .topic-broncode:before {
+.infi-test ol .topic-broncode:before {
     background: var(--way-color-3);
 }
 
-.block:nth-child(7n + 4), .infi-test ol .topic-technologie:before {
+.infi-test ol .topic-technologie:before {
     background: var(--way-color-4);
 }
 
-.block:nth-child(7n + 5), .infi-test ol .topic-proces-en-team:before {
+.infi-test ol .topic-proces-en-team:before {
     background: var(--way-color-5);
 }
 
-.block:nth-child(7n + 6), .infi-test ol .topic-ambacht:before {
+.infi-test ol .topic-ambacht:before {
     background: var(--way-color-6);
 }
 
-.block:nth-child(7n + 7), .infi-test ol .topic-overigen:before {
+.infi-test ol .topic-overigen:before {
     background: var(--way-color-7);
 }
