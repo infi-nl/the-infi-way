@@ -1,13 +1,13 @@
 /* Colors */
 
 :root {
-    --way-color-1: #d32f46;
-    --way-color-2: #a73276;
-    --way-color-3: #684084;
-    --way-color-4: #31406e;
-    --way-color-5: #1f3546;
-    --way-color-6: #316e6d;
-    --way-color-7: #6eb542;
+    --color-topic-gebruikers: #d32f46;
+    --color-topic-principes: #a73276;
+    --color-topic-broncode: #684084;
+    --color-topic-technologie: #31406e;
+    --color-topic-proces-team: #1f3546;
+    --color-topic-ambacht: #316e6d;
+    --color-topic-overig: #6eb542;
 
     --color-background: #121212;
     --color-block: #212121;
@@ -308,29 +308,29 @@ h2:hover a .anchor-hint {
 }
 
 .infi-test ol .topic-gebruikers:before {
-    background: var(--way-color-1);
+    background: var(--color-topic-gebruikers);
 }
 
 .infi-test ol .topic-principes:before {
-    background: var(--way-color-2);
+    background: var(--color-topic-principes);
 }
 
 .infi-test ol .topic-broncode:before {
-    background: var(--way-color-3);
+    background: var(--color-topic-broncode);
 }
 
 .infi-test ol .topic-technologie:before {
-    background: var(--way-color-4);
+    background: var(--color-topic-technologie);
 }
 
 .infi-test ol .topic-proces-en-team:before {
-    background: var(--way-color-5);
+    background: var(--color-topic-proces-team);
 }
 
 .infi-test ol .topic-ambacht:before {
-    background: var(--way-color-6);
+    background: var(--color-topic-ambacht);
 }
 
 .infi-test ol .topic-overigen:before {
-    background: var(--way-color-7);
+    background: var(--color-topic-overig);
 }
