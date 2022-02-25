@@ -205,6 +205,7 @@ h2:hover a .anchor-hint {
 
 .headline {
     max-width: 40%;
+    margin-bottom: 1rem;
 }
 
 .block-image {
@@ -264,6 +265,7 @@ h2:hover a .anchor-hint {
 
 .view-overview .headline {
     max-width: none;
+    margin-bottom: 0;
 }
 
 .view-overview .blocks {
@@ -284,10 +286,6 @@ h2:hover a .anchor-hint {
 /* Media queries */
 
 @media (max-width: 1024px) {
-    .headline, .view-overview .headline, .details {
-        padding: 1rem;
-    }
-
     .details-toggle {
         top: 10px;
         right: 10px;
@@ -346,7 +344,7 @@ h2:hover a .anchor-hint {
 
     .block-content {
         flex-direction: column;
-        padding: 0.5rem;
+        padding: 1rem;
     }
 
     .details {
