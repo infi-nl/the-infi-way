@@ -126,23 +126,37 @@ footer {
 }
 
 .infi-test {
-    padding: 1rem 2rem;
+    padding: 2rem;
     margin: 1rem 0.5rem;
     background: var(--color-block);
     box-shadow: inset 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
 
-.infi-test ol {
-    margin-top: 1rem;
+.infi-test h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
-.infi-test ol li:before {
-    content: '';
-    margin: 0 10px 0 5px;
-    background: rgba(0, 0, 0, 0.2);
-    width: 0.75rem;
-    height: 0.75rem;
-    display: inline-block;
+.infi-test ol {
+    margin: 1rem 0;
+    counter-reset: infi-test;
+    list-style: none;
+}
+
+.infi-test ol li {
+    margin-bottom: 0.7rem;
+}
+
+.infi-test ol li::before {
+    counter-increment: infi-test;
+    content: counter(infi-test);
+    margin-right: 0.7rem;
+    width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 8px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .block {
@@ -316,31 +330,31 @@ h2:hover a .anchor-hint {
 
 /* Topic coloring */
 
-.infi-test ol .topic-gebruikers:before {
+.infi-test ol .topic-gebruikers::before {
     background: var(--color-topic-gebruikers);
 }
 
-.infi-test ol .topic-principes:before {
+.infi-test ol .topic-principes::before {
     background: var(--color-topic-principes);
 }
 
-.infi-test ol .topic-broncode:before {
+.infi-test ol .topic-broncode::before {
     background: var(--color-topic-broncode);
 }
 
-.infi-test ol .topic-technologie:before {
+.infi-test ol .topic-technologie::before {
     background: var(--color-topic-technologie);
 }
 
-.infi-test ol .topic-proces-en-team:before {
+.infi-test ol .topic-proces-en-team::before {
     background: var(--color-topic-proces-en-team);
 }
 
-.infi-test ol .topic-ambacht:before {
+.infi-test ol .topic-ambacht::before {
     background: var(--color-topic-ambacht);
 }
 
-.infi-test ol .topic-overigen:before {
+.infi-test ol .topic-overigen::before {
     background: var(--color-topic-overigen);
 }
 
