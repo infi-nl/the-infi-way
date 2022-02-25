@@ -53,7 +53,7 @@ html, body {
     font-size: 20px;
     line-height: 1.35rem;
     color: rgba(255, 255, 255, 0.95);
-    background-color: var(--color-background);
+    background: var(--color-background);
 }
 
 h1, h2, h3, h4, h5, h6, p, ol, ul {
@@ -102,7 +102,7 @@ footer {
     font-size: 0.8rem;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     color: rgba(0, 0, 0, 0.70);
-    background-color: var(--color-orange);
+    background: var(--color-orange);
     text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.25);
     text-align: center;
 }
@@ -128,7 +128,7 @@ footer {
 .infi-test {
     padding: 1rem 2rem;
     margin: 1rem 0.5rem;
-    background-color: var(--color-block);
+    background: var(--color-block);
     box-shadow: inset 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -150,7 +150,7 @@ footer {
     text-shadow: 2px 2px 3px rgba(50, 50, 50, 0.5);
     box-shadow: inset 5px 5px 20px rgba(0, 0, 0, 0.2);
     display: flex;
-    background-color: var(--color-block);
+    background: var(--color-block);
     margin: 2rem 0.5rem;
 }
 
