@@ -9,9 +9,14 @@
     --color-topic-ambacht: #316e6d;
     --color-topic-overigen: #6eb542;
 
-    --color-background: #12121c;
-    --color-block: #21212c;
+    --color-black: #12121c;
+    --color-white: rgba(255, 255, 255, 0.95);
     --color-orange: #f67905;
+
+    --color-background: var(--color-black);
+    --color-text-light: var(--color-white);
+    --color-text-dark: var(--color-black);
+    --color-block: #21212c;
 }
 
 /* Fonts */
@@ -52,7 +57,7 @@ html, body {
     font-family: "Gudea", "Open Sans", Helvetica, Arial, sans-serif;
     font-size: 20px;
     line-height: 1.35rem;
-    color: rgba(255, 255, 255, 0.95);
+    color: var(--color-text-light);
     background: var(--color-background);
 }
 
@@ -105,8 +110,7 @@ footer {
     padding: 1rem;
     margin-top: 120px;
     font-size: 0.8rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    color: rgba(0, 0, 0, 0.70);
+    color: var(--color-text-dark);
     background: var(--color-orange);
     text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.25);
     text-align: center;
