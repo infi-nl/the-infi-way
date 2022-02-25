@@ -83,7 +83,7 @@ a:hover, a:focus {
 }
 
 header {
-    padding: 4rem;
+    margin: 120px 1rem;
     text-align: center;
 }
 
@@ -103,6 +103,7 @@ header p {
 
 footer {
     padding: 1rem;
+    margin-top: 120px;
     font-size: 0.8rem;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     color: rgba(0, 0, 0, 0.70);
@@ -126,12 +127,11 @@ footer {
 .wrapper {
     max-width: 1024px;
     margin: 0 auto;
-    padding: 1rem 0;
 }
 
 .infi-test {
     padding: 2rem;
-    margin: 1rem 0.5rem;
+    margin: 1rem 0.5rem 120px;
     background: var(--color-block);
     box-shadow: inset 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
@@ -169,7 +169,7 @@ footer {
     box-shadow: inset 5px 5px 20px rgba(0, 0, 0, 0.2);
     display: flex;
     background: var(--color-block);
-    margin: 2rem 0.5rem;
+    margin: 2rem 0.5rem 2rem calc(0.5rem + 88px);
 }
 
 h2 a,
@@ -250,8 +250,9 @@ h2:hover a .anchor-hint {
     display: none;
 }
 
-.view-overview .block .headline {
+.view-overview .headline {
     max-width: none;
+    padding-top: 2rem;
 }
 
 .view-overview .blocks {
@@ -272,7 +273,7 @@ h2:hover a .anchor-hint {
 /* Media queries */
 
 @media (max-width: 1024px) {
-    header, .headline, .details {
+    .headline, .view-overview .headline, .details {
         padding: 1rem;
     }
 
@@ -284,18 +285,34 @@ h2:hover a .anchor-hint {
     }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
     header {
-        padding: 10px;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header img {
+        height: 1.7rem;
+        margin-left: 0.2rem;
+        margin-right: 0.2rem;
     }
 
     header p {
-        font-size: 0.8rem;
+        font-size: 1rem;
+    }
+
+    footer {
+        margin-top: 60px;
     }
 
     .infi-test {
-        padding: 0.5rem 1rem;
-        margin-top: 0;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-bottom: 60px;
     }
 
     .infi-test ol {
@@ -312,6 +329,8 @@ h2:hover a .anchor-hint {
 
     .block, .infi-test {
         border-width: 2px;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .block {
@@ -324,7 +343,8 @@ h2:hover a .anchor-hint {
 
     .view-overview .blocks {
         grid-template-columns: 1fr;
-        gap: 0;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .view-overview .blocks .block:last-child {
