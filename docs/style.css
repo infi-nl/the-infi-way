@@ -116,6 +116,10 @@ footer {
     text-align: center;
 }
 
+footer a {
+    text-decoration-color: var(--color-text-dark);
+}
+
 .sr-only {
     position: absolute;
     width: 1px;
