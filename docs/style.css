@@ -137,7 +137,7 @@ footer {
     padding: 2rem;
     margin: 1rem 0.5rem 120px;
     background: var(--color-block);
-    box-shadow: inset 5px 5px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
 
 .infi-test h2 {
@@ -170,7 +170,7 @@ footer {
 .block {
     position: relative;
     text-shadow: 2px 2px 3px rgba(50, 50, 50, 0.5);
-    box-shadow: inset 5px 5px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
     display: flex;
     background: var(--color-block);
     margin: 2rem 0.5rem 2rem calc(0.5rem + 88px);
@@ -221,8 +221,8 @@ h2:hover a .anchor-hint {
     font-size: inherit;
     font-family: inherit;
     cursor: pointer;
-    color: rgba(0, 0, 0, 0.5);
-    border: 2px solid rgba(0, 0, 0, 0.1);
+    color: var(--color-text-light);
+    border: 2px solid var(--color-text-light);
     border-radius: 50%;
     text-align: center;
 }
