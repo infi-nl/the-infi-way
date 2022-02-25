@@ -17,6 +17,8 @@
     --color-text-light: var(--color-white);
     --color-text-dark: var(--color-black);
     --color-block: #21212c;
+
+    --box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Fonts */
@@ -141,7 +143,7 @@ footer a {
     padding: 2rem;
     margin: 1rem 0.5rem 120px;
     background: var(--color-block);
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--box-shadow);
 }
 
 .infi-test h2 {
@@ -174,7 +176,7 @@ footer a {
 .block {
     position: relative;
     text-shadow: 2px 2px 3px rgba(50, 50, 50, 0.5);
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--box-shadow);
     display: flex;
     background: var(--color-block);
     margin: 44px 0.5rem 44px calc(0.5rem + 88px);
@@ -216,6 +218,7 @@ h2:hover a .anchor-hint {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: var(--box-shadow);
 }
 
 .details-toggle {
