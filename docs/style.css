@@ -177,7 +177,7 @@ footer a {
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
     display: flex;
     background: var(--color-block);
-    margin: 2rem 0.5rem 2rem calc(0.5rem + 88px);
+    margin: 44px 0.5rem 44px calc(0.5rem + 88px);
 }
 
 .block-content {
@@ -200,7 +200,7 @@ h2:hover a .anchor-hint {
 
 .block-anchor-with-offset {
     position: relative;
-    top: -50px;
+    top: 0;
 }
 
 .headline {
@@ -338,13 +338,23 @@ h2:hover a .anchor-hint {
         margin-right: 0;
     }
 
+    .block {
+        flex-direction: column;
+        margin-top: 132px;
+    }
+
     .block-image {
-        display: none;
+        margin: -88px auto 0;
+        width: 176px;
     }
 
     .block-content {
         flex-direction: column;
         padding: 1rem;
+    }
+
+    .block-anchor-with-offset {
+        top: -88px;
     }
 
     .details {
