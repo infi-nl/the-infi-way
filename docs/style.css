@@ -1,5 +1,3 @@
-/* Colors */
-
 :root {
     --color-topic-gebruikers: #d32f46;
     --color-topic-principes: #a73276;
@@ -20,8 +18,6 @@
 
     --box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
-
-/* Fonts */
 
 @font-face {
     font-family: 'Gudea';
@@ -46,8 +42,6 @@
     src: local('Gudea Italic'), local('Gudea-Italic'), url(https://fonts.gstatic.com/s/gudea/v4/kvCX_I6neb4EN5z031M87g.woff2) format('woff2'), url(https://fonts.gstatic.com/s/gudea/v4/7K8okIOV072GIwnptze9lg.woff) format('woff');
     font-display: swap;
 }
-
-/* Style */
 
 * {
     box-sizing: border-box;
@@ -286,8 +280,6 @@ h2:hover a .anchor-hint {
     grid-column: 1 / span 2;
 }
 
-/* Media queries */
-
 @media (max-width: 1024px) {
     .details-toggle {
         top: 10px;
@@ -374,8 +366,6 @@ h2:hover a .anchor-hint {
         grid-column: auto;
     }
 }
-
-/* Topic coloring */
 
 .infi-test ol .topic-gebruikers::before {
     background: var(--color-topic-gebruikers);
