@@ -7,14 +7,14 @@
     --color-topic-ambacht: #316e6d;
     --color-topic-overigen: #6eb542;
 
-    --color-black: #12121c;
+    --color-black: #121212;
     --color-white: rgba(255, 255, 255, 0.95);
     --color-orange: #f67905;
 
     --color-background: var(--color-black);
     --color-text-light: var(--color-white);
     --color-text-dark: var(--color-black);
-    --color-block: #21212c;
+    --color-block: #212121;
 
     --box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
