@@ -13,7 +13,6 @@
 
     --color-background: var(--color-black);
     --color-text-light: var(--color-white);
-    --color-text-dark: var(--color-black);
     --color-block: #212121;
 
     --box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
@@ -55,6 +54,7 @@ html, body {
     line-height: 1.35rem;
     color: var(--color-text-light);
     background: var(--color-background);
+    text-shadow: 2px 2px 3px rgba(50, 50, 50, 0.5);
 }
 
 h1, h2, h3, h4, h5, h6, p, ol, ul {
@@ -106,14 +106,8 @@ footer {
     padding: 1rem;
     margin-top: 120px;
     font-size: 0.8rem;
-    color: var(--color-text-dark);
-    background: var(--color-orange);
-    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.25);
+    background: var(--color-block);
     text-align: center;
-}
-
-footer a {
-    text-decoration-color: var(--color-text-dark);
 }
 
 .sr-only {
@@ -169,7 +163,6 @@ footer a {
 
 .block {
     position: relative;
-    text-shadow: 2px 2px 3px rgba(50, 50, 50, 0.5);
     box-shadow: var(--box-shadow);
     display: flex;
     background: var(--color-block);
