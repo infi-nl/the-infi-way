@@ -5,6 +5,49 @@
     <meta charset="UTF-8">
     <title>The Infi Way</title>
     <link rel="stylesheet" href="style.css">
+    <script src="localization.js" type="text/javascript"></script>
+    <script id="content" type="application/json">
+      {
+        "nl": {
+          "header": {
+            "subtitle": "Bij Infi werken we graag op de volgende manier."
+          },
+          "topic": {
+            "users": {
+              "title": "Gebruikers centraal",
+              "how-title": "Hoe we dat graag doen:",
+              "how": [
+                "<em>Direct contact</em> met gebruikers",
+                "Prototyping, snel itereren",
+                "User-centric werken",
+                "Nauwe samenwerking met designers",
+                "Werk moet <em>waarde</em> opleveren",
+                "Werken vanuit \"waarom\""
+              ]
+            }
+          }
+        },
+        "en": {
+          "header": {
+            "subtitle": "At Infi we like to work the following way."
+          },
+          "topic": {
+            "users": {
+              "title": "User-centric",
+              "how-title": "How we like to do that:",
+              "how": [
+                "<em>Direct contact</em> with users",
+                "Prototyping, iterate quickly",
+                "Work user-centric",
+                "Close collaboration with designers",
+                "Work should deliver <em>value</em>",
+                "Work from \"why\""
+              ]
+            }
+          }
+        }
+      }
+    </script>
   </head>
   <body>
     <!--
@@ -12,7 +55,7 @@
     -->
     <header>
       <h1><a href="javascript: history.replaceState(null, null, ' '); window.scrollTo(0, 0)">The Infi Way</a></h1>
-      <p>Bij Infi werken we graag op de volgende manier.</p>
+      <p>{{header.subtitle}}</p>
     </header>
     <div class="wrapper" id="viewToggle">
       <section class="intro">
@@ -51,7 +94,7 @@
           <span id="gebruikers" class="block-anchor-with-offset"></span>
           <section class="headline">
             <h2><a href="#gebruikers">
-              Gebruikers centraal
+              {{topic.users.title}}
               <span class="anchor-hint">#</span>
             </a></h2>
             <p>Wij werken voor <em>de klant van onze klant</em>. Ze gebruiken software om <em>hun</em> doelen te bereiken, ons doel is hen daarbij te helpen.</p>
@@ -61,14 +104,11 @@
             </p>
           </section>
           <section class="details">
-            <p>Hoe we dat graag doen:</p>
+            <p>{{topic.users.how-title}}</p>
             <ul>
-              <li><em>Direct contact</em> met gebruikers</li>
-              <li>Prototyping, snel itereren</li>
-              <li>User-centric werken</li>
-              <li>Nauwe samenwerking met designers</li>
-              <li>Werk moet <em>waarde</em> opleveren</li>
-              <li>Werken vanuit "waarom"</li>
+              {{#each topic.users.how}}
+              <li>{{this}}</li>
+              {{/each}}
             </ul>
             <p>Denk aan <em>bijvoorbeeld</em>:</p>
             <ul>
