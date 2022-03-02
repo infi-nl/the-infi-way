@@ -2,7 +2,7 @@
 
 Een overzicht van _hoe_ we graag software bouwen bij Infi: welke technieken en technologie we graag gebruiken, en volgens welke principes we willen werken.
 
-## 🚀 Live versie
+## 🚀 Live Versie
 
 Gelijk door?
 **Lees [de online versie in je browser](https://infi-nl.github.io/the-infi-way).**
@@ -36,7 +36,7 @@ Voor dat laatste moeten we nog wel de licensing iets vrijer maken, subscribe op 
 Hoe dan ook, als je dat fijn vindt: voel je vrij om [een issue te openen](https://github.com/infi-nl/the-infi-way/issues/new) en/of [een PR te submitten](https://github.com/infi-nl/the-infi-way/pulls)!
 We zijn altijd benieuwd naar nieuwe inzichten.
 
-## 🔒 Tot slot
+## 🔒 Tot Slot
 
 Hopelijk vind je The Infi Way interessant, of zelfs _nuttig_!?
 Als je vragen hebt [weet je ons hopelijk te vinden](https://infi.nl/contact/), en als je mee wilt helpen bouwen aan dit soort projecten [weet je ook waar je moet zijn](https://werkenbij.infi.nl/), toch?
