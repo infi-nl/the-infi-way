@@ -3,10 +3,10 @@ const fs = require('fs/promises');
 
 (async () => {
   const template = (await fs.readFile(`${__dirname}/template.html`)).toString();
-  const langFiles = await fs.readdir(`${__dirname}/lang`);
+  const langFiles = await fs.readdir(`${__dirname}/content`);
   await Promise.all(
     langFiles
-      .map((f) => `${__dirname}/lang/${f}`)
+      .map((f) => `${__dirname}/content/${f}`)
       .map((f) => processTemplate(template, f)),
   );
   console.log('Done!');
