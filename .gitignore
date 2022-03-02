@@ -3,4 +3,4 @@
 .vscode/
 
 # Build artifacts
-build/
+build/*.html

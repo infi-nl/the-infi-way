@@ -8,7 +8,6 @@ const outputDir = `${__dirname}/build`;
 (async () => {
   const template = (await fs.readFile(templateFile)).toString();
   const contentFiles = await fs.readdir(contentDir);
-  await fs.mkdir(outputDir, { recursive: true });
 
   const processor = new TemplateProcessor();
   const compiledTemplate = processor.compile(template);

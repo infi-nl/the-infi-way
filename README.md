@@ -1,5 +1,7 @@
 # The Infi Way
 
+[![Deploy to GitHub Pages](https://github.com/infi-nl/the-infi-way/actions/workflows/deploy.yml/badge.svg)](https://github.com/infi-nl/the-infi-way/actions/workflows/deploy.yml)
+
 Een overzicht van _hoe_ we graag software bouwen bij Infi: welke technieken en technologie we graag gebruiken, en volgens welke principes we willen werken.
 
 ## 🚀 Live Versie
