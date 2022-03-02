@@ -5,7 +5,56 @@ const templateFile = `${__dirname}/template.html`;
 const contentDir = `${__dirname}/content`;
 const outputDir = `${__dirname}/build`;
 
+const cliHelpText = `
+Usage: ./build.js [options]
+
+Options:
+  -h, --help      Print the help and usage info (this text).
+  -w, --watch     Watch the template and content files for changes.
+`.trim();
+
 (async () => {
+  const [, , ...args] = process.argv;
+  let watch = false;
+
+  for (const arg of args) {
+    switch (arg) {
+      case '-h':
+      case '--help':
+        console.log(cliHelpText);
+        return;
+      case '-w':
+      case '--watch':
+        watch = true;
+        break;
+      default:
+        console.error(`Unknown option: ${arg}`);
+        console.log(cliHelpText);
+        process.exit(1);
+        return;
+    }
+  }
+
+  if (watch) {
+    console.clear();
+    console.log('Starting build in watch mode.');
+    await build();
+    startWatch(templateFile);
+    startWatch(contentDir);
+  } else {
+    await build();
+  }
+})();
+
+async function startWatch(file) {
+  const watcher = fs.watch(file, { recursive: true });
+  for await (const _ of watcher) {
+    console.clear();
+    await build();
+  }
+}
+
+async function build() {
   const template = (await fs.readFile(templateFile)).toString();
   const contentFiles = await fs.readdir(contentDir);
 
@@ -22,8 +71,7 @@ const outputDir = `${__dirname}/build`;
   }
 
   console.log('Done!');
-})();
-
+}
 
 class TemplateProcessor {
   static #TOKEN_TYPE_LITERAL = 'literal';
