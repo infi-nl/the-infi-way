@@ -72,7 +72,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-    text-decoration: underline 1px solid var(--color-orange);
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--color-orange);
 }
 
 a, a:link, a:visited, a:focus, a:active {
