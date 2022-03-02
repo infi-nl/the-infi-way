@@ -10,63 +10,161 @@ const outputDir = `${__dirname}/build`;
   const contentFiles = await fs.readdir(contentDir);
   await fs.mkdir(outputDir, { recursive: true });
 
+  const processor = new TemplateProcessor();
+  const compiledTemplate = processor.compile(template);
+
   for (const f of contentFiles) {
     const lang = f.substring(f.lastIndexOf('/') + 1, f.lastIndexOf('.'));
     console.log(`Processing language: ${lang}`);
     const content = JSON.parse((await fs.readFile(`${contentDir}/${f}`)).toString());
     content.lang = lang;
-    const processed = processTemplate(template, content);
+    const processed = processor.process(compiledTemplate, content);
     await fs.writeFile(`${outputDir}/${lang}.html`, processed);
   }
 
   console.log('Done!');
 })();
 
-function processTemplate(template, content) {
-  if (typeof content === 'object') {
-    return processTemplateObject(template, content);
+class TemplateProcessor {
+  #funcMapping = {
+    each: this.#processFuncEach.bind(this),
+  };
+
+  /**
+   * Compile a template into tokens.
+   *
+   * An example of the tokens:
+   *
+   * ```
+   *[
+   *  {
+   *    type: 'literal',
+   *    value: 'a literal string value'
+   *  },
+   *  {
+   *    type: 'value',
+   *    value: 'content.object.value'
+   *  },
+   *  {
+   *    type: 'func',
+   *    tag: {
+   *      name: 'each',
+   *      args: [ 'list' ]
+   *    },
+   *    value: [
+   *      {
+   *        type: 'value',
+   *        value: 'this'
+   *      }
+   *    ]
+   *  }
+   *]
+   * ```
+   *
+   * @param {string} template
+   */
+  compile(template) {
+    return this.#doCompile(template, 0)[0];
   }
-  if (typeof content === 'string') {
-    return processTemplateString(template, content);
-  }
-  console.error(`Unknown localization content type: ${typeof content}`);
-  return template;
-}
 
-function processTemplateObject(template, content, prefix = '') {
-  let result = template;
+  #doCompile(template, startIndex, openingTag) {
+    const compiled = [];
 
-  Object.entries(content).forEach(([key, val]) => {
-    const fullKey = `${prefix}${key}`;
+    let index = startIndex;
+    let tagStartIndex = -1;
+    while ((tagStartIndex = template.indexOf('{{', index)) >= 0) {
+      compiled.push({ type: 'literal', value: template.substring(index, tagStartIndex) });
 
-    if (typeof val === 'string') {
-      result = result.replaceAll(`{{${fullKey}}}`, val);
-    } else if (Array.isArray(val)) {
-      const eachStartToken = `{{#each ${fullKey}}}`;
-      const eachEndToken = '{{/each}}';
+      index = template.indexOf('}}', tagStartIndex) + 2;
+      const tag = template.substring(tagStartIndex, index);
+      const tagContent = tag.substring(2, tag.length - 2);
 
-      let eachStartIndex = result.indexOf(eachStartToken);
-      while (eachStartIndex >= 0) {
-        const eachEndIndex = result.indexOf(eachEndToken, eachStartIndex + eachStartToken.length);
-        const subTemplate = result.substring(eachStartIndex + eachStartToken.length, eachEndIndex);
-        const subProcessed = val.map((v) => processTemplate(subTemplate, v)).join('');
-        result = spliceString(result, eachStartIndex, eachEndIndex + eachEndToken.length, subProcessed);
-        eachStartIndex = result.indexOf(eachStartToken);
+      if (tag[2] === '#') {
+        // The tag is opening a function block.
+        const [name, ...args] = tagContent.substring(1).split(' ');
+        if (!this.#funcMapping[name]) {
+          throw new Error(`Unknown tag function "${name}"`);
+        }
+
+        const subTag = { name, args };
+        const [sub, subEndIndex] = this.#doCompile(template, index, subTag);
+
+        index = subEndIndex;
+        compiled.push({ type: 'func', tag: subTag, value: sub });
+      } else if (tag[2] === '/') {
+        // The tag is closing a function block.
+        const name = tagContent.substring(1);
+        if (!openingTag || name !== openingTag.name) {
+          throw new Error(`Closing tag "${name}" does not match opening tag "${openingTag?.name}".`);
+        }
+
+        return [compiled, index];
+      } else {
+        // The tag is a value.
+        compiled.push({ type: 'value', value: tagContent });
       }
-    } else if (typeof val === 'object') {
-      result = processTemplateObject(result, val, `${fullKey}.`);
-    } else {
-      console.error(`Unknown localized value: ${val}`);
     }
-  });
 
-  return result;
-}
+    if (openingTag) {
+      throw new Error(`Unclosed tag: ${openingTag.name}`);
+    }
 
-function processTemplateString(template, content) {
-  return template.replaceAll('{{this}}', content);
-}
+    compiled.push({ type: 'literal', value: template.substring(index) });
+    return [compiled];
+  }
 
-function spliceString(val, start, end, replacement) {
-  return `${val.substring(0, start)}${replacement}${val.substring(end)}`;
+  process(compiledTemplate, content) {
+    return compiledTemplate
+      .map((token) => {
+        switch (token.type) {
+          case 'literal':
+            return token.value;
+          case 'value':
+            const contentValue = this.#getContentValue(content, token.value);
+            if (contentValue === undefined) {
+              throw new Error(`Undefined value: ${token.value}`);
+            }
+            return contentValue;
+          case 'func':
+            return this.#funcMapping[token.tag.name](token.tag, token.value, content);
+          default:
+            throw new Error(`Unknown token type: ${token.type}`);
+        }
+      })
+      .join('');
+  }
+
+  /**
+   * @param {Object} content
+   * @param {string} valuePath
+   */
+  #getContentValue(content, valuePath) {
+    if (typeof content === 'string' && valuePath === 'this') {
+      return content;
+    }
+
+    if (valuePath.includes('.')) {
+      const [first, ...rest] = valuePath.split('.');
+      return this.#getContentValue(content[first], rest.join('.'));
+    }
+
+    return content[valuePath];
+  }
+
+  #processFuncEach(tag, compiledTemplate, content) {
+    TemplateProcessor.#assertArgLength(tag, 1);
+    const list = this.#getContentValue(content, tag.args[0]);
+
+    if (!Array.isArray(list)) {
+      throw new Error(`Argument "${tag.args[0]}" for "${tag.name}" must be a list, ${typeof list} given`);
+    }
+
+    return list.map((item) => this.process(compiledTemplate, item)).join('');
+  }
+
+  static #assertArgLength(tag, expected) {
+    if (tag.args.length !== expected) {
+      throw new Error(`Expected ${expected} argument(s) for "${tag.name}", but got ${tag.args.length}`);
+    }
+  }
 }
