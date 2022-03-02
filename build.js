@@ -50,20 +50,23 @@ async function startWatch(file) {
   const watcher = fs.watch(file, { recursive: true });
   for await (const _ of watcher) {
     console.clear();
+    console.log(`Last build time: ${new Date().toLocaleString('en-GB')}`);
     await build();
   }
 }
 
 async function build() {
+  console.log('Starting build...');
   const template = (await fs.readFile(templateFile)).toString();
   const contentFiles = await fs.readdir(contentDir);
 
   const processor = new TemplateProcessor();
   const compiledTemplate = processor.compile(template);
 
+  console.log('Processing language:');
   for (const f of contentFiles) {
     const lang = f.substring(f.lastIndexOf('/') + 1, f.lastIndexOf('.'));
-    console.log(`Processing language: ${lang}`);
+    console.log(`  - ${lang}`);
     const content = JSON.parse((await fs.readFile(`${contentDir}/${f}`)).toString());
     content.lang = lang;
     const processed = processor.process(compiledTemplate, content);
