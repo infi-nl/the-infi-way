@@ -18,7 +18,7 @@ async function processTemplate(template, langFile) {
   const content = JSON.parse((await fs.readFile(langFile)).toString());
   content.lang = lang;
   const processed = processL10n(template, content);
-  await fs.writeFile(`${__dirname}/docs/${lang}.html`, processed);
+  await fs.writeFile(`${__dirname}/build/${lang}.html`, processed);
 }
 
 function processL10n(template, content) {
