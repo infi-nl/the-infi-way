@@ -25,40 +25,55 @@ const outputDir = `${__dirname}/build`;
   console.log('Done!');
 })();
 
+
 class TemplateProcessor {
+  static #TOKEN_TYPE_LITERAL = 'literal';
+  static #TOKEN_TYPE_REFERENCE = 'reference';
+  static #TOKEN_TYPE_FUNC = 'func';
+
   #funcMapping = {
     each: this.#processFuncEach.bind(this),
   };
 
   /**
-   * Compile a template into tokens.
+   * Compile a template into a list of tokens.
    *
-   * An example of the tokens:
+   * A token is an object with a type (one of the static `TOKEN_TYPE`s) and additional information.
+   *
+   * A literal token contains just a string value which will be used verbatim:
    *
    * ```
-   *[
-   *  {
-   *    type: 'literal',
-   *    value: 'a literal string value'
-   *  },
-   *  {
-   *    type: 'value',
-   *    value: 'content.object.value'
-   *  },
-   *  {
-   *    type: 'func',
-   *    tag: {
-   *      name: 'each',
-   *      args: [ 'list' ]
-   *    },
-   *    value: [
-   *      {
-   *        type: 'value',
-   *        value: 'this'
-   *      }
-   *    ]
-   *  }
-   *]
+   * {
+   *   type: 'literal',
+   *   value: 'A literal string value.'
+   * }
+   * ```
+   *
+   * A reference token contains a reference to a value from the content, which will be replaced:
+   *
+   * ```
+   * {
+   *   type: 'reference',
+   *   value: 'value.from.content'
+   * }
+   * ```
+   *
+   * A func token contains the tag name and arguments, and the body, which is a list of tokens:
+   *
+   * ```
+   * {
+   *   type: 'func',
+   *   tag: {
+   *     name: 'each',
+   *     args: [ 'list' ]
+   *   },
+   *   value: [
+   *     {
+   *       type: 'reference',
+   *       value: 'this'
+   *     }
+   *   ]
+   * }
    * ```
    *
    * @param {string} template
@@ -73,7 +88,7 @@ class TemplateProcessor {
     let index = startIndex;
     let tagStartIndex = -1;
     while ((tagStartIndex = template.indexOf('{{', index)) >= 0) {
-      compiled.push({ type: 'literal', value: template.substring(index, tagStartIndex) });
+      compiled.push({ type: TemplateProcessor.#TOKEN_TYPE_LITERAL, value: template.substring(index, tagStartIndex) });
 
       index = template.indexOf('}}', tagStartIndex) + 2;
       const tag = template.substring(tagStartIndex, index);
@@ -90,7 +105,7 @@ class TemplateProcessor {
         const [sub, subEndIndex] = this.#doCompile(template, index, subTag);
 
         index = subEndIndex;
-        compiled.push({ type: 'func', tag: subTag, value: sub });
+        compiled.push({ type: TemplateProcessor.#TOKEN_TYPE_FUNC, tag: subTag, value: sub });
       } else if (tag[2] === '/') {
         // The tag is closing a function block.
         const name = tagContent.substring(1);
@@ -100,8 +115,8 @@ class TemplateProcessor {
 
         return [compiled, index];
       } else {
-        // The tag is a value.
-        compiled.push({ type: 'value', value: tagContent });
+        // The tag is a reference.
+        compiled.push({ type: TemplateProcessor.#TOKEN_TYPE_REFERENCE, value: tagContent });
       }
     }
 
@@ -109,23 +124,30 @@ class TemplateProcessor {
       throw new Error(`Unclosed tag: ${openingTag.name}`);
     }
 
-    compiled.push({ type: 'literal', value: template.substring(index) });
+    compiled.push({ type: TemplateProcessor.#TOKEN_TYPE_LITERAL, value: template.substring(index) });
     return [compiled];
   }
 
+  /**
+   * Process a template, replacing all template tags with the content.
+   *
+   * @param compiledTemplate The compiled template, as returned by {@link compile}.
+   * @param content The template content.
+   * @return {string}
+   */
   process(compiledTemplate, content) {
     return compiledTemplate
       .map((token) => {
         switch (token.type) {
-          case 'literal':
+          case TemplateProcessor.#TOKEN_TYPE_LITERAL:
             return token.value;
-          case 'value':
-            const contentValue = this.#getContentValue(content, token.value);
+          case TemplateProcessor.#TOKEN_TYPE_REFERENCE:
+            const contentValue = this.#resolveContentReference(content, token.value);
             if (contentValue === undefined) {
-              throw new Error(`Undefined value: ${token.value}`);
+              throw new Error(`Undefined content reference: ${token.value}`);
             }
             return contentValue;
-          case 'func':
+          case TemplateProcessor.#TOKEN_TYPE_FUNC:
             return this.#funcMapping[token.tag.name](token.tag, token.value, content);
           default:
             throw new Error(`Unknown token type: ${token.type}`);
@@ -135,25 +157,34 @@ class TemplateProcessor {
   }
 
   /**
-   * @param {Object} content
-   * @param {string} valuePath
+   * Get a value from the content by a reference.
+   *
+   * If the content is an object, the reference can be a dot-separated path.
+   *
+   * If the content is a string, the reference can only be 'this'.
+   *
+   * @param {Object|string} content
+   * @param {string} reference
    */
-  #getContentValue(content, valuePath) {
-    if (typeof content === 'string' && valuePath === 'this') {
+  #resolveContentReference(content, reference) {
+    if (typeof content === 'string') {
+      if (reference !== 'this') {
+        throw new Error(`Invalid content reference for string content: "${reference}"`);
+      }
       return content;
     }
 
-    if (valuePath.includes('.')) {
-      const [first, ...rest] = valuePath.split('.');
-      return this.#getContentValue(content[first], rest.join('.'));
+    if (reference.includes('.')) {
+      const [first, ...rest] = reference.split('.');
+      return this.#resolveContentReference(content[first], rest.join('.'));
     }
 
-    return content[valuePath];
+    return content[reference];
   }
 
   #processFuncEach(tag, compiledTemplate, content) {
     TemplateProcessor.#assertArgLength(tag, 1);
-    const list = this.#getContentValue(content, tag.args[0]);
+    const list = this.#resolveContentReference(content, tag.args[0]);
 
     if (!Array.isArray(list)) {
       throw new Error(`Argument "${tag.args[0]}" for "${tag.name}" must be a list, ${typeof list} given`);
