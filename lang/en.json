@@ -1,0 +1,19 @@
+{
+  "header": {
+    "subtitle": "At Infi we like to work the following way."
+  },
+  "topic": {
+    "users": {
+      "title": "User-centric",
+      "how-title": "How we like to do that:",
+      "how": [
+        "<em>Direct contact</em> with users",
+        "Prototyping, iterate quickly",
+        "Work user-centric",
+        "Close collaboration with designers",
+        "Work should deliver <em>value</em>",
+        "Work from \"why\""
+      ]
+    }
+  }
+}
