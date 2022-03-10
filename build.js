@@ -38,7 +38,7 @@ Options:
   if (watch) {
     console.clear();
     console.log('Starting build in watch mode.');
-    await build();
+    await tryBuild();
     startWatch(templateFile);
     startWatch(contentDir);
   } else {
@@ -51,8 +51,12 @@ async function startWatch(file) {
   for await (const _ of watcher) {
     console.clear();
     console.log(`Last build time: ${new Date().toLocaleString('en-GB')}`);
-    await build();
+    await tryBuild();
   }
+}
+
+function tryBuild() {
+  return build().catch((e) => console.error(e));
 }
 
 async function build() {
