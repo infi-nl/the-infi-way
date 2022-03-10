@@ -64,6 +64,7 @@
   "topic": {
     "users": {
       "title": "User-centric",
+      "subtitle": "We work for <em>the client of our client</em>. They use software to achieve <em>their</em> goals, our goal is to help them with that.",
       "how-title": "How we like to do that:",
       "how": [
         "<em>Direct contact</em> with users",
