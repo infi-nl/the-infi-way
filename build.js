@@ -15,7 +15,6 @@ Options:
 
 (async () => {
   const [, , ...args] = process.argv;
-  let watch = false;
 
   for (const arg of args) {
     switch (arg) {
@@ -25,8 +24,8 @@ Options:
         return;
       case '-w':
       case '--watch':
-        watch = true;
-        break;
+        await buildWatch();
+        return;
       default:
         console.error(`Unknown option: ${arg}`);
         console.log(cliHelpText);
@@ -35,18 +34,18 @@ Options:
     }
   }
 
-  if (watch) {
-    console.clear();
-    console.log('Starting build in watch mode.');
-    await tryBuild();
-    startWatch(templateFile);
-    startWatch(contentDir);
-  } else {
-    await build();
-  }
+  await build();
 })();
 
-async function startWatch(file) {
+async function buildWatch() {
+  console.clear();
+  console.log('Starting build in watch mode.');
+  await tryBuild();
+  startWatchAndBuild(templateFile);
+  startWatchAndBuild(contentDir);
+}
+
+async function startWatchAndBuild(file) {
   const watcher = fs.watch(file, { recursive: true });
   for await (const _ of watcher) {
     console.clear();
