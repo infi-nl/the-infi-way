@@ -73,6 +73,16 @@
         "Nauwe samenwerking met designers",
         "Werk moet <em>waarde</em> opleveren",
         "Werken vanuit \"waarom\""
+      ],
+      "examples-title": "Denk aan bijvoorbeeld:",
+      "examples": [
+        "Gebruikerstests",
+        "<a href=\"https://www.gv.com/sprint/\" target=\"_blank\">Google \"Design Sprint\"</a>"
+      ],
+      "by-us-title": "Van onze hand:",
+      "by-us": [
+        "<a href=\"https://infi.nl/nieuws/kickstart-je-project-met-een-walking-skeleton/\" target=\"_blank\">Blogpost: Walking Skeletons</a>",
+        "<a href=\"https://infi.nl/onze-klanten/\" target=\"_blank\">Site: Onze klanten</a> (en hun gebruikers, dus!)"
       ]
     }
   }

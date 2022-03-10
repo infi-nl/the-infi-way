@@ -60,15 +60,17 @@
                 <li>{{this}}</li>
                 {{/each}}
               </ul>
-              <p>Denk aan bijvoorbeeld:</p>
+              <p>{{topic.users.examples-title}}</p>
               <ul>
-                <li>Gebruikerstests</li>
-                <li><a href="https://www.gv.com/sprint/" target="_blank">Google "Design Sprint"</a></li>
+                {{#each topic.users.examples}}
+                <li>{{this}}</li>
+                {{/each}}
               </ul>
-              <p>Van onze hand:</p>
+              <p>{{topic.users.by-us-title}}</p>
               <ul>
-                <li><a href="https://infi.nl/nieuws/kickstart-je-project-met-een-walking-skeleton/" target="_blank">Blogpost: Walking Skeletons</a></li>
-                <li><a href="https://infi.nl/onze-klanten/" target="_blank">Site: Onze klanten</a> (en hun gebruikers, dus!)</li>
+                {{#each topic.users.by-us}}
+                <li>{{this}}</li>
+                {{/each}}
               </ul>
             </section>
           </div>
