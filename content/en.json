@@ -7,7 +7,7 @@
     "subtitle": "A quick check to see if you're roughly following <em>The Infi Way</em>. A sort of <a href=\"https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/\" target=\"_blank\">Joel Test</a>.",
     "checks": [
       {
-        "topic": "gebruikers",
+        "topic": "users",
         "question": "Are developers seeing real users?"
       }
     ],

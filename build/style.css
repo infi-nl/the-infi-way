@@ -1,11 +1,11 @@
 :root {
-    --color-topic-gebruikers: #d32f46;
-    --color-topic-principes: #a73276;
-    --color-topic-broncode: #684084;
-    --color-topic-technologie: #245eb5;
-    --color-topic-proces-en-team: #2784ac;
-    --color-topic-ambacht: #349f72;
-    --color-topic-overigen: #569f34;
+    --color-topic-users: #d32f46;
+    --color-topic-principles: #a73276;
+    --color-topic-source-code: #684084;
+    --color-topic-technology: #245eb5;
+    --color-topic-process-and-team: #2784ac;
+    --color-topic-craft: #349f72;
+    --color-topic-others: #569f34;
 
     --color-black: #121212;
     --color-white: rgba(255, 255, 255, 0.95);
@@ -367,58 +367,58 @@ h2:hover a .anchor-hint {
     }
 }
 
-.infi-test ol .topic-gebruikers::before {
-    background: var(--color-topic-gebruikers);
+.infi-test ol .topic-users::before {
+    background: var(--color-topic-users);
 }
 
-.infi-test ol .topic-principes::before {
-    background: var(--color-topic-principes);
+.infi-test ol .topic-principles::before {
+    background: var(--color-topic-principles);
 }
 
-.infi-test ol .topic-broncode::before {
-    background: var(--color-topic-broncode);
+.infi-test ol .topic-source-code::before {
+    background: var(--color-topic-source-code);
 }
 
-.infi-test ol .topic-technologie::before {
-    background: var(--color-topic-technologie);
+.infi-test ol .topic-technology::before {
+    background: var(--color-topic-technology);
 }
 
-.infi-test ol .topic-proces-en-team::before {
-    background: var(--color-topic-proces-en-team);
+.infi-test ol .topic-process-and-team::before {
+    background: var(--color-topic-process-and-team);
 }
 
-.infi-test ol .topic-ambacht::before {
-    background: var(--color-topic-ambacht);
+.infi-test ol .topic-craft::before {
+    background: var(--color-topic-craft);
 }
 
-.infi-test ol .topic-overigen::before {
-    background: var(--color-topic-overigen);
+.infi-test ol .topic-others::before {
+    background: var(--color-topic-others);
 }
 
-.block.topic-gebruikers .block-image {
-    background: var(--color-topic-gebruikers);
+.block.topic-users .block-image {
+    background: var(--color-topic-users);
 }
 
-.block.topic-principes .block-image {
-    background: var(--color-topic-principes);
+.block.topic-principles .block-image {
+    background: var(--color-topic-principles);
 }
 
-.block.topic-broncode .block-image {
-    background: var(--color-topic-broncode);
+.block.topic-source-code .block-image {
+    background: var(--color-topic-source-code);
 }
 
-.block.topic-technologie .block-image {
-    background: var(--color-topic-technologie);
+.block.topic-technology .block-image {
+    background: var(--color-topic-technology);
 }
 
-.block.topic-proces-en-team .block-image {
-    background: var(--color-topic-proces-en-team);
+.block.topic-process-and-team .block-image {
+    background: var(--color-topic-process-and-team);
 }
 
-.block.topic-ambacht .block-image {
-    background: var(--color-topic-ambacht);
+.block.topic-craft .block-image {
+    background: var(--color-topic-craft);
 }
 
-.block.topic-overigen .block-image {
-    background: var(--color-topic-overigen);
+.block.topic-others .block-image {
+    background: var(--color-topic-others);
 }

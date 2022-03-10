@@ -7,55 +7,55 @@
     "subtitle": "Vlotte steekproef om te checken of je ruwweg <em>The Infi Way</em> volgt. Een soort <a href=\"https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/\" target=\"_blank\">Joel Test</a>.",
     "checks": [
       {
-        "topic": "gebruikers",
+        "topic": "users",
         "question": "Zien developers échte gebruikers?"
       },
       {
-        "topic": "principes",
+        "topic": "principles",
         "question": "Wordt code gereviewed?"
       },
       {
-        "topic": "broncode",
+        "topic": "source-code",
         "question": "Worden er automatische builds met tests gedraaid?"
       },
       {
-        "topic": "broncode",
+        "topic": "source-code",
         "question": "Kun je automatisch uitrollen naar productie?"
       },
       {
-        "topic": "broncode",
+        "topic": "source-code",
         "question": "Zijn repositories zelfdocumenterend?"
       },
       {
-        "topic": "technologie",
+        "topic": "technology",
         "question": "Kiest het team zelf passende technologie?"
       },
       {
-        "topic": "proces-en-team",
+        "topic": "process-and-team",
         "question": "Kiest het team zelf een passend proces?"
       },
       {
-        "topic": "proces-en-team",
+        "topic": "process-and-team",
         "question": "Wordt het proces periodiek geëvalueerd?"
       },
       {
-        "topic": "proces-en-team",
+        "topic": "process-and-team",
         "question": "Wordt werk gerefined voordat het gedaan wordt?"
       },
       {
-        "topic": "ambacht",
+        "topic": "craft",
         "question": "Worden storingen proactief opgemerkt en afgehandeld?"
       },
       {
-        "topic": "ambacht",
+        "topic": "craft",
         "question": "Wordt kennis actief gedeeld binnen- en buiten het team?"
       },
       {
-        "topic": "overigen",
+        "topic": "others",
         "question": "Worden secrets correct gemanaged?"
       },
       {
-        "topic": "overigen",
+        "topic": "others",
         "question": "Zijn er (bewezen) werkende, encrypted backups?"
       }
     ],
