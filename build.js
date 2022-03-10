@@ -218,10 +218,7 @@ class TemplateProcessor {
    */
   #resolveContentReference(content, reference) {
     if (typeof content === 'string') {
-      if (reference !== 'this') {
-        throw new Error(`Invalid content reference for string content: "${reference}"`);
-      }
-      return content;
+      return this.#resolveContentReference({ this: content }, reference);
     }
 
     if (reference.includes('.')) {
