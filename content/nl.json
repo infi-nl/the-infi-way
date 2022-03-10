@@ -2,6 +2,65 @@
   "header": {
     "subtitle": "Bij Infi werken we graag op de volgende manier."
   },
+  "test": {
+    "title": "De Infi Test",
+    "subtitle": "Vlotte steekproef om te checken of je ruwweg <em>The Infi Way</em> volgt. Een soort <a href=\"https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/\" target=\"_blank\">Joel Test</a>.",
+    "checks": [
+      {
+        "topic": "gebruikers",
+        "question": "Zien developers échte gebruikers?"
+      },
+      {
+        "topic": "principes",
+        "question": "Wordt code gereviewed?"
+      },
+      {
+        "topic": "broncode",
+        "question": "Worden er automatische builds met tests gedraaid?"
+      },
+      {
+        "topic": "broncode",
+        "question": "Kun je automatisch uitrollen naar productie?"
+      },
+      {
+        "topic": "broncode",
+        "question": "Zijn repositories zelfdocumenterend?"
+      },
+      {
+        "topic": "technologie",
+        "question": "Kiest het team zelf passende technologie?"
+      },
+      {
+        "topic": "proces-en-team",
+        "question": "Kiest het team zelf een passend proces?"
+      },
+      {
+        "topic": "proces-en-team",
+        "question": "Wordt het proces periodiek geëvalueerd?"
+      },
+      {
+        "topic": "proces-en-team",
+        "question": "Wordt werk gerefined voordat het gedaan wordt?"
+      },
+      {
+        "topic": "ambacht",
+        "question": "Worden storingen proactief opgemerkt en afgehandeld?"
+      },
+      {
+        "topic": "ambacht",
+        "question": "Wordt kennis actief gedeeld binnen- en buiten het team?"
+      },
+      {
+        "topic": "overigen",
+        "question": "Worden secrets correct gemanaged?"
+      },
+      {
+        "topic": "overigen",
+        "question": "Zijn er (bewezen) werkende, encrypted backups?"
+      }
+    ],
+    "note": "We mikken op maximale score, ook al moet je daar soms nog naartoe werken."
+  },
   "topic": {
     "users": {
       "title": "Gebruikers centraal",

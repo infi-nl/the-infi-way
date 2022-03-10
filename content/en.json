@@ -2,6 +2,17 @@
   "header": {
     "subtitle": "At Infi we like to work the following way."
   },
+  "test": {
+    "title": "The Infi Test",
+    "subtitle": "A quick check to see if you're roughly following <em>The Infi Way</em>. A sort of <a href=\"https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/\" target=\"_blank\">Joel Test</a>.",
+    "checks": [
+      {
+        "topic": "gebruikers",
+        "question": "Are developers seeing real users?"
+      }
+    ],
+    "note": "We aim for the maximum score, though sometimes you still have to work towards it."
+  },
   "topic": {
     "users": {
       "title": "User-centric",

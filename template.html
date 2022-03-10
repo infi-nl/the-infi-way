@@ -21,31 +21,16 @@
         <div class="infi-test">
           <span id="infi-test" class="block-anchor-with-offset"></span>
           <h2><a href="#infi-test">
-            De Infi Test
+            {{test.title}}
             <span class="anchor-hint">#</span>
           </a></h2>
-          <p>
-            Vlotte steekproef om te checken of je ruwweg <em>The Infi Way</em> volgt.
-            Een soort <a href="https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/" target="_blank">Joel Test</a>.
-          </p>
+          <p>{{test.subtitle}}</p>
           <ol>
-            <li class="topic-gebruikers">Zien developers échte gebruikers?</li>
-            <li class="topic-principes">Wordt code gereviewed?</li>
-            <li class="topic-broncode">Worden er automatische builds met tests gedraaid?</li>
-            <li class="topic-broncode">Kun je automatisch uitrollen naar productie?</li>
-            <li class="topic-broncode">Zijn repositories zelfdocumenterend?</li>
-            <li class="topic-technologie">Kiest het team zelf passende technologie?</li>
-            <li class="topic-proces-en-team">Kiest het team zelf een passend proces?</li>
-            <li class="topic-proces-en-team">Wordt het proces periodiek geëvalueerd?</li>
-            <li class="topic-proces-en-team">Wordt werk gerefined voordat het gedaan wordt?</li>
-            <li class="topic-ambacht">Worden storingen proactief opgemerkt en afgehandeld?</li>
-            <li class="topic-ambacht">Wordt kennis actief gedeeld binnen- en buiten het team?</li>
-            <li class="topic-overigen">Worden secrets correct gemanaged?</li>
-            <li class="topic-overigen">Zijn er (bewezen) werkende, encrypted backups?</li>
+            {{#each test.checks}}
+            <li class="topic-{{topic}}">{{question}}</li>
+            {{/each}}
           </ol>
-          <p>
-            We mikken op maximale score, ook al moet je daar soms nog naartoe werken.
-          </p>
+          <p>{{test.note}}</p>
         </div>
       </section>
       <section class="blocks">
