@@ -93,36 +93,30 @@
           <div class="block-content">
             <section class="headline">
               <h2><a href="#principles">
-                Ontwikkel&shy;principes
+                {{topic.principles.title}}
                 <span class="anchor-hint">#</span>
               </a></h2>
-              <p>We werken op een moderne manier, gericht op kwaliteit. <em>Goed</em> is op de lange termijn <em>ook</em> het goedkoopst.</p>
-              <button class="details-toggle" onclick="document.getElementById('viewToggle').classList.toggle('view-overview'); location.hash='principes';"><span class="sr-only">Details in-/uitklappen...</span></button>
+              <p>{{topic.principles.subtitle}}</p>
+              <button class="details-toggle" onclick="document.getElementById('viewToggle').classList.toggle('view-overview'); location.hash='gebruikers';"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
-              <p>Hoe we dat graag doen:</p>
+              <p>{{topic.principles.how-title}}</p>
               <ul>
-                <li>Modern versiebeheer</li>
-                <li>Up to date tooling, frameworks, en libraries</li>
-                <li>Automation waar mogelijk</li>
-                <li>Sterke test coverage</li>
-                <li>Linting, code quality checks</li>
-                <li>Pair programming</li>
-                <li>Code reviews voor (vrijwel) alles</li>
+                {{#each topic.principles.how}}
+                <li>{{this}}</li>
+                {{/each}}
               </ul>
-              <p>Denk aan bijvoorbeeld:</p>
+              <p>{{topic.principles.examples-title}}</p>
               <ul>
-                <li>Git (flow op project afgestemd)</li>
-                <li>Unit tests, integration tests, end-to-end tests</li>
-                <li><a href="https://www.sonarqube.org/" target="_blank">Sonarqube</a>, <a href="https://eslint.org/" target="_blank">ESLint</a>, etc.</li>
-                <li><a href="https://en.wikipedia.org/wiki/SOLID" target="_blank">SOLID</a> (of <a href="https://stackoverflow.com/q/6453235" target="_blank">DAMP</a>), <a href="https://martinfowler.com/bliki/Yagni.html" target="_blank">YAGNI</a>, <a href="https://en.wikipedia.org/wiki/KISS_principle" target="_blank">KISS</a></li>
-                <li><a href="https://www.goodreads.com/en/book/show/179133.Domain_Driven_Design" target="_blank">Domain-Driven Design</a></li>
+                {{#each topic.principles.examples}}
+                <li>{{this}}</li>
+                {{/each}}
               </ul>
-              <p>Van onze hand:</p>
+              <p>{{topic.principles.by-us-title}}</p>
               <ul>
-                <li><a href="https://infi.nl/nieuws/end-to-end-testen-met-puppeteer/" target="_blank">Blogpost: E2E Testen met Puppeteer</a></li>
-                <li><a href="https://infi.nl/nieuws/mob-programming-pilot/" target="_blank">Blogpost: Mob Programming</a></li>
-                <li><a href="https://infi.nl/nieuws/setup-cypress-and-auth0-for-spas/" target="_blank">Blogpost: Auth0 en Cypress</a></li>
+                {{#each topic.principles.by-us}}
+                <li>{{this}}</li>
+                {{/each}}
               </ul>
             </section>
           </div>
@@ -141,35 +135,30 @@
           <div class="block-content">
             <section class="headline">
               <h2><a href="#source-code">
-                Code is de bron
+                {{topic.source-code.title}}
                 <span class="anchor-hint">#</span>
               </a></h2>
-              <p>Broncode is dat: de <em>bron</em>. Zelfbeschrijvend en dus bruikbaar voor <em>elke</em> ontwikkelaar, van Infi of anderszins.</p>
-              <button class="details-toggle" onclick="document.getElementById('viewToggle').classList.toggle('view-overview'); location.hash='broncode';"><span class="sr-only">Details in-/uitklappen...</span></button>
+              <p>{{topic.source-code.subtitle}}</p>
+              <button class="details-toggle" onclick="document.getElementById('viewToggle').classList.toggle('view-overview'); location.hash='gebruikers';"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
-              <p>Hoe we dat graag doen:</p>
+              <p>{{topic.source-code.how-title}}</p>
               <ul>
-                <li>Architectuur <em>in</em> de bron</li>
-                <li>Clone &amp; run repositories</li>
-                <li>Continuous integration, continuous delivery</li>
-                <li>OTAP</li>
-                <li>Infrastructure as code</li>
-                <li>Adhoc scripts in versiebeheer</li>
-                <li>Backup-scripts in de broncode</li>
-                <li>Monitoring en alerting in de bron gedefinieerd</li>
+                {{#each topic.source-code.how}}
+                <li>{{this}}</li>
+                {{/each}}
               </ul>
-              <p>Denk aan bijvoorbeeld:</p>
+              <p>{{topic.source-code.examples-title}}</p>
               <ul>
-                <li><a href="https://adr.github.io/" target="_blank">Architecural Decision Records</a>, <a href="https://c4model.com/" target="_blank">C4 Model</a></li>
-                <li><a href="https://www.ansible.com/" target="_blank">Ansible</a>, <a href="https://www.docker.com/" target="_blank">Docker</a>, <a href="https://www.terraform.io/" target="_blank">Terraform</a></li>
-                <li><a href="https://gitlab.com/" target="_blank">GitLab</a> (SAAS of self-hosted), <a href="https://github.com/" target="_blank">GitHub</a></li>
-                <li><a href="https://docs.gitlab.com/ee/ci/" target="_blank">GitLab CI</a>, <a href="https://github.com/features/actions" target="_blank">GitHub Actions</a>, <a href="https://azure.microsoft.com/en-us/services/devops/" target="_blank">Azure Devops</a>, <a href="https://circleci.com/" target="_blank">CircleCI</a>, <a href="https://octopus.com/" target="_blank">Octopus</a></li>
+                {{#each topic.source-code.examples}}
+                <li>{{this}}</li>
+                {{/each}}
               </ul>
-              <p>Van onze hand:</p>
+              <p>{{topic.source-code.by-us-title}}</p>
               <ul>
-                <li><a href="https://infi.nl/nieuws/monitoring-elasticsearch-using-zabbix-and-elasticsearch-part-1/" target="_blank">Blogpost: Elasticsearch + Zabbix part 1</a> en <a href="https://infi.nl/nieuws/monitoring-elasticsearch-using-zabbix-and-elasticsearch-part-2/" target="_blank">part 2</a></li>
-                <li><a href="https://www.youtube.com/watch?v=kFDGxk3Exr8" target="_blank">Talk: GitLab CI/CD</a></li>
+                {{#each topic.source-code.by-us}}
+                <li>{{this}}</li>
+                {{/each}}
               </ul>
             </section>
           </div>
@@ -192,38 +181,30 @@
           <div class="block-content">
             <section class="headline">
               <h2><a href="#technology">
-                Gebruikte tech
+                {{topic.technology.title}}
                 <span class="anchor-hint">#</span>
               </a></h2>
-              <p>We gebruiken bij voorkeur altijd de "<em>best tool for the job</em>"; we zijn generalisten die zo nodig snel kunnen specialiseren en verdiepen.</p>
-              <button class="details-toggle" onclick="document.getElementById('viewToggle').classList.toggle('view-overview'); location.hash='technologie';"><span class="sr-only">Details in-/uitklappen...</span></button>
+              <p>{{topic.technology.subtitle}}</p>
+              <button class="details-toggle" onclick="document.getElementById('viewToggle').classList.toggle('view-overview'); location.hash='gebruikers';"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
-              <p>Hoe we dat graag doen:</p>
+              <p>{{topic.technology.how-title}}</p>
               <ul>
-                <li>Infi is maatwerk; we helpen met buy-over-build waar logisch</li>
-                <li>Hosting (doorgaans) in de cloud</li>
-                <li>Back-end in een moderne stack</li>
-                <li>Front-end doorgaans met volwassen frameworks</li>
-                <li>Mobile cross-platform, tenzij "native" écht meerwaarde biedt</li>
-                <li>Data-opslag passend bij het project</li>
+                {{#each topic.technology.how}}
+                <li>{{this}}</li>
+                {{/each}}
               </ul>
-              <p>Denk aan bijvoorbeeld:</p>
+              <p>{{topic.technology.examples-title}}</p>
               <ul>
-                <li><a href="https://azure.microsoft.com/" target="_blank">Azure</a> (vanuit ons Microsoft partnership), <a href="https://aws.amazon.com/" target="_blank">AWS</a>, <a href="https://cloud.google.com/" target="_blank">Google Cloud</a></li>
-                <li><a href="https://dotnet.microsoft.com/" target="_blank">.NET Core</a>, <a href="https://www.php.net/" target="_blank">PHP (met modern framework)</a>, of <a href="https://nodejs.org/" target="_blank">Node (met TypeScript)</a></li>
-                <li><a href="https://vuejs.org/" target="_blank">Vue</a>, <a href="https://angular.io/" target="_blank">Angular</a>, <a href="https://reactjs.org/" target="_blank">React</a></li>
-                <li><a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>, <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></li>
-                <li><a href="https://reactnative.dev/" target="_blank">ReactNative</a></li>
-                <li><a href="https://en.wikipedia.org/wiki/SQL" target="_blank">SQL</a>, <a href="https://en.wikipedia.org/wiki/Document-oriented_database" target="_blank">Document-storage</a>, Service Buses, etc.</li>
+                {{#each topic.technology.examples}}
+                <li>{{this}}</li>
+                {{/each}}
               </ul>
-              <p>Van onze hand:</p>
+              <p>{{topic.technology.by-us-title}}</p>
               <ul>
-                <li><a href="https://infi.nl/nieuws/c-voor-een-java-programmeur/" target="_blank">Blogpost: C# voor een Java programmeur</a></li>
-                <li><a href="https://infi.nl/nieuws/development-in-react-using-typescript-and-webpack/" target="_blank">Blogpost: React met TypeScript en WebPack</a></li>
-                <li><a href="https://www.youtube.com/watch?v=KAuXDjtswpM" target="_blank">Talk: VueJS Deep Dive</a></li>
-                <li><a href="https://infi.nl/nieuws/mobiele-frameworks/" target="_blank">Blogpost: Mobiele Frameworks</a></li>
-                <li><a href="https://www.youtube.com/watch?v=L4xVpPOye9I" target="_blank">Webinar: Mobiele Apps</a></li>
+                {{#each topic.technology.by-us}}
+                <li>{{this}}</li>
+                {{/each}}
               </ul>
             </section>
           </div>
@@ -242,39 +223,30 @@
           <div class="block-content">
             <section class="headline">
               <h2><a href="#process-and-team">
-                Proces en team
+                {{topic.process-and-team.title}}
                 <span class="anchor-hint">#</span>
               </a></h2>
-              <p>Teams werken <em>autonoom</em>, maar kiezen vrijwel altijd een vorm van <em>agile</em> werken. Met Product Owner van de klant.</p>
-              <button class="details-toggle" onclick="document.getElementById('viewToggle').classList.toggle('view-overview'); location.hash='proces-en-team';"><span class="sr-only">Details in-/uitklappen...</span></button>
+              <p>{{topic.process-and-team.subtitle}}</p>
+              <button class="details-toggle" onclick="document.getElementById('viewToggle').classList.toggle('view-overview'); location.hash='gebruikers';"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
-              <p>Hoe we dat graag doen:</p>
+              <p>{{topic.process-and-team.how-title}}</p>
               <ul>
-                <li>Team bepaalt eigen proces</li>
-                <li>Continu proces blijven verbeteren</li>
-                <li>Product Owner vanuit de klant</li>
-                <li>Scrummaster (projectmanager of developer)</li>
-                <li><em>Samen</em> een planning onderhouden</li>
-                <li><em>Alle</em> teamleden helpen refinen</li>
-                <li>Minimaal 2 personen per <em>team</em>, splitsen vanaf 6 a 7</li>
-                <li>Collega's uit andere teams invliegen</li>
-                <li>Infi en klant regelmatig samen in één kantoor</li>
-                <li>Testers, designers, en overige expertise aanhaken</li>
+                {{#each topic.process-and-team.how}}
+                <li>{{this}}</li>
+                {{/each}}
               </ul>
-              <p>Denk aan bijvoorbeeld:</p>
+              <p>{{topic.process-and-team.examples-title}}</p>
               <ul>
-                <li><a href="https://scrumguides.org/" target="_blank">Scrum</a> of <a href="https://en.wikipedia.org/wiki/Kanban_(development)" target="_blank">Kanban</a></li>
-                <li>Retrospectives, Lean</li>
-                <li><a href="https://trello.com/" target="_blank">Trello</a>, <a href="https://www.atlassian.com/software/jira" target="_blank">Jira</a>, <a href="https://shortcut.com/" target="_blank">Shortcut (formerly Clubhouse)</a>, <a href="https://www.jetbrains.com/youtrack/" target="_blank">YouTrack</a></li>
-                </ul>
-              <p>Van onze hand:</p>
+                {{#each topic.process-and-team.examples}}
+                <li>{{this}}</li>
+                {{/each}}
+              </ul>
+              <p>{{topic.process-and-team.by-us-title}}</p>
               <ul>
-                <li><a href="https://infi.nl/nieuws/effectief-aan-de-slag-met-retro-uitkomsten/" target="_blank">Blogpost: Retro Uitkomsten</a></li>
-                <li><a href="https://infi.nl/nieuws/5-tips-voor-de-perfecte-user-story/" target="_blank">Blogpost: Perfecte user stories</a></li>
-                <li><a href="https://infi.nl/nieuws/vijf-tips-voor-remote-demos/" target="_blank">Blogpost: Tips voor remote demos</a></li>
-                <li><a href="https://infi.nl/nieuws/liever-kanban-dan-scrum/" target="_blank">Blogpost: Kanban vs Scrum</a></li>
-                <li><a href="https://infi.nl/nieuws/teamsamenstelling/" target="_blank">Blogpost: teamsamenstelling</a></li>
+                {{#each topic.process-and-team.by-us}}
+                <li>{{this}}</li>
+                {{/each}}
               </ul>
             </section>
           </div>
@@ -290,36 +262,30 @@
           <div class="block-content">
             <section class="headline">
               <h2><a href="#craft">
-                Ambacht
+                {{topic.craft.title}}
                 <span class="anchor-hint">#</span>
               </a></h2>
-              <p>Maatwerksoftware bouwen is een ambacht. We willen vol vertrouwen (én trots!) een kijkje achter de schermen kunnen geven.</p>
-              <button class="details-toggle" onclick="document.getElementById('viewToggle').classList.toggle('view-overview'); location.hash='ambacht';"><span class="sr-only">Details in-/uitklappen...</span></button>
+              <p>{{topic.craft.subtitle}}</p>
+              <button class="details-toggle" onclick="document.getElementById('viewToggle').classList.toggle('view-overview'); location.hash='gebruikers';"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
-              <p>Hoe we dat doen:</p>
+              <p>{{topic.craft.how-title}}</p>
               <ul>
-                <li>Actieve kennisdeling</li>
-                <li>Voldoende studeren</li>
-                <li>Investeren in tooling</li>
-                <li>Goede hardware</li>
-                <li>Experimenteren</li>
-                <li>Monitoring en alerting</li>
+                {{#each topic.craft.how}}
+                <li>{{this}}</li>
+                {{/each}}
               </ul>
-              <p>Denk aan bijvoorbeeld:</p>
+              <p>{{topic.craft.examples-title}}</p>
               <ul>
-                <li>Presentaties (intern en extern)</li>
-                <li>Leergangen, zelfstudie</li>
-                <li>Congressen en meetups bezoeken</li>
-                <li><a href="https://www.elastic.co/kibana/" target="_blank">Kibana</a>, <a href="https://sentry.io/" target="_blank">Sentry</a>, <a href="https://www.zabbix.com/" target="_blank">Zabbix</a>, etc.</li>
+                {{#each topic.craft.examples}}
+                <li>{{this}}</li>
+                {{/each}}
               </ul>
-              <p>Van onze hand:</p>
+              <p>{{topic.craft.by-us-title}}</p>
               <ul>
-                <li><a href="https://infi.nl/nieuws/infi-con-2020-wrap-up/" target="_blank">INFI-CON 2020</a> en <a href="https://infi.nl/nieuws/infi-con-2019-wrap-up/" target="_blank">INFI-CON 2019</a></li>
-                <li><a href="https://infi.nl/nieuws/spreken-met-impact/" target="_blank">Blogpost: Spreken met Impact</a></li>
-                <li><a href="https://infi.nl/nieuws/je-eigen-linux-kernel-bouwen/" target="_blank">Blogpost: Je eigen Linux kernel bouwen</a></li>
-                <li><a href="https://infi.nl/nieuws/software-engineering-bestaat-niet/" target="_blank">Blogpost: "Software engineering" bestaat niet</a></li>
-                <li><a href="https://infi.nl/nieuws/vakmanschap-is-meesterschap/" target="_blank">Blogpost: Vakmanschap is meesterschap</a></li>
+                {{#each topic.craft.by-us}}
+                <li>{{this}}</li>
+                {{/each}}
               </ul>
             </section>
           </div>
@@ -341,39 +307,30 @@
           <div class="block-content">
             <section class="headline">
               <h2><a href="#others">
-                Vaste waardes
+                {{topic.others.title}}
                 <span class="anchor-hint">#</span>
               </a></h2>
-              <p>Sommige dingen spreken voor ons voor zichzelf: dit hoort er <em>altijd</em> bij. Denk aan Security, Performance, Backups, kritisch meedenken, en jezelf kunnen zijn.</p>
-              <button class="details-toggle" onclick="document.getElementById('viewToggle').classList.toggle('view-overview'); location.hash='overigen';"><span class="sr-only">Details in-/uitklappen...</span></button>
+              <p>{{topic.others.subtitle}}</p>
+              <button class="details-toggle" onclick="document.getElementById('viewToggle').classList.toggle('view-overview'); location.hash='gebruikers';"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
-              <p>Wat die vaste waardes zijn:</p>
+              <p>{{topic.others.how-title}}</p>
               <ul>
-                <li><strong>Backups</strong>, inclusief encrypted offsite backups</li>
-                <li><strong>Security</strong> van code, en secure manier van werken</li>
-                <li><strong>Security audits</strong> waar logisch (eventueel extern)</li>
-                <li><strong>Performance</strong>, bijvoorbeeld via load testing</li>
-                <li>Kritisch meedenken over features, alternatieven aandragen</li>
-                <li>Buy-over-build suggereren indien logisch</li>
-                <li>OS naar keuze (Windows, OSX, Linux) voor devs</li>
-                <li>Open Source gebruiken en ondersteunen</li>
-                <li>Meetups hosten en/of organiseren</li>
-                <li>Onszelf zijn: "<em><a href="https://infi.nl/manifest/" target="_blank">Wij zijn mensen.</a></em>"</li>
+                {{#each topic.others.how}}
+                <li>{{this}}</li>
+                {{/each}}
               </ul>
-              <p>Denk aan bijvoorbeeld:</p>
+              <p>{{topic.others.examples-title}}</p>
               <ul>
-                <li>OWASP</li>
-                <li>Password managers, 2FA, GPG, SSH</li>
-                <li><a href="https://locust.io/" target="_blank">Locust</a>, <a href="https://octoperf.com/" target="_blank">OctoPerf</a>, <a href="https://jmeter.apache.org/" target="_blank">JMeter</a></li>
-                <li><a href="https://auth0.com/" target="_blank">Auth0</a>, <a href="https://stripe.com/" target="_blank">Stripe</a>, <a href="https://sendgrid.com/" target="_blank">SendGrid</a>, <a href="https://www.contentful.com/" target="_blank">Contentful</a>, <a href="https://lokalise.com/" target="_blank">Lokalise</a>, etc.</li>
-                <li>Onbeheerde laptops altijd locken <!-- en mocht je dat een keer vergeten, kun je er op rekenen dat je collega's hier op ludieke wijze (met serieuze ondertoon!) op zullen attenderen... --></li>
+                {{#each topic.others.examples}}
+                <li>{{this}}</li>
+                {{/each}}
               </ul>
-              <p>Van onze hand:</p>
+              <p>{{topic.others.by-us-title}}</p>
               <ul>
-                <li><a href="https://infi.nl/manifest/" target="_blank">Het Infi Manifest</a></li>
-                <li><a href="https://infi.nl/nieuws/spa-necromancy/" target="_blank">Blogpost: SPA Necromancy</a></li>
-                <li><a href="https://infi.nl/nieuws/launching-free-open-source-software/" target="_blank">Blogpost: FOSS lanceren</a></li>
+                {{#each topic.others.by-us}}
+                <li>{{this}}</li>
+                {{/each}}
               </ul>
             </section>
           </div>
