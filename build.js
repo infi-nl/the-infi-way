@@ -34,7 +34,7 @@ Options:
     }
   }
 
-  await build();
+  await tryBuild();
 })();
 
 async function buildWatch() {
@@ -52,7 +52,7 @@ async function startWatchAndBuild(file) {
 }
 
 function tryBuild() {
-  return build().catch((e) => console.error(e));
+  return build().catch((e) => console.error(`Build failed! ${e.message}`));
 }
 
 async function build() {
