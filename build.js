@@ -38,7 +38,6 @@ Options:
 })();
 
 async function buildWatch() {
-  console.clear();
   console.log('Starting build in watch mode.');
   await tryBuild();
   startWatchAndBuild(templateFile);
@@ -48,8 +47,6 @@ async function buildWatch() {
 async function startWatchAndBuild(file) {
   const watcher = fs.watch(file, { recursive: true });
   for await (const _ of watcher) {
-    console.clear();
-    console.log(`Last build time: ${new Date().toLocaleString('en-GB')}`);
     await tryBuild();
   }
 }
@@ -76,7 +73,7 @@ async function build() {
     await fs.writeFile(`${outputDir}/${lang}.html`, processed);
   }
 
-  console.log('Done!');
+  console.log(`Build finished at ${new Date().toLocaleString('en-GB')}`);
 }
 
 class TemplateProcessor {
