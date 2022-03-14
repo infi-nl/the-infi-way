@@ -1,424 +1,424 @@
 :root {
-    --color-topic-users: #d32f46;
-    --color-topic-principles: #a73276;
-    --color-topic-source-code: #684084;
-    --color-topic-technology: #245eb5;
-    --color-topic-process-and-team: #2784ac;
-    --color-topic-craft: #349f72;
-    --color-topic-others: #569f34;
+  --color-topic-users: #d32f46;
+  --color-topic-principles: #a73276;
+  --color-topic-source-code: #684084;
+  --color-topic-technology: #245eb5;
+  --color-topic-process-and-team: #2784ac;
+  --color-topic-craft: #349f72;
+  --color-topic-others: #569f34;
 
-    --color-black: #121212;
-    --color-white: rgba(255, 255, 255, 0.95);
-    --color-orange: #f67905;
+  --color-black: #121212;
+  --color-white: rgba(255, 255, 255, 0.95);
+  --color-orange: #f67905;
 
-    --color-background: var(--color-black);
-    --color-text-light: var(--color-white);
-    --color-block: #212121;
+  --color-background: var(--color-black);
+  --color-text-light: var(--color-white);
+  --color-block: #212121;
 
-    --box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  --box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
 
 @font-face {
-    font-family: 'Gudea';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Gudea'), url(https://fonts.gstatic.com/s/gudea/v4/WTDyO8MdshuMhAnoLO0WMw.woff2) format('woff2'), url(https://fonts.gstatic.com/s/gudea/v4/Z6xYy_2MlN1cUISkeodEPA.woff) format('woff');
-    font-display: swap;
+  font-family: 'Gudea';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Gudea'), url(https://fonts.gstatic.com/s/gudea/v4/WTDyO8MdshuMhAnoLO0WMw.woff2) format('woff2'), url(https://fonts.gstatic.com/s/gudea/v4/Z6xYy_2MlN1cUISkeodEPA.woff) format('woff');
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Gudea';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Gudea Bold'), local('Gudea-Bold'), url(https://fonts.gstatic.com/s/gudea/v4/jayXbUsof2FdMCHG3BRDEPesZW2xOQ-xsNqO47m55DA.woff2) format('woff2'), url(https://fonts.gstatic.com/s/gudea/v4/6M2RKly85u67vSsXH0-zqvesZW2xOQ-xsNqO47m55DA.woff) format('woff');
-    font-display: swap;
+  font-family: 'Gudea';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Gudea Bold'), local('Gudea-Bold'), url(https://fonts.gstatic.com/s/gudea/v4/jayXbUsof2FdMCHG3BRDEPesZW2xOQ-xsNqO47m55DA.woff2) format('woff2'), url(https://fonts.gstatic.com/s/gudea/v4/6M2RKly85u67vSsXH0-zqvesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Gudea';
-    font-style: italic;
-    font-weight: 400;
-    src: local('Gudea Italic'), local('Gudea-Italic'), url(https://fonts.gstatic.com/s/gudea/v4/kvCX_I6neb4EN5z031M87g.woff2) format('woff2'), url(https://fonts.gstatic.com/s/gudea/v4/7K8okIOV072GIwnptze9lg.woff) format('woff');
-    font-display: swap;
+  font-family: 'Gudea';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Gudea Italic'), local('Gudea-Italic'), url(https://fonts.gstatic.com/s/gudea/v4/kvCX_I6neb4EN5z031M87g.woff2) format('woff2'), url(https://fonts.gstatic.com/s/gudea/v4/7K8okIOV072GIwnptze9lg.woff) format('woff');
+  font-display: swap;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html, body {
-    margin: 0;
-    padding: 0;
-    font-family: "Gudea", "Open Sans", Helvetica, Arial, sans-serif;
-    font-size: 20px;
-    line-height: 1.35rem;
-    color: var(--color-text-light);
-    background: var(--color-background);
-    text-shadow: 2px 2px 3px rgba(50, 50, 50, 0.5);
+  margin: 0;
+  padding: 0;
+  font-family: "Gudea", "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.35rem;
+  color: var(--color-text-light);
+  background: var(--color-background);
+  text-shadow: 2px 2px 3px rgba(50, 50, 50, 0.5);
 }
 
 h1, h2, h3, h4, h5, h6, p, ol, ul {
-    margin: 0.2rem 0;
-    padding: 0;
+  margin: 0.2rem 0;
+  padding: 0;
 }
 
 ul, ol {
-    padding-left: 2.5rem;
-    margin: 0 0 0.75rem 0;
+  padding-left: 2.5rem;
+  margin: 0 0 0.75rem 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 a {
-    text-decoration-thickness: 1px;
-    text-decoration-color: var(--color-orange);
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--color-orange);
 }
 
 a, a:link, a:visited, a:focus, a:active {
-    color: inherit;
+  color: inherit;
 }
 
 a:hover, a:focus {
-    text-decoration-style: double;
+  text-decoration-style: double;
 }
 
 header {
-    margin: 120px 1rem;
-    text-align: center;
+  margin: 120px 1rem;
+  text-align: center;
 }
 
 header h1 {
-    font-size: 4rem;
-    margin-bottom: 1.5rem;
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
 }
 
 header img {
-    height: 3.5rem;
-    margin: 0 0.5rem;
+  height: 3.5rem;
+  margin: 0 0.5rem;
 }
 
 header p {
-    font-size: 1.3rem;
+  font-size: 1.3rem;
 }
 
 footer {
-    padding: 1rem;
-    margin-top: 120px;
-    font-size: 0.8rem;
-    background: var(--color-block);
-    text-align: center;
+  padding: 1rem;
+  margin-top: 120px;
+  font-size: 0.8rem;
+  background: var(--color-block);
+  text-align: center;
 }
 
 .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap; /* added line */
-    border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
 }
 
 .wrapper {
-    max-width: 1024px;
-    margin: 0 auto;
+  max-width: 1024px;
+  margin: 0 auto;
 }
 
 .infi-test {
-    padding: 2rem;
-    margin: 1rem 0.5rem 120px;
-    background: var(--color-block);
-    box-shadow: var(--box-shadow);
+  padding: 2rem;
+  margin: 1rem 0.5rem 120px;
+  background: var(--color-block);
+  box-shadow: var(--box-shadow);
 }
 
 .infi-test h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .infi-test ol {
-    margin: 1rem 0;
-    counter-reset: infi-test;
-    list-style: none;
+  margin: 1rem 0;
+  counter-reset: infi-test;
+  list-style: none;
 }
 
 .infi-test ol li {
-    margin-bottom: 0.7rem;
+  margin-bottom: 0.7rem;
 }
 
 .infi-test ol li::before {
-    counter-increment: infi-test;
-    content: counter(infi-test);
-    margin-right: 0.7rem;
-    width: 1.7rem;
-    height: 1.7rem;
-    border-radius: 8px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+  counter-increment: infi-test;
+  content: counter(infi-test);
+  margin-right: 0.7rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 8px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .block {
-    position: relative;
-    box-shadow: var(--box-shadow);
-    display: flex;
-    background: var(--color-block);
-    margin: 44px 0.5rem 44px calc(0.5rem + 88px);
+  position: relative;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  background: var(--color-block);
+  margin: 44px 0.5rem 44px calc(0.5rem + 88px);
 }
 
 .block-content {
-    display: flex;
-    padding: 3rem 2rem;
+  display: flex;
+  padding: 3rem 2rem;
 }
 
 h2 a,
 header a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 h2 a .anchor-hint {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 h2:hover a .anchor-hint {
-    visibility: visible;
+  visibility: visible;
 }
 
 .block-anchor-with-offset {
-    position: relative;
-    top: 0;
+  position: relative;
+  top: 0;
 }
 
 .headline {
-    max-width: 40%;
-    margin-bottom: 1rem;
+  max-width: 40%;
+  margin-bottom: 1rem;
 }
 
 .block-image {
-    margin: 2rem 0 0 -88px;
-    border-radius: 50%;
-    flex: 0 0 176px;
-    height: 176px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: var(--box-shadow);
+  margin: 2rem 0 0 -88px;
+  border-radius: 50%;
+  flex: 0 0 176px;
+  height: 176px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--box-shadow);
 }
 
 .block-image svg {
-    width: 132px;
-    height: 132px;
-    fill: var(--color-white);
+  width: 132px;
+  height: 132px;
+  fill: var(--color-white);
 }
 
 .details-toggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 2em;
-    height: 2em;
-    opacity: 0.5;
-    background: none !important;
-    padding: 0 !important;
-    font-size: inherit;
-    font-family: inherit;
-    cursor: pointer;
-    color: var(--color-text-light);
-    border: 2px solid var(--color-text-light);
-    border-radius: 50%;
-    text-align: center;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 2em;
+  height: 2em;
+  opacity: 0.5;
+  background: none !important;
+  padding: 0 !important;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  color: var(--color-text-light);
+  border: 2px solid var(--color-text-light);
+  border-radius: 50%;
+  text-align: center;
 }
 
 .details-toggle:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .details-toggle:before {
-    content: '▲';
+  content: '▲';
 }
 
 .view-overview .details-toggle:before {
-    content: '▼'
+  content: '▼'
 }
 
 .details {
-    font-size: 0.8rem;
-    line-height: 1.2rem;
-    margin-left: 2rem;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  margin-left: 2rem;
 }
 
 .details p {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .view-overview .details,
 .view-overview .block-image {
-    display: none;
+  display: none;
 }
 
 .view-overview .headline {
-    max-width: none;
-    margin-bottom: 0;
+  max-width: none;
+  margin-bottom: 0;
 }
 
 .view-overview .blocks {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-    margin: 0 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin: 0 0.5rem;
 }
 
 .view-overview .blocks .block {
-    margin: 0;
+  margin: 0;
 }
 
 .view-overview .blocks .block:last-child {
-    grid-column: 1 / span 2;
+  grid-column: 1 / span 2;
 }
 
 @media (max-width: 1024px) {
-    .details-toggle {
-        top: 10px;
-        right: 10px;
-        width: 1.5em;
-        height: 1.5em;
-    }
+  .details-toggle {
+    top: 10px;
+    right: 10px;
+    width: 1.5em;
+    height: 1.5em;
+  }
 }
 
 @media (max-width: 768px) {
-    header {
-        margin-top: 60px;
-        margin-bottom: 60px;
-    }
+  header {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
 
-    header h1 {
-        font-size: 2rem;
-    }
+  header h1 {
+    font-size: 2rem;
+  }
 
-    header img {
-        height: 1.7rem;
-        margin-left: 0.2rem;
-        margin-right: 0.2rem;
-    }
+  header img {
+    height: 1.7rem;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+  }
 
-    header p {
-        font-size: 1rem;
-    }
+  header p {
+    font-size: 1rem;
+  }
 
-    footer {
-        margin-top: 60px;
-    }
+  footer {
+    margin-top: 60px;
+  }
 
-    .infi-test {
-        padding-left: 1rem;
-        padding-right: 1rem;
-        margin-bottom: 60px;
-    }
+  .infi-test {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 60px;
+  }
 
-    .infi-test ol {
-        padding-left: 1.5rem;
-    }
+  .infi-test ol {
+    padding-left: 1.5rem;
+  }
 
-    .headline {
-        max-width: none;
-    }
+  .headline {
+    max-width: none;
+  }
 
-    .block, .infi-test {
-        border-width: 2px;
-        margin-left: 0;
-        margin-right: 0;
-    }
+  .block, .infi-test {
+    border-width: 2px;
+    margin-left: 0;
+    margin-right: 0;
+  }
 
-    .block {
-        flex-direction: column;
-        margin-top: 132px;
-    }
+  .block {
+    flex-direction: column;
+    margin-top: 132px;
+  }
 
-    .block-image {
-        margin: -88px auto 0;
-        width: 176px;
-    }
+  .block-image {
+    margin: -88px auto 0;
+    width: 176px;
+  }
 
-    .block-content {
-        flex-direction: column;
-        padding: 1rem;
-    }
+  .block-content {
+    flex-direction: column;
+    padding: 1rem;
+  }
 
-    .block-anchor-with-offset {
-        top: -88px;
-    }
+  .block-anchor-with-offset {
+    top: -88px;
+  }
 
-    .details {
-        margin-left: 0;
-    }
+  .details {
+    margin-left: 0;
+  }
 
-    .view-overview .blocks {
-        grid-template-columns: 1fr;
-        margin-left: 0;
-        margin-right: 0;
-    }
+  .view-overview .blocks {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+    margin-right: 0;
+  }
 
-    .view-overview .blocks .block:last-child {
-        grid-column: auto;
-    }
+  .view-overview .blocks .block:last-child {
+    grid-column: auto;
+  }
 }
 
 .infi-test ol .topic-users::before {
-    background: var(--color-topic-users);
+  background: var(--color-topic-users);
 }
 
 .infi-test ol .topic-principles::before {
-    background: var(--color-topic-principles);
+  background: var(--color-topic-principles);
 }
 
 .infi-test ol .topic-source-code::before {
-    background: var(--color-topic-source-code);
+  background: var(--color-topic-source-code);
 }
 
 .infi-test ol .topic-technology::before {
-    background: var(--color-topic-technology);
+  background: var(--color-topic-technology);
 }
 
 .infi-test ol .topic-process-and-team::before {
-    background: var(--color-topic-process-and-team);
+  background: var(--color-topic-process-and-team);
 }
 
 .infi-test ol .topic-craft::before {
-    background: var(--color-topic-craft);
+  background: var(--color-topic-craft);
 }
 
 .infi-test ol .topic-others::before {
-    background: var(--color-topic-others);
+  background: var(--color-topic-others);
 }
 
 .block.topic-users .block-image {
-    background: var(--color-topic-users);
+  background: var(--color-topic-users);
 }
 
 .block.topic-principles .block-image {
-    background: var(--color-topic-principles);
+  background: var(--color-topic-principles);
 }
 
 .block.topic-source-code .block-image {
-    background: var(--color-topic-source-code);
+  background: var(--color-topic-source-code);
 }
 
 .block.topic-technology .block-image {
-    background: var(--color-topic-technology);
+  background: var(--color-topic-technology);
 }
 
 .block.topic-process-and-team .block-image {
-    background: var(--color-topic-process-and-team);
+  background: var(--color-topic-process-and-team);
 }
 
 .block.topic-craft .block-image {
-    background: var(--color-topic-craft);
+  background: var(--color-topic-craft);
 }
 
 .block.topic-others .block-image {
-    background: var(--color-topic-others);
+  background: var(--color-topic-others);
 }
