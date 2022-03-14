@@ -260,5 +260,8 @@
         "<a href=\"https://infi.nl/nieuws/launching-free-open-source-software/\" target=\"_blank\">Blogpost: FOSS lanceren</a>"
       ]
     }
+  },
+  "footer": {
+    "questions": "Vragen?"
   }
 }
