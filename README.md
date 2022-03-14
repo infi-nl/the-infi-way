@@ -38,6 +38,8 @@ Voor dat laatste moeten we nog wel de licensing iets vrijer maken, subscribe op 
 Hoe dan ook, als je dat fijn vindt: voel je vrij om [een issue te openen](https://github.com/infi-nl/the-infi-way/issues/new) en/of [een PR te submitten](https://github.com/infi-nl/the-infi-way/pulls)!
 We zijn altijd benieuwd naar nieuwe inzichten.
 
+Wil je The Infi Way lokaal draaien? Kijk dan in [CONTRIBUTING.md](CONTRIBUTING.md) voor meer informatie.
+
 ## 🔒 Tot Slot
 
 Hopelijk vind je The Infi Way interessant, of zelfs _nuttig_!?
