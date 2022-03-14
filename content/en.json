@@ -7,7 +7,7 @@
     "subtitle": "A quick check to see if you're roughly following <em>The Infi Way</em>. A sort of <a href=\"https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/\" target=\"_blank\">Joel Test</a>.",
     "checks": [
       {
-        "topic": "users", 
+        "topic": "users",
         "question": "Are developers seeing real users?"
       },
       {
@@ -90,27 +90,27 @@
       "subtitle": "We work in a modern way, aiming for quality. \"First time right\" is also cheapest in the end.",
       "how-title": "How we like to do this:",
       "how": [
-          "Modern version control",
-          "Up to date tooling, frameworks, and libraries",
-          "Automation where possible",
-          "Strong test coverage",
-          "Linting, code quality checks",
-          "Pair programming",
-          "Code reviews for (nearly) everything"
+        "Modern version control",
+        "Up to date tooling, frameworks, and libraries",
+        "Automation where possible",
+        "Strong test coverage",
+        "Linting, code quality checks",
+        "Pair programming",
+        "Code reviews for (nearly) everything"
       ],
       "examples-title": "Concrete examples:",
       "examples": [
-          "Git (flow chosen per project)",
-          "Unit tests, integration tests, end-to-end tests",
-          "<a href=\"https://www.sonarqube.org/\" target=\"_blank\">Sonarqube</a>, <a href=\"https://eslint.org/\" target=\"_blank\">ESLint</a>, etc.",
-          "<a href=\"https://en.wikipedia.org/wiki/SOLID\" target=\"_blank\">SOLID</a> (of <a href=\"https://stackoverflow.com/q/6453235\" target=\"_blank\">DAMP</a>), <a href=\"https://martinfowler.com/bliki/Yagni.html\" target=\"_blank\">YAGNI</a>, <a href=\"https://en.wikipedia.org/wiki/KISS_principle\" target=\"_blank\">KISS</a>",
-          "<a href=\"https://www.goodreads.com/en/book/show/179133.Domain_Driven_Design\" target=\"_blank\">Domain-Driven Design</a>"
+        "Git (flow chosen per project)",
+        "Unit tests, integration tests, end-to-end tests",
+        "<a href=\"https://www.sonarqube.org/\" target=\"_blank\">Sonarqube</a>, <a href=\"https://eslint.org/\" target=\"_blank\">ESLint</a>, etc.",
+        "<a href=\"https://en.wikipedia.org/wiki/SOLID\" target=\"_blank\">SOLID</a> (of <a href=\"https://stackoverflow.com/q/6453235\" target=\"_blank\">DAMP</a>), <a href=\"https://martinfowler.com/bliki/Yagni.html\" target=\"_blank\">YAGNI</a>, <a href=\"https://en.wikipedia.org/wiki/KISS_principle\" target=\"_blank\">KISS</a>",
+        "<a href=\"https://www.goodreads.com/en/book/show/179133.Domain_Driven_Design\" target=\"_blank\">Domain-Driven Design</a>"
       ],
       "by-us-title": "By us:",
       "by-us": [
-          "<a href=\"https://infi.nl/nieuws/end-to-end-testen-met-puppeteer/\" target=\"_blank\">Blog (Dutch): E2E Testing with Puppeteer</a>",
-          "<a href=\"https://infi.nl/nieuws/mob-programming-pilot/\" target=\"_blank\">Blog (Dutch): Mob Programming</a>",
-          "<a href=\"https://infi.nl/nieuws/setup-cypress-and-auth0-for-spas/\" target=\"_blank\">Blog: Auth0 and Cypress</a>"
+        "<a href=\"https://infi.nl/nieuws/end-to-end-testen-met-puppeteer/\" target=\"_blank\">Blog (Dutch): E2E Testing with Puppeteer</a>",
+        "<a href=\"https://infi.nl/nieuws/mob-programming-pilot/\" target=\"_blank\">Blog (Dutch): Mob Programming</a>",
+        "<a href=\"https://infi.nl/nieuws/setup-cypress-and-auth0-for-spas/\" target=\"_blank\">Blog: Auth0 and Cypress</a>"
       ]
     },
     "source-code": {
@@ -118,26 +118,26 @@
       "subtitle": "Source code is just that: the <em>source</em>. Self-documenting, so usable for <em>any</em> developer, from Infi or otherwise.",
       "how-title": "How we like to do this:",
       "how": [
-          "Architecture <em>also</em> in the source",
-          "Clone &amp; run repositories",
-          "Continuous integration, continuous delivery",
-          "DTAP",
-          "Infrastructure as code",
-          "Adhoc scripts in source control",
-          "Backup scripts in source control",
-          "Monitoring and alerting defined in code"
+        "Architecture <em>also</em> in the source",
+        "Clone &amp; run repositories",
+        "Continuous integration, continuous delivery",
+        "DTAP",
+        "Infrastructure as code",
+        "Adhoc scripts in source control",
+        "Backup scripts in source control",
+        "Monitoring and alerting defined in code"
       ],
       "examples-title": "Concrete examples:",
       "examples": [
-          "<a href=\"https://adr.github.io/\" target=\"_blank\">Architecural Decision Records</a>, <a href=\"https://c4model.com/\" target=\"_blank\">C4 Model</a>",
-          "<a href=\"https://www.ansible.com/\" target=\"_blank\">Ansible</a>, <a href=\"https://www.docker.com/\" target=\"_blank\">Docker</a>, <a href=\"https://www.terraform.io/\" target=\"_blank\">Terraform</a>",
-          "<a href=\"https://gitlab.com/\" target=\"_blank\">GitLab</a> (SAAS or self-hosted), <a href=\"https://github.com/\" target=\"_blank\">GitHub</a>",
-          "<a href=\"https://docs.gitlab.com/ee/ci/\" target=\"_blank\">GitLab CI</a>, <a href=\"https://github.com/features/actions\" target=\"_blank\">GitHub Actions</a>, <a href=\"https://azure.microsoft.com/en-us/services/devops/\" target=\"_blank\">Azure Devops</a>, <a href=\"https://circleci.com/\" target=\"_blank\">CircleCI</a>, <a href=\"https://octopus.com/\" target=\"_blank\">Octopus</a>"
+        "<a href=\"https://adr.github.io/\" target=\"_blank\">Architecural Decision Records</a>, <a href=\"https://c4model.com/\" target=\"_blank\">C4 Model</a>",
+        "<a href=\"https://www.ansible.com/\" target=\"_blank\">Ansible</a>, <a href=\"https://www.docker.com/\" target=\"_blank\">Docker</a>, <a href=\"https://www.terraform.io/\" target=\"_blank\">Terraform</a>",
+        "<a href=\"https://gitlab.com/\" target=\"_blank\">GitLab</a> (SAAS or self-hosted), <a href=\"https://github.com/\" target=\"_blank\">GitHub</a>",
+        "<a href=\"https://docs.gitlab.com/ee/ci/\" target=\"_blank\">GitLab CI</a>, <a href=\"https://github.com/features/actions\" target=\"_blank\">GitHub Actions</a>, <a href=\"https://azure.microsoft.com/en-us/services/devops/\" target=\"_blank\">Azure Devops</a>, <a href=\"https://circleci.com/\" target=\"_blank\">CircleCI</a>, <a href=\"https://octopus.com/\" target=\"_blank\">Octopus</a>"
       ],
       "by-us-title": "By us:",
       "by-us": [
-          "<a href=\"https://infi.nl/nieuws/monitoring-elasticsearch-using-zabbix-and-elasticsearch-part-1/\" target=\"_blank\">Blog: Elasticsearch + Zabbix part 1</a> en <a href=\"https://infi.nl/nieuws/monitoring-elasticsearch-using-zabbix-and-elasticsearch-part-2/\" target=\"_blank\">part 2</a>",
-          "<a href=\"https://www.youtube.com/watch?v=kFDGxk3Exr8\" target=\"_blank\">Talk: GitLab CI/CD</a>"
+        "<a href=\"https://infi.nl/nieuws/monitoring-elasticsearch-using-zabbix-and-elasticsearch-part-1/\" target=\"_blank\">Blog: Elasticsearch + Zabbix part 1</a> en <a href=\"https://infi.nl/nieuws/monitoring-elasticsearch-using-zabbix-and-elasticsearch-part-2/\" target=\"_blank\">part 2</a>",
+        "<a href=\"https://www.youtube.com/watch?v=kFDGxk3Exr8\" target=\"_blank\">Talk: GitLab CI/CD</a>"
       ]
     },
     "technology": {
@@ -145,29 +145,29 @@
       "subtitle": "We prefer using \"<em>the best tool for the job</em>\"; we're generalists who can quickly specialize when the need arises.",
       "how-title": "How we like to do this:",
       "how": [
-          "We do custom-made software; aiding in buy-over-build where needed",
-          "Hosting (usually) in the cloud",
-          "Back-end in a modern stack",
-          "Front-end normally with mature frameworks",
-          "Mobile cross-platform, unless \"native\" <em>really</em> adds value",
-          "Databases picked per project"
+        "We do custom-made software; aiding in buy-over-build where needed",
+        "Hosting (usually) in the cloud",
+        "Back-end in a modern stack",
+        "Front-end normally with mature frameworks",
+        "Mobile cross-platform, unless \"native\" <em>really</em> adds value",
+        "Databases picked per project"
       ],
       "examples-title": "Concrete examples:",
       "examples": [
-          "<a href=\"https://azure.microsoft.com/\" target=\"_blank\">Azure</a> (via our Microsoft partnership), <a href=\"https://aws.amazon.com/\" target=\"_blank\">AWS</a>, <a href=\"https://cloud.google.com/\" target=\"_blank\">Google Cloud</a>",
-          "<a href=\"https://dotnet.microsoft.com/\" target=\"_blank\">.NET Core</a>, <a href=\"https://www.php.net/\" target=\"_blank\">PHP (with a modern framework)</a>, or <a href=\"https://nodejs.org/\" target=\"_blank\">Node (with TypeScript)</a>",
-          "<a href=\"https://vuejs.org/\" target=\"_blank\">Vue</a>, <a href=\"https://angular.io/\" target=\"_blank\">Angular</a>, <a href=\"https://reactjs.org/\" target=\"_blank\">React</a>",
-          "<a href=\"https://tailwindcss.com/\" target=\"_blank\">TailwindCSS</a>, <a href=\"https://getbootstrap.com/\" target=\"_blank\">Bootstrap</a>",
-          "<a href=\"https://reactnative.dev/\" target=\"_blank\">ReactNative</a>",
-          "<a href=\"https://en.wikipedia.org/wiki/SQL\" target=\"_blank\">SQL</a>, <a href=\"https://en.wikipedia.org/wiki/Document-oriented_database\" target=\"_blank\">Document-storage</a>, Service Buses, etc."
+        "<a href=\"https://azure.microsoft.com/\" target=\"_blank\">Azure</a> (via our Microsoft partnership), <a href=\"https://aws.amazon.com/\" target=\"_blank\">AWS</a>, <a href=\"https://cloud.google.com/\" target=\"_blank\">Google Cloud</a>",
+        "<a href=\"https://dotnet.microsoft.com/\" target=\"_blank\">.NET Core</a>, <a href=\"https://www.php.net/\" target=\"_blank\">PHP (with a modern framework)</a>, or <a href=\"https://nodejs.org/\" target=\"_blank\">Node (with TypeScript)</a>",
+        "<a href=\"https://vuejs.org/\" target=\"_blank\">Vue</a>, <a href=\"https://angular.io/\" target=\"_blank\">Angular</a>, <a href=\"https://reactjs.org/\" target=\"_blank\">React</a>",
+        "<a href=\"https://tailwindcss.com/\" target=\"_blank\">TailwindCSS</a>, <a href=\"https://getbootstrap.com/\" target=\"_blank\">Bootstrap</a>",
+        "<a href=\"https://reactnative.dev/\" target=\"_blank\">ReactNative</a>",
+        "<a href=\"https://en.wikipedia.org/wiki/SQL\" target=\"_blank\">SQL</a>, <a href=\"https://en.wikipedia.org/wiki/Document-oriented_database\" target=\"_blank\">Document-storage</a>, Service Buses, etc."
       ],
       "by-us-title": "By us:",
       "by-us": [
-          "<a href=\"https://infi.nl/nieuws/c-voor-een-java-programmeur/\" target=\"_blank\">Blog (Dutch): C# for a Java programmer</a>",
-          "<a href=\"https://infi.nl/nieuws/development-in-react-using-typescript-and-webpack/\" target=\"_blank\">Blog (Dutch): React met TypeScript en WebPack</a>",
-          "<a href=\"https://www.youtube.com/watch?v=KAuXDjtswpM\" target=\"_blank\">Talk: VueJS Deep Dive</a>",
-          "<a href=\"https://infi.nl/nieuws/mobiele-frameworks/\" target=\"_blank\">Blog (Dutch): Mobiele Frameworks</a>",
-          "<a href=\"https://www.youtube.com/watch?v=L4xVpPOye9I\" target=\"_blank\">Webinar (Dutch): Mobiele Apps</a>"
+        "<a href=\"https://infi.nl/nieuws/c-voor-een-java-programmeur/\" target=\"_blank\">Blog (Dutch): C# for a Java programmer</a>",
+        "<a href=\"https://infi.nl/nieuws/development-in-react-using-typescript-and-webpack/\" target=\"_blank\">Blog (Dutch): React met TypeScript en WebPack</a>",
+        "<a href=\"https://www.youtube.com/watch?v=KAuXDjtswpM\" target=\"_blank\">Talk: VueJS Deep Dive</a>",
+        "<a href=\"https://infi.nl/nieuws/mobiele-frameworks/\" target=\"_blank\">Blog (Dutch): Mobiele Frameworks</a>",
+        "<a href=\"https://www.youtube.com/watch?v=L4xVpPOye9I\" target=\"_blank\">Webinar (Dutch): Mobiele Apps</a>"
       ]
     },
     "process-and-team": {
@@ -175,30 +175,30 @@
       "subtitle": "Teams work <em>autonomously</em>, but usually pick an <em>agile</em> way of working. With a Product Owner from the customer.",
       "how-title": "How we like to do this:",
       "how": [
-          "Team determines their own process",
-          "Continu improve the process",
-          "Product Owner from the client",
-          "Scrum master (can be a developer or project manager)",
-          "Maintain a planning <em>together</em>",
-          "<em>All</em> team members typically help with refinement",
-          "Minimum of 2 people per <em>team</em>, split up from 6-7 upward",
-          "Call in help from colleagues in other teams",
-          "Infi and client regularly work from the same location",
-          "Testers, designers, and other experts called in when needed"
+        "Team determines their own process",
+        "Continu improve the process",
+        "Product Owner from the client",
+        "Scrum master (can be a developer or project manager)",
+        "Maintain a planning <em>together</em>",
+        "<em>All</em> team members typically help with refinement",
+        "Minimum of 2 people per <em>team</em>, split up from 6-7 upward",
+        "Call in help from colleagues in other teams",
+        "Infi and client regularly work from the same location",
+        "Testers, designers, and other experts called in when needed"
       ],
       "examples-title": "Concrete examples:",
       "examples": [
-          "<a href=\"https://scrumguides.org/\" target=\"_blank\">Scrum</a> or <a href=\"https://en.wikipedia.org/wiki/Kanban_(development)\" target=\"_blank\">Kanban</a>",
-          "Retrospectives, Lean",
-          "<a href=\"https://trello.com/\" target=\"_blank\">Trello</a>, <a href=\"https://www.atlassian.com/software/jira\" target=\"_blank\">Jira</a>, <a href=\"https://shortcut.com/\" target=\"_blank\">Shortcut (formerly Clubhouse)</a>, <a href=\"https://www.jetbrains.com/youtrack/\" target=\"_blank\">YouTrack</a>"
-        ],
+        "<a href=\"https://scrumguides.org/\" target=\"_blank\">Scrum</a> or <a href=\"https://en.wikipedia.org/wiki/Kanban_(development)\" target=\"_blank\">Kanban</a>",
+        "Retrospectives, Lean",
+        "<a href=\"https://trello.com/\" target=\"_blank\">Trello</a>, <a href=\"https://www.atlassian.com/software/jira\" target=\"_blank\">Jira</a>, <a href=\"https://shortcut.com/\" target=\"_blank\">Shortcut (formerly Clubhouse)</a>, <a href=\"https://www.jetbrains.com/youtrack/\" target=\"_blank\">YouTrack</a>"
+      ],
       "by-us-title": "By us:",
       "by-us": [
-          "<a href=\"https://infi.nl/nieuws/effectief-aan-de-slag-met-retro-uitkomsten/\" target=\"_blank\">Blog (Dutch): Retro Uitkomsten</a>",
-          "<a href=\"https://infi.nl/nieuws/5-tips-voor-de-perfecte-user-story/\" target=\"_blank\">Blog (Dutch): Perfecte user stories</a>",
-          "<a href=\"https://infi.nl/nieuws/vijf-tips-voor-remote-demos/\" target=\"_blank\">Blog (Dutch): Tips voor remote demos</a>",
-          "<a href=\"https://infi.nl/nieuws/liever-kanban-dan-scrum/\" target=\"_blank\">Blog (Dutch): Kanban vs Scrum</a>",
-          "<a href=\"https://infi.nl/nieuws/teamsamenstelling/\" target=\"_blank\">Blog (Dutch): teamsamenstelling</a>"
+        "<a href=\"https://infi.nl/nieuws/effectief-aan-de-slag-met-retro-uitkomsten/\" target=\"_blank\">Blog (Dutch): Retro Uitkomsten</a>",
+        "<a href=\"https://infi.nl/nieuws/5-tips-voor-de-perfecte-user-story/\" target=\"_blank\">Blog (Dutch): Perfecte user stories</a>",
+        "<a href=\"https://infi.nl/nieuws/vijf-tips-voor-remote-demos/\" target=\"_blank\">Blog (Dutch): Tips voor remote demos</a>",
+        "<a href=\"https://infi.nl/nieuws/liever-kanban-dan-scrum/\" target=\"_blank\">Blog (Dutch): Kanban vs Scrum</a>",
+        "<a href=\"https://infi.nl/nieuws/teamsamenstelling/\" target=\"_blank\">Blog (Dutch): teamsamenstelling</a>"
       ]
     },
     "craft": {
@@ -206,27 +206,27 @@
       "subtitle": "Building custom software is a craft. We are happy (and proud!) to show what's going on behind the scenes.",
       "how-title": "How we like to do this:",
       "how": [
-          "Active knowledge sharing",
-          "Plenty of studying",
-          "Invest in tooling",
-          "Great hardware",
-          "Experiment",
-          "Monitoring and alerting"
+        "Active knowledge sharing",
+        "Plenty of studying",
+        "Invest in tooling",
+        "Great hardware",
+        "Experiment",
+        "Monitoring and alerting"
       ],
       "examples-title": "Concrete examples:",
       "examples": [
-          "Presentations (internally and externally)",
-          "Study groups, and self-study",
-          "Visit conferences and meetups",
-          "<a href=\"https://www.elastic.co/kibana/\" target=\"_blank\">Kibana</a>, <a href=\"https://sentry.io/\" target=\"_blank\">Sentry</a>, <a href=\"https://www.zabbix.com/\" target=\"_blank\">Zabbix</a>, etc."
+        "Presentations (internally and externally)",
+        "Study groups, and self-study",
+        "Visit conferences and meetups",
+        "<a href=\"https://www.elastic.co/kibana/\" target=\"_blank\">Kibana</a>, <a href=\"https://sentry.io/\" target=\"_blank\">Sentry</a>, <a href=\"https://www.zabbix.com/\" target=\"_blank\">Zabbix</a>, etc."
       ],
       "by-us-title": "By us:",
       "by-us": [
-          "<a href=\"https://infi.nl/nieuws/infi-con-2020-wrap-up/\" target=\"_blank\">INFI-CON 2020</a> and <a href=\"https://infi.nl/nieuws/infi-con-2019-wrap-up/\" target=\"_blank\">INFI-CON 2019</a>",
-          "<a href=\"https://infi.nl/nieuws/spreken-met-impact/\" target=\"_blank\">Blog (Dutch): Spreken met Impact</a>",
-          "<a href=\"https://infi.nl/nieuws/je-eigen-linux-kernel-bouwen/\" target=\"_blank\">Blog (Dutch): Je eigen Linux kernel bouwen</a>",
-          "<a href=\"https://infi.nl/nieuws/software-engineering-bestaat-niet/\" target=\"_blank\">Blog (Dutch): \"Software engineering\" bestaat niet</a>",
-          "<a href=\"https://infi.nl/nieuws/vakmanschap-is-meesterschap/\" target=\"_blank\">Blog (Dutch): Vakmanschap is meesterschap</a>"
+        "<a href=\"https://infi.nl/nieuws/infi-con-2020-wrap-up/\" target=\"_blank\">INFI-CON 2020</a> and <a href=\"https://infi.nl/nieuws/infi-con-2019-wrap-up/\" target=\"_blank\">INFI-CON 2019</a>",
+        "<a href=\"https://infi.nl/nieuws/spreken-met-impact/\" target=\"_blank\">Blog (Dutch): Spreken met Impact</a>",
+        "<a href=\"https://infi.nl/nieuws/je-eigen-linux-kernel-bouwen/\" target=\"_blank\">Blog (Dutch): Je eigen Linux kernel bouwen</a>",
+        "<a href=\"https://infi.nl/nieuws/software-engineering-bestaat-niet/\" target=\"_blank\">Blog (Dutch): \"Software engineering\" bestaat niet</a>",
+        "<a href=\"https://infi.nl/nieuws/vakmanschap-is-meesterschap/\" target=\"_blank\">Blog (Dutch): Vakmanschap is meesterschap</a>"
       ]
     },
     "others": {
@@ -234,30 +234,30 @@
       "subtitle": "Some things speak for themselves: they are <em>always</em> part of the deal. Think Security, Performance, Backups, a critical note, plus the opportunity to be ourselves.",
       "how-title": "Those foundations include:",
       "how": [
-          "<strong>Backups</strong>, including encrypted offsite backups",
-          "<strong>Security</strong> in code, and a secure way of working",
-          "<strong>Security audits</strong> when sensible (possibly via audits)",
-          "<strong>Performance</strong>, for example via load testing",
-          "Be critical of features, come up with alternatives",
-          "Buy-over-build suggestions where that makes sense",
-          "OS (Windows, OSX, Linux) as a personal choice per developer",
-          "Open Source usage and contributions",
-          "Meetups: host and organize",
-          "Be ourselves: (Dutch manifesto) \"<em><a href=\"https://infi.nl/manifest/\" target=\"_blank\">Wij zijn mensen.</a></em>\""
+        "<strong>Backups</strong>, including encrypted offsite backups",
+        "<strong>Security</strong> in code, and a secure way of working",
+        "<strong>Security audits</strong> when sensible (possibly via audits)",
+        "<strong>Performance</strong>, for example via load testing",
+        "Be critical of features, come up with alternatives",
+        "Buy-over-build suggestions where that makes sense",
+        "OS (Windows, OSX, Linux) as a personal choice per developer",
+        "Open Source usage and contributions",
+        "Meetups: host and organize",
+        "Be ourselves: (Dutch manifesto) \"<em><a href=\"https://infi.nl/manifest/\" target=\"_blank\">Wij zijn mensen.</a></em>\""
       ],
       "examples-title": "Concrete examples:",
       "examples": [
-          "OWASP",
-          "Password managers, 2FA, GPG, SSH",
-          "<a href=\"https://locust.io/\" target=\"_blank\">Locust</a>, <a href=\"https://octoperf.com/\" target=\"_blank\">OctoPerf</a>, <a href=\"https://jmeter.apache.org/\" target=\"_blank\">JMeter</a>",
-          "<a href=\"https://auth0.com/\" target=\"_blank\">Auth0</a>, <a href=\"https://stripe.com/\" target=\"_blank\">Stripe</a>, <a href=\"https://sendgrid.com/\" target=\"_blank\">SendGrid</a>, <a href=\"https://www.contentful.com/\" target=\"_blank\">Contentful</a>, <a href=\"https://lokalise.com/\" target=\"_blank\">Lokalise</a>, etc.",
-          "Always lock your laptop! <!-- should you forget, you'd better count on your colleagues to let you know... ;-) -->"
+        "OWASP",
+        "Password managers, 2FA, GPG, SSH",
+        "<a href=\"https://locust.io/\" target=\"_blank\">Locust</a>, <a href=\"https://octoperf.com/\" target=\"_blank\">OctoPerf</a>, <a href=\"https://jmeter.apache.org/\" target=\"_blank\">JMeter</a>",
+        "<a href=\"https://auth0.com/\" target=\"_blank\">Auth0</a>, <a href=\"https://stripe.com/\" target=\"_blank\">Stripe</a>, <a href=\"https://sendgrid.com/\" target=\"_blank\">SendGrid</a>, <a href=\"https://www.contentful.com/\" target=\"_blank\">Contentful</a>, <a href=\"https://lokalise.com/\" target=\"_blank\">Lokalise</a>, etc.",
+        "Always lock your laptop! <!-- should you forget, you'd better count on your colleagues to let you know... ;-) -->"
       ],
       "by-us-title": "By us:",
       "by-us": [
-          "Manifesto (Dutch) <a href=\"https://infi.nl/manifest/\" target=\"_blank\">Het Infi Manifest</a>",
-          "<a href=\"https://infi.nl/nieuws/spa-necromancy/\" target=\"_blank\">Blog: SPA Necromancy</a>",
-          "<a href=\"https://infi.nl/nieuws/launching-free-open-source-software/\" target=\"_blank\">Blog (Dutch): FOSS lanceren</a>"
+        "Manifesto (Dutch) <a href=\"https://infi.nl/manifest/\" target=\"_blank\">Het Infi Manifest</a>",
+        "<a href=\"https://infi.nl/nieuws/spa-necromancy/\" target=\"_blank\">Blog: SPA Necromancy</a>",
+        "<a href=\"https://infi.nl/nieuws/launching-free-open-source-software/\" target=\"_blank\">Blog (Dutch): FOSS lanceren</a>"
       ]
     }
   }
