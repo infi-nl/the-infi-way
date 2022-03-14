@@ -4,6 +4,7 @@ const fs = require('fs/promises');
 const templateFile = `${__dirname}/template.html`;
 const contentDir = `${__dirname}/content`;
 const outputDir = `${__dirname}/build`;
+const langMappings = { nl: 'index' };
 
 const cliHelpText = `
 Usage: ./build.js [options]
@@ -66,11 +67,12 @@ async function build() {
   console.log('Processing language:');
   for (const f of contentFiles) {
     const lang = f.substring(f.lastIndexOf('/') + 1, f.lastIndexOf('.'));
-    console.log(`  - ${lang}`);
+    const mapping = langMappings[lang];
+    console.log(`  - ${lang}${mapping ? ` (${mapping})` : ''}`);
     const content = JSON.parse((await fs.readFile(`${contentDir}/${f}`)).toString());
     content.lang = lang;
     const processed = processor.process(compiledTemplate, content);
-    await fs.writeFile(`${outputDir}/${lang}.html`, processed);
+    await fs.writeFile(`${outputDir}/${mapping || lang}.html`, processed);
   }
 
   console.log(`Build finished at ${new Date().toLocaleString('en-GB')}`);
