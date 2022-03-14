@@ -63,7 +63,7 @@
   },
   "topic": {
     "users": {
-      "title": "Gebruikers centraal",
+      "title": "Gebruikers Centraal",
       "subtitle": "Wij werken voor <em>de klant van onze klant</em>. Ze gebruiken software om <em>hun</em> doelen te bereiken, ons doel is hen daarbij te helpen.",
       "how-title": "Hoe we dat graag doen:",
       "how": [
@@ -114,7 +114,7 @@
       ]
     },
     "source-code": {
-      "title": "Code is de bron",
+      "title": "Code is de Bron",
       "subtitle": "Broncode is dat: de <em>bron</em>. Zelfbeschrijvend en dus bruikbaar voor <em>elke</em> ontwikkelaar, van Infi of anderszins.",
       "how-title": "Hoe we dat graag doen:",
       "how": [
@@ -141,7 +141,7 @@
       ]
     },
     "technology": {
-      "title": "Gebruikte tech",
+      "title": "Gebruikte Tech",
       "subtitle": "We gebruiken bij voorkeur altijd de \"<em>best tool for the job</em>\"; we zijn generalisten die zo nodig snel kunnen specialiseren en verdiepen.",
       "how-title": "Hoe we dat graag doen:",
       "how": [
@@ -171,7 +171,7 @@
       ]
     },
     "process-and-team": {
-      "title": "Proces en team",
+      "title": "Proces en Team",
       "subtitle": "Teams werken <em>autonoom</em>, maar kiezen vrijwel altijd een vorm van <em>agile</em> werken. Met Product Owner van de klant.",
       "how-title": "Hoe we dat graag doen:",
       "how": [
@@ -230,7 +230,7 @@
       ]
     },
     "others": {
-      "title": "Vaste waardes",
+      "title": "Vaste Waardes",
       "subtitle": "Sommige dingen spreken voor ons voor zichzelf: dit hoort er <em>altijd</em> bij. Denk aan Security, Performance, Backups, kritisch meedenken, en jezelf kunnen zijn.",
       "how-title": "Wat die vaste waardes zijn:",
       "how": [

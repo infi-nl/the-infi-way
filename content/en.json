@@ -141,7 +141,7 @@
       ]
     },
     "technology": {
-      "title": "Technology Used",
+      "title": "Used Technology",
       "subtitle": "We prefer using \"<em>the best tool for the job</em>\"; we're generalists who can quickly specialize when the need arises.",
       "how-title": "How we like to do this:",
       "how": [
@@ -171,7 +171,7 @@
       ]
     },
     "process-and-team": {
-      "title": "Proces and team",
+      "title": "Process and Team",
       "subtitle": "Teams work <em>autonomously</em>, but usually pick an <em>agile</em> way of working. With a Product Owner from the customer.",
       "how-title": "How we like to do this:",
       "how": [
