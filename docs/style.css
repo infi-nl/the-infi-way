@@ -53,8 +53,11 @@ html, body {
     font-size: 20px;
     line-height: 1.35rem;
     color: var(--color-text-light);
-    background: var(--color-background);
     text-shadow: 2px 2px 3px rgba(50, 50, 50, 0.5);
+}
+
+body {
+    background: var(--color-background) url("bg_icons.svg");
 }
 
 h1, h2, h3, h4, h5, h6, p, ol, ul {
