@@ -118,7 +118,7 @@
       "subtitle": "Source code is just that: the <em>source</em>. Self-documenting, so usable for <em>any</em> developer, from Infi or otherwise.",
       "how-title": "How we like to do this:",
       "how": [
-        "Architecture <em>also</em> in the source",
+        "Architecture <em>in</em> the source",
         "Clone &amp; run repositories",
         "Continuous integration, continuous delivery",
         "DTAP",
@@ -150,7 +150,7 @@
         "Back-end in a modern stack",
         "Front-end normally with mature frameworks",
         "Mobile cross-platform, unless \"native\" <em>really</em> adds value",
-        "Databases picked per project"
+        "Data storage fitting for the project"
       ],
       "examples-title": "Concrete examples:",
       "examples": [
@@ -176,11 +176,11 @@
       "how-title": "How we like to do this:",
       "how": [
         "Team determines their own process",
-        "Continu improve the process",
+        "Continuously improve the process",
         "Product Owner from the client",
         "Scrum master (can be a developer or project manager)",
         "Maintain a planning <em>together</em>",
-        "<em>All</em> team members typically help with refinement",
+        "<em>All</em> team members help with refinement",
         "Minimum of 2 people per <em>team</em>, split up from 6-7 upward",
         "Call in help from colleagues in other teams",
         "Infi and client regularly work from the same location",
@@ -216,7 +216,7 @@
       "examples-title": "Concrete examples:",
       "examples": [
         "Presentations (internally and externally)",
-        "Study groups, and self-study",
+        "Study groups, self-study",
         "Visit conferences and meetups",
         "<a href=\"https://www.elastic.co/kibana/\" target=\"_blank\">Kibana</a>, <a href=\"https://sentry.io/\" target=\"_blank\">Sentry</a>, <a href=\"https://www.zabbix.com/\" target=\"_blank\">Zabbix</a>, etc."
       ],
