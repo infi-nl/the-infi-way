@@ -1,5 +1,7 @@
 # The Infi Way
 
+[![Deploy to GitHub Pages](https://github.com/infi-nl/the-infi-way/actions/workflows/deploy.yml/badge.svg)](https://github.com/infi-nl/the-infi-way/actions/workflows/deploy.yml)
+
 Een overzicht van _hoe_ we graag software bouwen bij Infi: welke technieken en technologie we graag gebruiken, en volgens welke principes we willen werken.
 
 ## 🚀 Live Versie
@@ -35,6 +37,8 @@ Voor dat laatste moeten we nog wel de licensing iets vrijer maken, subscribe op 
 
 Hoe dan ook, als je dat fijn vindt: voel je vrij om [een issue te openen](https://github.com/infi-nl/the-infi-way/issues/new) en/of [een PR te submitten](https://github.com/infi-nl/the-infi-way/pulls)!
 We zijn altijd benieuwd naar nieuwe inzichten.
+
+Wil je The Infi Way lokaal draaien? Kijk dan in [CONTRIBUTING.md](CONTRIBUTING.md) voor meer informatie.
 
 ## 🔒 Tot Slot
 
