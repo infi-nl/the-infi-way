@@ -11,6 +11,7 @@ jobs:
       - name: Build
         run: ./build.js
       - name: Deploy
+        if: ${{ github.ref == 'refs/heads/main' }}
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           branch: gh-pages
