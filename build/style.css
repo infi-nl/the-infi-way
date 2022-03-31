@@ -152,13 +152,15 @@ footer {
 
 .infi-test ol li {
     margin-bottom: 0.7rem;
+    display: flex;
+    align-items: baseline;
 }
 
 .infi-test ol li::before {
     counter-increment: infi-test;
     content: counter(infi-test);
     margin-right: 0.7rem;
-    width: 1.7rem;
+    flex: 0 0 1.7rem;
     height: 1.7rem;
     border-radius: 8px;
     display: inline-flex;
