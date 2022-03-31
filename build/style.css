@@ -145,6 +145,7 @@ footer {
 
 .infi-test ol {
     margin: 1rem 0;
+    padding-left: 0;
     counter-reset: infi-test;
     list-style: none;
 }
@@ -320,10 +321,6 @@ h2:hover a .anchor-hint {
         padding-left: 1rem;
         padding-right: 1rem;
         margin-bottom: 60px;
-    }
-
-    .infi-test ol {
-        padding-left: 1.5rem;
     }
 
     .headline {
