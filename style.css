@@ -145,19 +145,22 @@ footer {
 
 .infi-test ol {
     margin: 1rem 0;
+    padding-left: 0;
     counter-reset: infi-test;
     list-style: none;
 }
 
 .infi-test ol li {
     margin-bottom: 0.7rem;
+    display: flex;
+    align-items: baseline;
 }
 
 .infi-test ol li::before {
     counter-increment: infi-test;
     content: counter(infi-test);
     margin-right: 0.7rem;
-    width: 1.7rem;
+    flex: 0 0 1.7rem;
     height: 1.7rem;
     border-radius: 8px;
     display: inline-flex;
@@ -320,10 +323,6 @@ h2:hover a .anchor-hint {
         padding-left: 1rem;
         padding-right: 1rem;
         margin-bottom: 60px;
-    }
-
-    .infi-test ol {
-        padding-left: 1.5rem;
     }
 
     .headline {
