@@ -2,45 +2,47 @@
 
 [![Deploy to GitHub Pages](https://github.com/infi-nl/the-infi-way/actions/workflows/deploy.yml/badge.svg)](https://github.com/infi-nl/the-infi-way/actions/workflows/deploy.yml)
 
-Een overzicht van _hoe_ we graag software bouwen bij Infi: welke technieken en technologie we graag gebruiken, en volgens welke principes we willen werken.
+An overview of _how_ we like to build software: which techniques and technology we like to use, and which principles we follow when building software.
 
-## 🚀 Live Versie
+## 🚀 Live Version
 
-Gelijk door?
-**Lees [de online versie in je browser](https://infi-nl.github.io/the-infi-way).**
+Interested?
+**Read [the online version in your browser](https://infi-nl.github.io/the-infi-way).**
 
 ## 🧡 Context
 
-Er zijn veel verschillende manieren om naar Infi te kijken.
-**The Infi Way** is één van de manieren, in een langere lijst:
+There are many ways to look at software development
+**The Infi Way** is one of those, from a larger set of view points:
 
-- **_Wie_ we zijn**, waar we in geloven, en wat we belangrijk vinden: dat lees je in [het Infi Manifest](https://infi.nl/manifest/).
-- **_Wie_ we _letterlijk_ zijn**, dat vindt je op [infi.nl/wij-zijn-infi](https://infi.nl/wij-zijn-infi/) en als jij daar bij wilt horen: [werkenbij.infi.nl](https://werkenbij.infi.nl/).
-- **_Wat_ we bouwen**, voor welke klanten, en het soort producten: dat vind je onder meer op [infi.nl/onze-klanten](https://infi.nl/onze-klanten/).
-- **_Hoe_ we dat _in algemene zin_ doen**, en hoe we graag samenwerken: dit lees je op [infi.nl/software](https://infi.nl/software/).
-- **_Hoe_ we dat _qua techniek_ doen**, dat [lees je in The Infi Way](https://infi-nl.github.io/the-infi-way): namelijk _hier_!
-- En nog meer manieren die we in de toekomst gaan toevoegen...
+- **_Who_ we are**, what we believe in, and what we find important: you can read this in [the Infi Manifest (Dutch)](https://infi.nl/manifest/).
+- **_Wie_ we _literally_ are**, you'll find at [infi.nl/wij-zijn-infi (Dutch)](https://infi.nl/wij-zijn-infi/) and if you want to be part of our team, at [werkenbij.infi.nl (Dutch)](https://werkenbij.infi.nl/).
+- **_What_ we build**, for which customners, and the kind of products: you'll find this at [infi.nl/onze-klanten (Dutch)](https://infi.nl/onze-klanten/).
+- **_How_ we _generally_ do this**, and how we like to work: you can find this at [infi.nl/software (Dutch)](https://infi.nl/software/).
+- **_How_ we do this _technology wise_**, is what [you read in The Infi Way](https://infi-nl.github.io/the-infi-way): so _here_!
+- And surely more methods later on...
 
-The Infi Way is een inkijkje in wat je bij onze projecten tegenkomt.
-De manier waarop- en tools en technieken waarmee wij vinden dat je doorgaans aan software dient te bouwen.
+The Infi Way is a little peek into our engineering efforts.
+The way in which and tools and techniques we think are mandatory for building software the right way.
 
 ## 💻 Open Source!?
 
-Jazeker!
+For sure!
 
-Ten eerste is het voor een enkeling wellicht interessant om te zien hoe we stap voor stap op de huidige versie zijn gekomen.
-En bovendien vinden we het zelf ook leuk om het "in the open" te regelen.
+First up, the git history can be interesting to view.
+To see how we got here in the first place.
+Plus, we also _enjoy_ developing this "in the open".
 
-Ten tweede willen we ook graag dat mensen deze opzet delen met anderen.
-En op termijn ook wijzigingen suggereren of remixes van deze content maken.
-Voor dat laatste moeten we nog wel de licensing iets vrijer maken, subscribe op [issue #3](https://github.com/infi-nl/the-infi-way/issues/3) om dat te volgen.
+Second, we would love for others to share this setup with more people.
+And when the time comes, perhaps also remix this content to their own liking.
+For that we do need to fix [issue #3](https://github.com/infi-nl/the-infi-way/issues/3) and choose a proper license to allow that.
 
-Hoe dan ook, als je dat fijn vindt: voel je vrij om [een issue te openen](https://github.com/infi-nl/the-infi-way/issues/new) en/of [een PR te submitten](https://github.com/infi-nl/the-infi-way/pulls)!
-We zijn altijd benieuwd naar nieuwe inzichten.
+Either way, feel free to [open an issue](https://github.com/infi-nl/the-infi-way/issues/new) and/or [submit a PR](https://github.com/infi-nl/the-infi-way/pulls)!
+We always welcome new points of view.
 
-Wil je The Infi Way lokaal draaien? Kijk dan in [CONTRIBUTING.md](CONTRIBUTING.md) voor meer informatie.
+Do you want to run The Infi Way locally?
+Then please check [CONTRIBUTING.md](CONTRIBUTING.md) for more information
 
-## 🔒 Tot Slot
+## 🔒 In closing
 
-Hopelijk vind je The Infi Way interessant, of zelfs _nuttig_!?
-Als je vragen hebt [weet je ons hopelijk te vinden](https://infi.nl/contact/), en als je mee wilt helpen bouwen aan dit soort projecten [weet je ook waar je moet zijn](https://werkenbij.infi.nl/), toch?
+Hopefully The Infi Way is interesting or perhaps even _useful_ to you!?
+If you ever have questions for the originators from Infi, we hope [you'll be able to find us](https://infi.nl/contact/)?
