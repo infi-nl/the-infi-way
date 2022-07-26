@@ -1,19 +1,19 @@
 # Contribute to The Infi Way?
 
 Thanks for your interest in helping build The Infi Way!
-We're always curious for new view points.
+We're always curious for new viewpoints.
 
 Seen something that can be better?
 Feel free to [open an issue](https://github.com/infi-nl/the-infi-way/issues/new).
 [Pull requests](https://github.com/infi-nl/the-infi-way/pulls) are also welcome.
-If you want to run The Infi Way locally, please do read on.
+If you want to run The Infi Way locally, please continue reading.
 
 ## 🧑‍💻 Local Development
 
 To develop locally you need:
 
 - A clone of this repository
-- [Node.js](https://nodejs.org) 16 (of up)
+- [Node.js](https://nodejs.org) 16 (or higher)
 
 In the root you'll find `build.js`, used to build the site.
 Usage is as follows:
@@ -30,8 +30,8 @@ node build.js -w
 ```
 
 This script uses `template.html` and the files from the `content` folder to generate a `build` folder with one page per language (one of them default as `index.html`).
-In the `build` folders assets such as the stylesheet are also located.
-When the build has run you can open the HTML in this folder (optionally via a dev server) in your favorite browser, and you're good to go!
+This `build` folder also contains all static assets such as the stylesheet.
+When the build is done you can open the HTML files in this folder (optionally via a dev server) in your favorite browser, and you're good to go!
 
-The templating is something light weight and homebrew, inspired by [Handlebars](https://handlebarsjs.com).
+The templating is something lightweight and homebrew, inspired by [Handlebars](https://handlebarsjs.com).
 This entire engine is part of `build.js`.
