@@ -18,30 +18,6 @@
     --box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
 }
 
-@font-face {
-    font-family: 'Gudea';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Gudea'), url(https://fonts.gstatic.com/s/gudea/v4/WTDyO8MdshuMhAnoLO0WMw.woff2) format('woff2'), url(https://fonts.gstatic.com/s/gudea/v4/Z6xYy_2MlN1cUISkeodEPA.woff) format('woff');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Gudea';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Gudea Bold'), local('Gudea-Bold'), url(https://fonts.gstatic.com/s/gudea/v4/jayXbUsof2FdMCHG3BRDEPesZW2xOQ-xsNqO47m55DA.woff2) format('woff2'), url(https://fonts.gstatic.com/s/gudea/v4/6M2RKly85u67vSsXH0-zqvesZW2xOQ-xsNqO47m55DA.woff) format('woff');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Gudea';
-    font-style: italic;
-    font-weight: 400;
-    src: local('Gudea Italic'), local('Gudea-Italic'), url(https://fonts.gstatic.com/s/gudea/v4/kvCX_I6neb4EN5z031M87g.woff2) format('woff2'), url(https://fonts.gstatic.com/s/gudea/v4/7K8okIOV072GIwnptze9lg.woff) format('woff');
-    font-display: swap;
-}
-
 * {
     box-sizing: border-box;
 }
@@ -49,7 +25,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    font-family: "Gudea", "Open Sans", Helvetica, Arial, sans-serif;
+    font-family: "Open Sans", "Liberation Sans", Helvetica, Arial, sans-serif;
     font-size: 20px;
     line-height: 1.35rem;
     color: var(--color-text-light);
