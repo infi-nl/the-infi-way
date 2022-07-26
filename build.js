@@ -4,7 +4,7 @@ const fs = require('fs/promises');
 const templateFile = `${__dirname}/template.html`;
 const contentDir = `${__dirname}/content`;
 const outputDir = `${__dirname}/build`;
-const langMappings = { nl: 'index' };
+const langMappings = { en: 'index' };
 
 const cliHelpText = `
 Usage: ./build.js [options]

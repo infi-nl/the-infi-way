@@ -1,35 +1,37 @@
-# Meehelpen aan The Infi Way?
+# Contribute to The Infi Way?
 
-Leuk dat je mee wilt helpen aan The Infi Way!
-We zijn altijd benieuwd naar nieuwe inzichten.
+Thanks for your interest in helping build The Infi Way!
+We're always curious for new viewpoints.
 
-Heb je iets gezien wat beter kan?
-Voel je dan vrij om [een issue te openen](https://github.com/infi-nl/the-infi-way/issues/new).
-Ook [pull requests](https://github.com/infi-nl/the-infi-way/pulls) zijn van harte welkom!
-Wil je The Infi Way lokaal draaien, lees dan verder.
+Seen something that can be better?
+Feel free to [open an issue](https://github.com/infi-nl/the-infi-way/issues/new).
+[Pull requests](https://github.com/infi-nl/the-infi-way/pulls) are also welcome.
+If you want to run The Infi Way locally, please continue reading.
 
-## 🧑‍💻 Lokaal Developen
+## 🧑‍💻 Local Development
 
-Om lokaal aan The Infi Way te developen heb je het volgende nodig:
+To develop locally you need:
 
-- Een clone van deze repository
-- [Node.js](https://nodejs.org) 16 (of hoger)
+- A clone of this repository
+- [Node.js](https://nodejs.org) 16 (or higher)
 
-In de root van het project staat een `build.js` script, deze gebruiken we om de site te bouwen.
-Dit script gebruik je als volgt:
+In the root you'll find `build.js`, used to build the site.
+Usage is as follows:
 
 ```shell
 ./build.js
-# Of
+# Or
 node build.js
 
-# Om te rebuilden bij elke verandering in de template of content:
+# To rebuild whenever content or template changes:
 ./build.js -w
+# Or
+node build.js -w
 ```
 
-Dit script gebruikt `template.html` en de bestanden uit de `content` map om in de `build` map een pagina per taal te genereren, met de Nederlandse variant als `index.html`.
-In deze `build` map staan ook de assets zoals de stylesheet.
-Als de build gerund is kan je de HTML bestanden uit deze map openen in je favoriete browser, en voilà!
+This script uses `template.html` and the files from the `content` folder to generate a `build` folder with one page per language (one of them default as `index.html`).
+This `build` folder also contains all static assets such as the stylesheet.
+When the build is done you can open the HTML files in this folder (optionally via a dev server) in your favorite browser, and you're good to go!
 
-De templating taal is een eigen lightweight implementatie, geïnspireerd door [Handlebars](https://handlebarsjs.com).
-Ook deze code zit volledig in `build.js`.
+The templating is something lightweight and homebrew, inspired by [Handlebars](https://handlebarsjs.com).
+This entire engine is part of `build.js`.
