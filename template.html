@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{lang}}">
   <head>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'none';
+        font-src https://fonts.gstatic.com;
+        img-src 'self';
+        script-src 'self' 'sha256-Ae3eHf6iH3HmkxQ5VMpiwB2ZZoFXcpdPgXGAyxoGFBk=';
+        style-src 'self';
+      ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>The Infi Way</title>
@@ -9,10 +18,13 @@
   </head>
   <body>
     <!--
-      Dit is dus de bron van The Infi Way! Do you also know the way? Kijk dan eens op https://werkenbij.infi.nl.
+      So this is the source of The Infi Way!
+      Do you also know the way?
+      En wil je ergens werken waar de voertaal Nederlands is?
+      Kijk dan eens op https://werkenbij.infi.nl
     -->
     <header>
-      <h1><a href="javascript: history.replaceState(null, null, ' '); window.scrollTo(0, 0)">
+      <h1><a href="#">
         The <img src="logo_infi.svg" alt="Infi"> Way
       </a></h1>
       <p>{{header.subtitle}}</p>
@@ -52,7 +64,7 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.users.subtitle}}</p>
-              <button class="details-toggle" onclick="document.getElementById('viewToggle').classList.toggle('view-overview'); location.hash='gebruikers';"><span class="sr-only">Details in-/uitklappen...</span></button>
+              <button class="details-toggle" data-toggle-target="users"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
               <p>{{topic.users.how-title}}</p>
@@ -98,7 +110,7 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.principles.subtitle}}</p>
-              <button class="details-toggle" onclick="document.getElementById('viewToggle').classList.toggle('view-overview'); location.hash='gebruikers';"><span class="sr-only">Details in-/uitklappen...</span></button>
+              <button class="details-toggle" data-toggle-target="principles"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
               <p>{{topic.principles.how-title}}</p>
@@ -140,7 +152,7 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.source-code.subtitle}}</p>
-              <button class="details-toggle" onclick="document.getElementById('viewToggle').classList.toggle('view-overview'); location.hash='gebruikers';"><span class="sr-only">Details in-/uitklappen...</span></button>
+              <button class="details-toggle" data-toggle-target="source-code"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
               <p>{{topic.source-code.how-title}}</p>
@@ -186,7 +198,7 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.technology.subtitle}}</p>
-              <button class="details-toggle" onclick="document.getElementById('viewToggle').classList.toggle('view-overview'); location.hash='gebruikers';"><span class="sr-only">Details in-/uitklappen...</span></button>
+              <button class="details-toggle" data-toggle-target="technology"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
               <p>{{topic.technology.how-title}}</p>
@@ -228,7 +240,7 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.process-and-team.subtitle}}</p>
-              <button class="details-toggle" onclick="document.getElementById('viewToggle').classList.toggle('view-overview'); location.hash='gebruikers';"><span class="sr-only">Details in-/uitklappen...</span></button>
+              <button class="details-toggle" data-toggle-target="process-and-team"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
               <p>{{topic.process-and-team.how-title}}</p>
@@ -267,7 +279,7 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.craft.subtitle}}</p>
-              <button class="details-toggle" onclick="document.getElementById('viewToggle').classList.toggle('view-overview'); location.hash='gebruikers';"><span class="sr-only">Details in-/uitklappen...</span></button>
+              <button class="details-toggle" data-toggle-target="craft"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
               <p>{{topic.craft.how-title}}</p>
@@ -312,7 +324,7 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.others.subtitle}}</p>
-              <button class="details-toggle" onclick="document.getElementById('viewToggle').classList.toggle('view-overview'); location.hash='gebruikers';"><span class="sr-only">Details in-/uitklappen...</span></button>
+              <button class="details-toggle" data-toggle-target="others"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
               <p>{{topic.others.how-title}}</p>
@@ -340,8 +352,8 @@
     </div>
 
     <footer>
-      <a href="index.html">Nederlands</a>
-      | <a href="en.html">English</a>
+      <a href="index.html">English</a>
+      | <a href="nl.html">Nederlands</a>
       <p>---</p>
       © 2022, Infi
       | <a href="https://github.com/infi-nl/the-infi-way" target="_blank">Source</a>
@@ -349,7 +361,31 @@
       | <a href="https://werkenbij.infi.nl" target="_blank">werkenbij.infi.nl</a>
       | {{footer.questions}} <a href="mailto:jeroen@infi.nl">jeroen@infi.nl</a>
       <p>---</p>
-      <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/infi-nl/the-infi-way">The Infi Way</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/infi-nl">Infi</a> is licensed under <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-ND 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1"></a></p>
+      <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+        <a property="dct:title" rel="cc:attributionURL" href="https://github.com/infi-nl/the-infi-way">The Infi Way</a>
+        by
+        <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/infi-nl">Infi</a>
+        is licensed under
+        <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="license noopener noreferrer">
+          CC BY-NC-ND 4.0
+        </a>
+      </p>
     </footer>
+
+    <script>
+      // ⚠ Contents of this script block are hashed and used in
+      // the CSP meta tag. Any change (including white space) will
+      // require update of the CSP tag. All this to prevent the
+      // need for 'unsafe-inline'.
+      document.addEventListener("DOMContentLoaded", () => {
+        [...document.querySelectorAll(".details-toggle")].forEach(element => {
+          const anchor = element.dataset.toggleTarget;
+          element.addEventListener('click', () => {
+            document.getElementById('viewToggle').classList.toggle('view-overview');
+            location.hash = anchor;
+          });
+        });
+      });
+    </script>
   </body>
 </html>
