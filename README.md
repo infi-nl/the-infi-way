@@ -1,6 +1,6 @@
 # The Infi Way
 
-[![Deploy to GitHub Pages](https://github.com/infi-nl/the-infi-way/actions/workflows/deploy.yml/badge.svg)](https://github.com/infi-nl/the-infi-way/actions/workflows/deploy.yml)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c0c0732e-42b0-4735-af56-e8c46f4a7250/deploy-status)](https://app.netlify.com/sites/the-infi-way/deploys)
 
 An overview of _how_ we like to build software: which techniques and technology we like to use, and which principles we follow when building software.
 
