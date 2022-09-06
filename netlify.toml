@@ -1,0 +1,9 @@
+[build]
+  command = "./build.js"
+  publish = "build/"
+
+[[redirects]]
+  from = "https://the-infi-way.netlify.app"
+  to = "https://way.infi.nl"
+  status = 301
+  force = true
