@@ -1,0 +1,13 @@
+{
+  "name": "the-infi-way",
+  "version": "1.0.0",
+  "repository": "github:infi-nl/the-infi-way",
+  "license": "CC-BY-NC-ND-4.0",
+  "bugs": {
+    "url": "https://github.com/infi-nl/the-infi-way/issues"
+  },
+  "homepage": "https://github.com/infi-nl/the-infi-way#readme",
+  "devDependencies": {
+    "@netlify/plugin-lighthouse": "^4.0.7"
+  }
+}
