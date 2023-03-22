@@ -7,7 +7,7 @@ An overview of _how_ we like to build software: which techniques and technology 
 ## 🚀 Live Version
 
 Interested?
-**Read [the online version in your browser](https://infi-nl.github.io/the-infi-way).**
+**Read [the online version in your browser](https://way.infi.nl).**
 
 ## 🧡 Context
 
