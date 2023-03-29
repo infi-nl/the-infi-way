@@ -18,7 +18,7 @@ There are many ways to look at software development.
 - **_Who_ we _literally_ are**, you'll find at [infi.nl/wij-zijn-infi (Dutch)](https://infi.nl/wij-zijn-infi/) and if you want to be part of our team, at [werkenbij.infi.nl (Dutch)](https://werkenbij.infi.nl/).
 - **_What_ we build**, for which customers, and what kind of products: you'll find this at [infi.nl/onze-klanten (Dutch)](https://infi.nl/onze-klanten/).
 - **_How_ we _generally_ do this**, and how we like to work: you can find this at [infi.nl/software (Dutch)](https://infi.nl/software/).
-- **_How_ we do this _technology-wise_**, is what [you read in The Infi Way](https://infi-nl.github.io/the-infi-way): so _here_!
+- **_How_ we do this _technology-wise_**, is what [you read in The Infi Way](https://way.infi.nl): so _here_!
 - And surely more methods later on...
 
 The Infi Way is a little peek into our engineering efforts.
