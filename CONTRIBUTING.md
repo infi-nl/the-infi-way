@@ -35,3 +35,6 @@ When the build is done you can open the HTML files in this folder (optionally vi
 
 The templating is something lightweight and homebrew, inspired by [Handlebars](https://handlebarsjs.com).
 This entire engine is part of `build.js`.
+
+Note that while a `package.json` is present, you _don't_ actually need to install NPM dependencies.
+It is only necessary to enable the [Lighthouse plugin](https://github.com/netlify/netlify-plugin-lighthouse#readme) for Netlify.

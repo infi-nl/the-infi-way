@@ -4,3 +4,6 @@
 
 # Build artifacts
 build/*.html
+
+# Node
+node_modules/

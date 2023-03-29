@@ -7,3 +7,12 @@
   to = "https://way.infi.nl"
   status = 301
   force = true
+
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+
+  [plugins.inputs.thresholds]
+    performance = 1
+    accessibility = 1
+    best-practices = 1
+    seo = 0.95
