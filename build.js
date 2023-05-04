@@ -64,15 +64,37 @@ async function build() {
   const processor = new TemplateProcessor();
   const compiledTemplate = processor.compile(template);
 
-  console.log('Processing language:');
-  for (const f of contentFiles) {
-    const lang = f.substring(f.lastIndexOf('/') + 1, f.lastIndexOf('.'));
-    const mapping = langMappings[lang];
-    console.log(`  - ${lang}${mapping ? ` (${mapping})` : ''}`);
+  console.log('Processing languages:');
+  const languages = await Promise.all(contentFiles.map(async (f) => {
+    const code = f.substring(f.lastIndexOf('/') + 1, f.lastIndexOf('.'));
+    const mapping = langMappings[code] || code;
     const content = JSON.parse((await fs.readFile(`${contentDir}/${f}`)).toString());
-    content.lang = lang;
+    const name = content.language;
+    console.log(`  - ${code}${mapping !== code ? ` (${mapping})` : ''}: ${name}`);
+
+    return {
+      code,
+      mapping,
+      name,
+      content
+    }
+  }));
+
+  console.log('Processing language:');
+  for (const language of languages) {
+    console.log(`  - ${language.code}${language.mapping !== language.code ? ` (${language.mapping})` : ''}`);
+    const content = {
+      ...language.content,
+      lang: language.code,
+      languages: languages.map((l) => ({
+        code: l.code,
+        name: l.name,
+        mapping: l.mapping,
+        isCurrentLanguage: language === l,
+      }))
+    }
     const processed = processor.process(compiledTemplate, content);
-    await fs.writeFile(`${outputDir}/${mapping || lang}.html`, processed);
+    await fs.writeFile(`${outputDir}/${language.mapping}.html`, processed);
   }
 
   console.log(`Build finished at ${new Date().toLocaleString('en-GB')}`);
@@ -85,6 +107,7 @@ class TemplateProcessor {
 
   #funcMapping = {
     each: this.#processFuncEach.bind(this),
+    if: this.#processFuncIf.bind(this),
   };
 
   /**
@@ -240,6 +263,14 @@ class TemplateProcessor {
     }
 
     return list.map((item) => this.process(compiledTemplate, item)).join('');
+  }
+
+  #processFuncIf(tag, compiledTemplate, content) {
+    // limited to checking a single boolean
+    if (!content[tag.args[0]]) {
+      return;
+    }
+    return this.process(compiledTemplate, content);
   }
 
   static #assertArgLength(tag, expected) {
