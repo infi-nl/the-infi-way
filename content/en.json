@@ -116,7 +116,7 @@
     },
     "source-code": {
       "title": "Code is the Source",
-      "subtitle": "Source code is just that: the <em>source</em>. Self-documenting, so usable for <em>any</em> developer, from Infi or otherwise.",
+      "subtitle": "Source code is just that: the <em>source</em>. Self-documenting, so usable for <em>any</em> developer, our own or otherwise.",
       "how-title": "How we like to do this:",
       "how": [
         "Architecture <em>in</em> the source",
@@ -184,7 +184,7 @@
         "<em>All</em> team members help with refinement",
         "Minimum of 2 people per <em>team</em>, split up from 6-7 upward",
         "Call in help from colleagues in other teams",
-        "Infi and client regularly work from the same location",
+        "Regularly work together with the client at the same location",
         "Testers, designers, and other experts called in when needed"
       ],
       "examples-title": "Concrete examples:",
