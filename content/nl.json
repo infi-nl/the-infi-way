@@ -1,7 +1,7 @@
 {
   "description": "Een overzicht van hoe wij graag software bouwen: welke technieken en technologie we graag gebruiken, en welke principes we volgen.",
   "header": {
-    "subtitle": "Bij Infi werken we graag op de volgende manier."
+    "subtitle": "Bij Infi werken we graag op de volgende manier"
   },
   "test": {
     "title": "De Infi Test",
@@ -64,11 +64,11 @@
   },
   "topic": {
     "users": {
-      "title": "Gebruikers Centraal",
-      "subtitle": "Wij werken voor <em>de klant van onze klant</em>. Ze gebruiken software om <em>hun</em> doelen te bereiken, ons doel is hen daarbij te helpen.",
+      "title": "Gebruikers centraal",
+      "subtitle": "Wij werken voor <em>de klanten van onze klant</em>. Ze gebruiken software om <em>hun</em> doelen te bereiken, ons doel is hen daarbij te helpen.",
       "how-title": "Hoe we dat graag doen:",
       "how": [
-        "<em>Direct contact</em> met gebruikers",
+        "<em>Direct contact</em> met (eind)gebruikers",
         "Prototyping, snel itereren",
         "User-centric werken",
         "Nauwe samenwerking met designers",
@@ -92,7 +92,7 @@
       "how-title": "Hoe we dat graag doen:",
       "how": [
         "Modern versiebeheer",
-        "Up to date tooling, frameworks, en libraries",
+        "Up to date tooling, frameworks en libraries",
         "Automation waar mogelijk",
         "Sterke test coverage",
         "Linting, code quality checks",
@@ -115,7 +115,7 @@
       ]
     },
     "source-code": {
-      "title": "Code is de Bron",
+      "title": "Code is de bron",
       "subtitle": "Broncode is dat: de <em>bron</em>. Zelfbeschrijvend en dus bruikbaar voor <em>elke</em> ontwikkelaar, van onszelf of anderszins.",
       "how-title": "Hoe we dat graag doen:",
       "how": [
@@ -142,7 +142,7 @@
       ]
     },
     "technology": {
-      "title": "Gebruikte Tech",
+      "title": "Gebruikte tech",
       "subtitle": "We gebruiken bij voorkeur altijd de \"<em>best tool for the job</em>\"; we zijn generalisten die zo nodig snel kunnen specialiseren en verdiepen.",
       "how-title": "Hoe we dat graag doen:",
       "how": [
@@ -172,7 +172,7 @@
       ]
     },
     "process-and-team": {
-      "title": "Proces en Team",
+      "title": "Proces en team",
       "subtitle": "Teams werken <em>autonoom</em>, maar kiezen vrijwel altijd een vorm van <em>agile</em> werken. Met Product Owner van de klant.",
       "how-title": "Hoe we dat graag doen:",
       "how": [
@@ -231,7 +231,7 @@
       ]
     },
     "others": {
-      "title": "Vaste Waardes",
+      "title": "Vaste waardes",
       "subtitle": "Sommige dingen spreken voor ons voor zichzelf: dit hoort er <em>altijd</em> bij. Denk aan Security, Performance, Backups, kritisch meedenken, en jezelf kunnen zijn.",
       "how-title": "Wat die vaste waardes zijn:",
       "how": [
