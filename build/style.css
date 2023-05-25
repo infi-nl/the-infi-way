@@ -233,7 +233,8 @@ h2:hover a .anchor-hint {
     margin-left: 2rem;
 }
 
-.details p {
+.details h3 {
+    font-size: 0.8rem;
     font-weight: bold;
 }
 
