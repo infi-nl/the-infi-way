@@ -24,6 +24,11 @@
       En wil je ergens werken waar de voertaal Nederlands is?
       Kijk dan eens op https://werkenbij.infi.nl
     -->
+    <nav class="language-select">
+      {{#each languages}}
+      <span class="{{#if isCurrentLanguage}}current{{/if}}"><a hreflang="{{code}}" href="{{href}}">{{name}}</a></span>
+      {{/each}}
+    </nav>
     <header>
       <h1><a href="#">
         The <img src="/logo_infi.svg" alt="Infi"> Way
@@ -355,12 +360,6 @@
     </main>
 
     <footer>
-      <div class="language-select">
-        {{#each languages}}
-          <span class="{{#if isCurrentLanguage}}current{{/if}}"><a hreflang="{{code}}" href="{{href}}">{{name}}</a></span>
-        {{/each}}
-      </div>
-      <p>---</p>
       © 2022, Infi
       | <a href="https://github.com/infi-nl/the-infi-way" target="_blank">Source</a>
       | <a href="https://infi.nl" target="_blank">infi.nl</a>
