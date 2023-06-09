@@ -18,6 +18,11 @@
 
     --box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
     --block-image-height: 176px;
+
+
+    --color-background-light: var(--color-white);
+    --color-text-dark: var(--color-black);
+    --color-block-light: #f7f7f7;
 }
 
 * {
@@ -588,6 +593,81 @@ h2:hover a .anchor-hint {
         text-decoration: none;
     }
     
+    .no-print {
+        display: none;
+    }
+
+    .print-only {
+        display: initial;
+    }
+
+    footer {
+        text-align: left;
+    }
+
+    footer :last-child {
+        /* For some reason, without this, there a small "bite" out of the last line of text. */
+        padding-bottom: 1rem;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    html, body {
+        color: var(--color-text-dark);
+        text-shadow: 2px 2px 3px rgba(50, 50, 50, 0.1);
+    }
+
+    body {
+        background: var(--color-background-light) url("bg_icons_lightmode.svg");
+    }
+
+    .infi-test {
+        background: var(--color-block-light);
+    }
+
+    .block {
+        background: var(--color-block-light);
+    }
+
+    .details-toggle {
+        color: var(--color-text-dark);
+        border-color: var(--color-text-dark);
+        opacity: 0.7;
+    }
+
+    footer {
+        background: var(--color-block-light);
+    }
+
+    .infi-test ol li::before {
+        color: var(--color-text-light);
+        border-radius: 8px;
+    }
+
+    .infi-test .topic-icon {
+        border: none;
+    }
+
+    .infi-test .topic-icon img {
+        filter: invert(100%);
+        height: 1.5rem;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-right: 0;
+    }
+
+    .block {
+        page-break-after: always;
+    }
+
+    .block-image {
+        margin-top: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
     .no-print {
         display: none;
     }
