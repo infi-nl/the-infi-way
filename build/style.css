@@ -16,6 +16,11 @@
     --color-block: #212121;
 
     --box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+
+
+    --color-background-light: var(--color-white);
+    --color-text-dark: var(--color-black);
+    --color-block-light: #f7f7f7;
 }
 
 * {
@@ -402,3 +407,37 @@ h2:hover a .anchor-hint {
 .block.topic-others .block-image {
     background: var(--color-topic-others);
 }
+
+@media (prefers-color-scheme: light) {
+    html, body {
+        color: var(--color-text-dark);
+        text-shadow: 2px 2px 3px rgba(50, 50, 50, 0.1);
+    }
+
+    body {
+        background: var(--color-background-light) url("bg_icons_lightmode.svg");
+    }
+
+    .infi-test {
+        background: var(--color-block-light);
+    }
+
+    .block {
+        background: var(--color-block-light);
+    }
+
+    .details-toggle {
+        color: var(--color-text-dark);
+        border-color: var(--color-text-dark);
+        opacity: 0.7;
+    }
+
+    footer {
+        background: var(--color-block-light);
+    }
+
+    .infi-test ol li::before {
+        color: var(--color-text-light);
+    }
+}
+
