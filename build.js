@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 const fs = require('fs/promises');
+const path = require("path");
 
 const templateFile = `${__dirname}/template.html`;
 const contentDir = `${__dirname}/content`;
 const outputDir = `${__dirname}/build`;
-const langMappings = { en: 'index' };
 
 const cliHelpText = `
 Usage: ./build.js [options]
@@ -59,42 +59,45 @@ function tryBuild() {
 async function build() {
   console.log('Starting build...');
   const template = (await fs.readFile(templateFile)).toString();
-  const contentFiles = await fs.readdir(contentDir);
-
   const processor = new TemplateProcessor();
   const compiledTemplate = processor.compile(template);
 
-  console.log('Processing languages:');
-  const languages = await Promise.all(contentFiles.map(async (f) => {
-    const code = f.substring(f.lastIndexOf('/') + 1, f.lastIndexOf('.'));
-    const mapping = langMappings[code] || code;
-    const content = JSON.parse((await fs.readFile(`${contentDir}/${f}`)).toString());
-    const name = content.language;
-    console.log(`  - ${code}${mapping !== code ? ` (${mapping})` : ''}: ${name}`);
+  console.log('Loading languages');
+  const languages = JSON.parse((await fs.readFile(path.join(contentDir, 'languages.json'))).toString());
 
-    return {
-      code,
-      mapping,
-      name,
-      content
-    }
-  }));
+  console.log('Processing languages');
+  const defaultLanguage = languages.default;
+  for (const language of languages.languages) {
+    const code = language.code;
+    const isDefault = code === defaultLanguage;
+    const name = language.name;
+    const contentFile =  path.join(contentDir, language.contentFile);
 
-  console.log('Processing language:');
-  for (const language of languages) {
-    console.log(`  - ${language.code}${language.mapping !== language.code ? ` (${language.mapping})` : ''}`);
+    console.log(`  - ${code} ${name}${isDefault ? ' (default)' : ''} from ${contentFile}`);
+
     const content = {
-      ...language.content,
-      lang: language.code,
-      languages: languages.map((l) => ({
+      ...JSON.parse((await fs.readFile(contentFile)).toString()),
+      lang: code,
+      languages: languages.languages.map(l => ({
         code: l.code,
         name: l.name,
-        mapping: l.mapping,
-        isCurrentLanguage: language === l,
+        href: (l.code === defaultLanguage) ? '/' : `/${l.outPath}`,
+        isCurrentLanguage: l.code === code,
       }))
-    }
+    };
+
     const processed = processor.process(compiledTemplate, content);
-    await fs.writeFile(`${outputDir}/${language.mapping}.html`, processed);
+    console.log('    Input processed');
+
+    const languageDir = path.join(outputDir, language.outPath);
+    fs.mkdir(languageDir, {recursive: true});
+    console.log(`    Writing to ${languageDir}/index.html`);
+    await fs.writeFile(path.join(languageDir, 'index.html'), processed);
+
+    if (isDefault) {
+      console.log(`    Writing to ${outputDir}/index.html`);
+      await fs.writeFile(path.join(outputDir, 'index.html'), processed);
+    }
   }
 
   console.log(`Build finished at ${new Date().toLocaleString('en-GB')}`);

@@ -14,8 +14,8 @@
     <meta charset="UTF-8">
     <meta name="description" content="{{description}}">
     <title>The Infi Way</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.png?v=1">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/favicon.png?v=1">
   </head>
   <body>
     <!--
@@ -26,7 +26,7 @@
     -->
     <header>
       <h1><a href="#">
-        The <img src="logo_infi.svg" alt="Infi"> Way
+        The <img src="/logo_infi.svg" alt="Infi"> Way
       </a></h1>
       <p role="doc-subtitle">{{header.subtitle}}</p>
     </header>
@@ -357,7 +357,7 @@
     <footer>
       <div class="language-select">
         {{#each languages}}
-          <span class="{{#if isCurrentLanguage}}current{{/if}}"><a hreflang="{{code}}" href="{{mapping}}.html">{{name}}</a></span>
+          <span class="{{#if isCurrentLanguage}}current{{/if}}"><a hreflang="{{code}}" href="{{href}}">{{name}}</a></span>
         {{/each}}
       </div>
       <p>---</p>
