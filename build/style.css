@@ -264,6 +264,22 @@ h2:hover a .anchor-hint {
     grid-column: 1 / span 2;
 }
 
+.language-select {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-top: 0.15rem;
+    padding-right: 0.4rem;
+}
+
+.language-select span:not(:last-child):after {
+    content: " | ";
+}
+
+.language-select span.current {
+    font-weight: bold;
+}
+
 @media (max-width: 1024px) {
     .details-toggle {
         top: 10px;

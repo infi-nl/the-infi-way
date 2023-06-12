@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 const fs = require('fs/promises');
+const path = require("path");
 
 const templateFile = `${__dirname}/template.html`;
 const contentDir = `${__dirname}/content`;
 const outputDir = `${__dirname}/build`;
-const langMappings = { en: 'index' };
 
 const cliHelpText = `
 Usage: ./build.js [options]
@@ -59,20 +59,45 @@ function tryBuild() {
 async function build() {
   console.log('Starting build...');
   const template = (await fs.readFile(templateFile)).toString();
-  const contentFiles = await fs.readdir(contentDir);
-
   const processor = new TemplateProcessor();
   const compiledTemplate = processor.compile(template);
 
-  console.log('Processing language:');
-  for (const f of contentFiles) {
-    const lang = f.substring(f.lastIndexOf('/') + 1, f.lastIndexOf('.'));
-    const mapping = langMappings[lang];
-    console.log(`  - ${lang}${mapping ? ` (${mapping})` : ''}`);
-    const content = JSON.parse((await fs.readFile(`${contentDir}/${f}`)).toString());
-    content.lang = lang;
+  console.log('Loading languages');
+  const languages = JSON.parse((await fs.readFile(path.join(contentDir, 'languages.json'))).toString());
+
+  console.log('Processing languages');
+  const defaultLanguage = languages.default;
+  for (const language of languages.languages) {
+    const code = language.code;
+    const isDefault = code === defaultLanguage;
+    const name = language.name;
+    const contentFile =  path.join(contentDir, language.contentFile);
+
+    console.log(`  - ${code} ${name}${isDefault ? ' (default)' : ''} from ${contentFile}`);
+
+    const content = {
+      ...JSON.parse((await fs.readFile(contentFile)).toString()),
+      lang: code,
+      languages: languages.languages.map(l => ({
+        code: l.code,
+        name: l.name,
+        href: (l.code === defaultLanguage) ? '/' : `/${l.outPath}`,
+        isCurrentLanguage: l.code === code,
+      }))
+    };
+
     const processed = processor.process(compiledTemplate, content);
-    await fs.writeFile(`${outputDir}/${mapping || lang}.html`, processed);
+    console.log('    Input processed');
+
+    const languageDir = path.join(outputDir, language.outPath);
+    fs.mkdir(languageDir, {recursive: true});
+    console.log(`    Writing to ${languageDir}/index.html`);
+    await fs.writeFile(path.join(languageDir, 'index.html'), processed);
+
+    if (isDefault) {
+      console.log(`    Writing to ${outputDir}/index.html`);
+      await fs.writeFile(path.join(outputDir, 'index.html'), processed);
+    }
   }
 
   console.log(`Build finished at ${new Date().toLocaleString('en-GB')}`);
@@ -85,6 +110,7 @@ class TemplateProcessor {
 
   #funcMapping = {
     each: this.#processFuncEach.bind(this),
+    if: this.#processFuncIf.bind(this),
   };
 
   /**
@@ -240,6 +266,14 @@ class TemplateProcessor {
     }
 
     return list.map((item) => this.process(compiledTemplate, item)).join('');
+  }
+
+  #processFuncIf(tag, compiledTemplate, content) {
+    // limited to checking a single boolean
+    if (!content[tag.args[0]]) {
+      return;
+    }
+    return this.process(compiledTemplate, content);
   }
 
   static #assertArgLength(tag, expected) {
