@@ -69,12 +69,8 @@
       "subtitle": "We work for <em>the client of our client</em>. They use software to achieve <em>their</em> goals, our goal is to help them with that.",
       "how-title": "How we like to do this:",
       "how": [
-        "<em>Direct contact</em> with users",
-        "Prototyping, iterate quickly",
-        "Work user-centric",
-        "Close collaboration with designers",
-        "Work should deliver <em>value</em>",
-        "Work from \"why\""
+        "Iterate quickly with direct feedback from users",
+        "Understand the user to provide value"
       ],
       "examples-title": "Concrete examples:",
       "examples": [
@@ -92,13 +88,13 @@
       "subtitle": "We work in a modern way, aiming for quality. \"First time right\" is also cheapest in the end.",
       "how-title": "How we like to do this:",
       "how": [
-        "Modern version control",
-        "Up to date tooling, frameworks, and libraries",
+        "Everything in version control",
+        "Up-to-date tools",
         "Automation where possible",
         "Strong test coverage",
-        "Linting, code quality checks",
+        "Linting",
         "Pair programming",
-        "Code reviews for (nearly) everything"
+        "Code reviews"
       ],
       "examples-title": "Concrete examples:",
       "examples": [
@@ -124,10 +120,7 @@
         "Clone &amp; run repositories",
         "<a href=\"https://en.wikipedia.org/wiki/Continuous_integration\" target=\"_blank\">Continuous integration</a>, <a href=\"https://en.wikipedia.org/wiki/Continuous_delivery\" target=\"_blank\">continuous delivery</a>",
         "<a href=\"https://en.wikipedia.org/wiki/Development,_testing,_acceptance_and_production\" target=\"_blank\">DTAP</a>",
-        "Infrastructure as code",
-        "Ad hoc scripts in source control",
-        "Backup scripts in source control",
-        "Monitoring and alerting defined in code"
+        "Infra, scripts, and monitoring in code"
       ],
       "examples-title": "Concrete examples:",
       "examples": [
@@ -143,16 +136,16 @@
       ]
     },
     "technology": {
-      "title": "Used Technology",
+      "title": "Technology",
       "subtitle": "We prefer using \"<em>the best tool for the job</em>\"; we're generalists who can quickly specialize when the need arises.",
       "how-title": "How we like to do this:",
       "how": [
-        "We do custom-made software; aiding in buy-over-build where needed",
-        "Hosting (usually) in the cloud",
+        "OS is a personal choice per developer",
+        "We make custom software and aid in buy-over-build",
+        "Hosting in the cloud",
         "Back-end in a modern stack",
-        "Front-end normally with mature frameworks",
-        "Mobile cross-platform, unless \"native\" <em>really</em> adds value",
-        "Data storage fitting for the project"
+        "Front-end with mature frameworks",
+        "Mobile, cross-platform applications"
       ],
       "examples-title": "Concrete examples:",
       "examples": [
@@ -174,18 +167,15 @@
     },
     "process-and-team": {
       "title": "Process and Team",
-      "subtitle": "Teams work <em>autonomously</em>, but usually pick an <em>agile</em> way of working. With a Product Owner from the customer.",
+      "subtitle": "Teams work <em>autonomously</em>, but usually pick an <em>agile</em> way of working with a Product Owner from the customer.",
       "how-title": "How we like to do this:",
       "how": [
-        "Team determines their own process",
-        "Continuously improve the process",
+        "Teams determine and improve their processes",
         "Product Owner from the client",
-        "Scrum master (can be a developer or project manager)",
+        "Scrum master",
         "Maintain a planning <em>together</em>",
-        "<em>All</em> team members help with refinement",
-        "Minimum of 2 people per <em>team</em>, split up from 6-7 upward",
-        "Call in help from colleagues in other teams",
-        "Regularly work together with the client at the same location",
+        "Work in small teams",
+        "Call in help from internal and external experts",
         "Testers, designers, and other experts called in when needed"
       ],
       "examples-title": "Concrete examples:",
@@ -208,8 +198,7 @@
       "subtitle": "Building custom software is a craft. We are happy (and proud!) to show what's going on behind the scenes.",
       "how-title": "How we like to do this:",
       "how": [
-        "Active knowledge sharing",
-        "Plenty of studying",
+        "Study and knowledge sharing",
         "Invest in tooling",
         "Great hardware",
         "Experiment",
@@ -217,7 +206,7 @@
       ],
       "examples-title": "Concrete examples:",
       "examples": [
-        "Presentations (internally and externally)",
+        "Internal and external presentations",
         "Study groups, self-study",
         "Visit conferences and meetups",
         "<a href=\"https://www.elastic.co/kibana/\" target=\"_blank\">Kibana</a>, <a href=\"https://sentry.io/\" target=\"_blank\">Sentry</a>, <a href=\"https://www.zabbix.com/\" target=\"_blank\">Zabbix</a>, etc."
@@ -237,12 +226,10 @@
       "how-title": "Those foundations include:",
       "how": [
         "<strong>Backups</strong>, including encrypted offsite backups",
-        "<strong>Security</strong> in code, and a secure way of working",
-        "<strong>Security audits</strong> when sensible (possibly via audits)",
+        "<strong>Security</strong> as a core value in our work",
+        "<strong>Audits</strong> when sensible",
         "<strong>Performance</strong>, for example via load testing",
         "Be critical of features, come up with alternatives",
-        "Buy-over-build suggestions where that makes sense",
-        "OS (Windows, OSX, Linux) as a personal choice per developer",
         "Open Source usage and contributions",
         "Meetups: host and organize",
         "Be ourselves: (Dutch manifesto) \"<em><a href=\"https://infi.nl/manifest/\" target=\"_blank\">Wij zijn mensen.</a></em>\""
