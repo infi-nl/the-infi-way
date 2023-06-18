@@ -122,8 +122,8 @@
       "how": [
         "Architectuur <em>in</em> de bron",
         "Clone &amp; run repositories",
-        "Continuous integration, continuous delivery",
-        "OTAP",
+        "<a href=\"https://en.wikipedia.org/wiki/Continuous_integration\" target=\"_blank\">Continuous integration</a>, <a href=\"https://en.wikipedia.org/wiki/Continuous_delivery\" target=\"_blank\">continuous delivery</a>",
+        "<a href=\"https://nl.wikipedia.org/wiki/OTAP\" target=\"_blank\">OTAP</a>",
         "Infrastructure as code",
         "Ad hoc scripts in versiebeheer",
         "Backup-scripts in de broncode",
@@ -249,8 +249,8 @@
       ],
       "examples-title": "Denk aan bijvoorbeeld:",
       "examples": [
-        "OWASP",
-        "Password managers, 2FA, GPG, SSH",
+        "<a href=\"https://en.wikipedia.org/wiki/OWASP\" target=\"_blank\">OWASP</a>",
+        "Password managers, <a href=\"https://en.wikipedia.org/wiki/2FA\" target=\"_blank\">2FA</a>, <a href=\"https://gnupg.org/\" target=\"_blank\">GPG</a>, <a href=\"https://en.wikipedia.org/wiki/Secure_Shell\" target=\"_blank\">SSH</a>",
         "<a href=\"https://locust.io/\" target=\"_blank\">Locust</a>, <a href=\"https://octoperf.com/\" target=\"_blank\">OctoPerf</a>, <a href=\"https://jmeter.apache.org/\" target=\"_blank\">JMeter</a>",
         "<a href=\"https://auth0.com/\" target=\"_blank\">Auth0</a>, <a href=\"https://stripe.com/\" target=\"_blank\">Stripe</a>, <a href=\"https://sendgrid.com/\" target=\"_blank\">SendGrid</a>, <a href=\"https://www.contentful.com/\" target=\"_blank\">Contentful</a>, <a href=\"https://lokalise.com/\" target=\"_blank\">Lokalise</a>, etc.",
         "Onbeheerde laptops altijd locken <!-- en mocht je dat een keer vergeten, kun je er op rekenen dat je collega's hier op ludieke wijze (met serieuze ondertoon!) op zullen attenderen... -->"
