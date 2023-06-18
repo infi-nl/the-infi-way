@@ -33,7 +33,7 @@ html, body {
 }
 
 body {
-    background: var(--color-background) url("bg_icons.svg");
+    background: var(--color-background) url("bg_icons.svg") fixed;
 }
 
 h1, h2, h3, h4, h5, h6, p, ol, ul {
