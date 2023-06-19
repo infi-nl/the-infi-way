@@ -149,7 +149,7 @@ footer {
     box-shadow: var(--box-shadow);
     display: flex;
     background: var(--color-block);
-    margin: 44px 0.5rem 44px calc(0.5rem + 88px);
+    margin: 44px 0.5rem 44px 0.5rem;
 }
 
 .block-content {
