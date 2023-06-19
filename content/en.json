@@ -92,7 +92,7 @@
         "Up-to-date tools",
         "Automation where possible",
         "Strong test coverage",
-        "Linting",
+        "Code quality controls",
         "Pair programming",
         "Code reviews"
       ],
