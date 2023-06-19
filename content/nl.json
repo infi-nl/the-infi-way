@@ -69,8 +69,11 @@
       "subtitle": "Wij werken voor <em>de klanten van onze klant</em>. Ze gebruiken software om <em>hun</em> doelen te bereiken, ons doel is hen daarbij te helpen.",
       "how-title": "Hoe we dat graag doen:",
       "how": [
-        "Itereer snel met directe feedback van gebruikers",
-        "Begrijp de user om waarde op te leveren"
+        "<em>Direct contact</em> met (eind)gebruikers",
+        "Prototyping, snel itereren",
+        "User-centric werken",
+        "Nauwe samenwerking met designers",
+        "Werken vanuit \"waarom\""
       ],
       "examples-title": "Denk aan bijvoorbeeld:",
       "examples": [
@@ -147,7 +150,7 @@
         "Hosting in de cloud",
         "Back-end in een moderne stack",
         "Front-end met volwassen frameworks",
-        "Mobiele, cross-platform applicaties"
+        "Mobile cross-platform, tenzij \"native\" écht meerwaarde biedt"
       ],
       "examples-title": "Denk aan bijvoorbeeld:",
       "examples": [

@@ -69,8 +69,11 @@
       "subtitle": "We work for <em>the client of our client</em>. They use software to achieve <em>their</em> goals, our goal is to help them with that.",
       "how-title": "How we like to do this:",
       "how": [
-        "Iterate quickly with direct feedback from users",
-        "Understand the user to provide value"
+        "<em>Direct contact</em> with users",
+        "Prototyping, iterate quickly",
+        "Work user-centric",
+        "Close collaboration with designers",
+        "Work from \"why\""
       ],
       "examples-title": "Concrete examples:",
       "examples": [
@@ -145,7 +148,7 @@
         "Hosting in the cloud",
         "Back-end in a modern stack",
         "Front-end with mature frameworks",
-        "Mobile, cross-platform applications"
+        "Mobile cross-platform, unless \"native\" <em>really</em> adds value"
       ],
       "examples-title": "Concrete examples:",
       "examples": [
@@ -176,7 +179,7 @@
         "Maintain a planning <em>together</em>",
         "Work in small teams",
         "Call in help from internal and external experts",
-        "Testers, designers, and other experts called in when needed"
+        "Regularly work together with the client at the same location"
       ],
       "examples-title": "Concrete examples:",
       "examples": [
