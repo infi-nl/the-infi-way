@@ -6,51 +6,7 @@ const templateFile = `${__dirname}/template.html`;
 const contentDir = `${__dirname}/content`;
 const outputDir = `${__dirname}/build`;
 
-const cliHelpText = `
-Usage: ./build.js [options]
-
-Options:
-  -h, --help      Print the help and usage info (this text).
-  -w, --watch     Watch the template and content files for changes.
-`.trim();
-
-(async () => {
-  const [, , ...args] = process.argv;
-
-  for (const arg of args) {
-    switch (arg) {
-      case '-h':
-      case '--help':
-        console.log(cliHelpText);
-        return;
-      case '-w':
-      case '--watch':
-        await buildWatch();
-        return;
-      default:
-        console.error(`Unknown option: ${arg}`);
-        console.log(cliHelpText);
-        process.exit(1);
-        return;
-    }
-  }
-
-  await tryBuild();
-})();
-
-async function buildWatch() {
-  console.log('Starting build in watch mode.');
-  await tryBuild();
-  startWatchAndBuild(templateFile);
-  startWatchAndBuild(contentDir);
-}
-
-async function startWatchAndBuild(file) {
-  const watcher = fs.watch(file, { recursive: true });
-  for await (const _ of watcher) {
-    await tryBuild();
-  }
-}
+tryBuild();
 
 function tryBuild() {
   return build().catch((e) => console.error(`Build failed! ${e.message}`));
