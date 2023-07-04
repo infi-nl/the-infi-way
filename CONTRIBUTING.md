@@ -24,9 +24,7 @@ Usage is as follows:
 node build.js
 
 # To rebuild whenever content or template changes:
-./build.js -w
-# Or
-node build.js -w
+npm start
 ```
 
 This script uses `template.html` and the files from the `content` folder to generate a `build` folder with one page per language (one of them default as `index.html`).
