@@ -73,7 +73,6 @@
         "Prototyping, snel itereren",
         "User-centric werken",
         "Nauwe samenwerking met designers",
-        "Werk moet <em>waarde</em> opleveren",
         "Werken vanuit \"waarom\""
       ],
       "examples-title": "Denk aan bijvoorbeeld:",
@@ -92,13 +91,13 @@
       "subtitle": "We werken op een moderne manier, gericht op kwaliteit. <em>Goed</em> is op de lange termijn <em>ook</em> het goedkoopst.",
       "how-title": "Hoe we dat graag doen:",
       "how": [
-        "Modern versiebeheer",
-        "Up to date tooling, frameworks en libraries",
+        "Alles in versiebeheer",
+        "Up-to-date tools",
         "Automation waar mogelijk",
         "Sterke test coverage",
-        "Linting, code quality checks",
+        "Linting",
         "Pair programming",
-        "Code reviews voor (vrijwel) alles"
+        "Code reviews"
       ],
       "examples-title": "Denk aan bijvoorbeeld:",
       "examples": [
@@ -124,10 +123,9 @@
         "Clone &amp; run repositories",
         "<a href=\"https://en.wikipedia.org/wiki/Continuous_integration\" target=\"_blank\">Continuous integration</a>, <a href=\"https://en.wikipedia.org/wiki/Continuous_delivery\" target=\"_blank\">continuous delivery</a>",
         "<a href=\"https://nl.wikipedia.org/wiki/OTAP\" target=\"_blank\">OTAP</a>",
-        "Infrastructure as code",
-        "Ad hoc scripts in versiebeheer",
-        "Backup-scripts in de broncode",
-        "Monitoring en alerting in de bron gedefinieerd"
+        "Continuous integration, continuous delivery",
+        "OTAP",
+        "Infra, scripts, en monitoring in de code"
       ],
       "examples-title": "Denk aan bijvoorbeeld:",
       "examples": [
@@ -143,16 +141,16 @@
       ]
     },
     "technology": {
-      "title": "Gebruikte tech",
+      "title": "Technologie",
       "subtitle": "We gebruiken bij voorkeur altijd de \"<em>best tool for the job</em>\"; we zijn generalisten die zo nodig snel kunnen specialiseren en verdiepen.",
       "how-title": "Hoe we dat graag doen:",
       "how": [
-        "Infi is maatwerk; we helpen met buy-over-build waar logisch",
-        "Hosting (doorgaans) in de cloud",
+        "OS naar keuze voor developers",
+        "Wij leveren maatwerk en helpen bij buy-over-build",
+        "Hosting in de cloud",
         "Back-end in een moderne stack",
-        "Front-end doorgaans met volwassen frameworks",
-        "Mobile cross-platform, tenzij \"native\" écht meerwaarde biedt",
-        "Data-opslag passend bij het project"
+        "Front-end met volwassen frameworks",
+        "Mobile cross-platform, tenzij \"native\" écht meerwaarde biedt"
       ],
       "examples-title": "Denk aan bijvoorbeeld:",
       "examples": [
@@ -177,16 +175,13 @@
       "subtitle": "Teams werken <em>autonoom</em>, maar kiezen vrijwel altijd een vorm van <em>agile</em> werken. Met Product Owner van de klant.",
       "how-title": "Hoe we dat graag doen:",
       "how": [
-        "Team bepaalt eigen proces",
-        "Continu proces blijven verbeteren",
+        "Teams bepalen en verbeteren hun eigen proces",
         "Product Owner vanuit de klant",
-        "Scrummaster (projectmanager of developer)",
+        "Scrum master",
         "<em>Samen</em> een planning onderhouden",
-        "<em>Alle</em> teamleden helpen refinen",
-        "Minimaal 2 personen per <em>team</em>, splitsen vanaf 6 a 7",
-        "Collega's uit andere teams invliegen",
-        "Regelmatig samenwerken met klant in één kantoor",
-        "Testers, designers, en overige expertise aanhaken"
+        "Werken in kleine teams",
+        "Hulp van interne en externe experts zoeken",
+        "Regelmatig samenwerken met klant in één kantoor"
       ],
       "examples-title": "Denk aan bijvoorbeeld:",
       "examples": [
@@ -208,8 +203,7 @@
       "subtitle": "Maatwerksoftware bouwen is een ambacht. We willen vol vertrouwen (én trots!) een kijkje achter de schermen kunnen geven.",
       "how-title": "Hoe we dat doen:",
       "how": [
-        "Actieve kennisdeling",
-        "Voldoende studeren",
+        "Studie en kennisdeling",
         "Investeren in tooling",
         "Goede hardware",
         "Experimenteren",
@@ -217,7 +211,7 @@
       ],
       "examples-title": "Denk aan bijvoorbeeld:",
       "examples": [
-        "Presentaties (intern en extern)",
+        "Interne en externe presentaties",
         "Leergangen, zelfstudie",
         "Congressen en meetups bezoeken",
         "<a href=\"https://www.elastic.co/kibana/\" target=\"_blank\">Kibana</a>, <a href=\"https://sentry.io/\" target=\"_blank\">Sentry</a>, <a href=\"https://www.zabbix.com/\" target=\"_blank\">Zabbix</a>, etc."
@@ -237,12 +231,10 @@
       "how-title": "Wat die vaste waardes zijn:",
       "how": [
         "<strong>Backups</strong>, inclusief encrypted offsite backups",
-        "<strong>Security</strong> van code, en secure manier van werken",
-        "<strong>Security audits</strong> waar logisch (eventueel extern)",
+        "<strong>Security</strong> is een kernwaarde in ons werk",
+        "<strong>Audits</strong> waar logisch",
         "<strong>Performance</strong>, bijvoorbeeld via load testing",
         "Kritisch meedenken over features, alternatieven aandragen",
-        "Buy-over-build suggereren indien logisch",
-        "OS naar keuze (Windows, OSX, Linux) voor devs",
         "Open Source gebruiken en ondersteunen",
         "Meetups hosten en/of organiseren",
         "Onszelf zijn: \"<em><a href=\"https://infi.nl/manifest/\" target=\"_blank\">Wij zijn mensen.</a></em>\""
