@@ -34,7 +34,7 @@ Plus, we also _enjoy_ developing this "in the open".
 
 Second, we would love for others to share this setup with more people.
 And when the time comes, perhaps also remix this content to their own liking.
-For that we do need to fix [issue #3](https://github.com/infi-nl/the-infi-way/issues/3) and choose a proper license to allow that.
+For that we do need to fix [issue #22](https://github.com/infi-nl/the-infi-way/issues/22) and choose a proper license to allow that.
 
 Either way, feel free to [open an issue](https://github.com/infi-nl/the-infi-way/issues/new) and/or [submit a PR](https://github.com/infi-nl/the-infi-way/pulls)!
 We always welcome new perspectives.
