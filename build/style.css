@@ -51,8 +51,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-    text-decoration-thickness: 1px;
+    text-decoration-thickness: 2px;
     text-decoration-color: var(--color-orange);
+    text-underline-offset: 3px;
 }
 
 a, a:link, a:visited, a:focus, a:active {
