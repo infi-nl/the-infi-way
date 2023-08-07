@@ -133,10 +133,9 @@ footer {
     align-items: baseline;
 }
 
-.infi-test ol li::before {
+.infi-test ol li::before, .topic-icon {
     counter-increment: infi-test;
     content: counter(infi-test);
-    margin-right: 0.7rem;
     flex: 0 0 1.7rem;
     height: 1.7rem;
     border-radius: 8px;
@@ -364,35 +363,35 @@ h2:hover a .anchor-hint {
     }
 }
 
-.infi-test ol .topic-users::before {
+.infi-test ol .topic-users::before, .topic-users.topic-icon {
     background: var(--color-topic-users);
 }
 
-.infi-test ol .topic-principles::before {
+.infi-test ol .topic-principles::before, .topic-principles.topic-icon {
     background: var(--color-topic-principles);
 }
 
-.infi-test ol .topic-source-code::before {
+.infi-test ol .topic-source-code::before, .topic-source-code.topic-icon {
     background: var(--color-topic-source-code);
 }
 
-.infi-test ol .topic-technology::before {
+.infi-test ol .topic-technology::before, .topic-technology.topic-icon {
     background: var(--color-topic-technology);
 }
 
-.infi-test ol .topic-process-and-team::before {
+.infi-test ol .topic-process-and-team::before, .topic-process-and-team.topic-icon {
     background: var(--color-topic-process-and-team);
 }
 
-.infi-test ol .topic-craft::before {
+.infi-test ol .topic-craft::before, .topic-craft.topic-icon {
     background: var(--color-topic-craft);
 }
 
-.infi-test ol .topic-others::before {
+.infi-test ol .topic-others::before, .topic-others.topic-icon {
     background: var(--color-topic-others);
 }
 
-.block.topic-users .block-image {
+.block.topic-users .topic-icon .block-image {
     background: var(--color-topic-users);
 }
 
@@ -417,5 +416,53 @@ h2:hover a .anchor-hint {
 }
 
 .block.topic-others .block-image {
+    background: var(--color-topic-others);
+}
+
+.topic-icon {
+    padding: .25rem;
+    margin-top: auto;
+    margin-right: .7rem
+}
+
+.topic-icon::before {
+    content: "a";
+    height: .25rem;
+    width: .7rem;
+    background-color: white;
+}
+
+.connector {
+    width: .35rem;
+    height: .25rem;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.connector.users {
+    background: var(--color-topic-users);
+}
+
+.connector.principles {
+    background: var(--color-topic-principles);
+}
+
+.connector.source-code{
+    background: var(--color-topic-source-code);
+}
+
+.connector.technology {
+    background: var(--color-topic-technology);
+}
+
+.connector.process-and-team {
+    background: var(--color-topic-process-and-team);
+}
+
+.connector.craft {
+    background: var(--color-topic-craft);
+}
+
+.connector.others {
     background: var(--color-topic-others);
 }
