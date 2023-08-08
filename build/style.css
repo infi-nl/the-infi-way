@@ -128,20 +128,24 @@ footer {
 }
 
 .infi-test ol li {
-    margin-bottom: 0.7rem;
+    margin-bottom: 1.7rem;
     display: flex;
-    align-items: baseline;
+    align-items: center;
+    
 }
 
 .infi-test ol li::before, .topic-icon {
-    counter-increment: infi-test;
-    content: counter(infi-test);
     flex: 0 0 1.7rem;
     height: 1.7rem;
-    border-radius: 8px;
+    border-radius: 8px 0px 0px 8px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
+}
+
+.infi-test ol li::before {
+    counter-increment: infi-test;
+    content: counter(infi-test);
 }
 
 .block {
@@ -420,49 +424,42 @@ h2:hover a .anchor-hint {
 }
 
 .topic-icon {
-    padding: .25rem;
-    margin-top: auto;
-    margin-right: .7rem
+    margin-right: .7rem;
+    align-items: center;
 }
 
-.topic-icon::before {
-    content: "a";
-    height: .25rem;
-    width: .7rem;
-    background-color: white;
+.svg-wrapper.users {
+    border-color: var(--color-topic-users);
 }
 
-.connector {
-    width: .35rem;
-    height: .25rem;
-    margin-top: auto;
-    margin-bottom: auto;
+.svg-wrapper.principles {
+    border-color: var(--color-topic-principles);
 }
 
-.connector.users {
-    background: var(--color-topic-users);
+.svg-wrapper.source-code{
+    border-color: var(--color-topic-source-code);
 }
 
-.connector.principles {
-    background: var(--color-topic-principles);
+.svg-wrapper.technology {
+    border-color: var(--color-topic-technology);
 }
 
-.connector.source-code{
-    background: var(--color-topic-source-code);
+.svg-wrapper.process-and-team {
+    border-color: var(--color-topic-process-and-team);
 }
 
-.connector.technology {
-    background: var(--color-topic-technology);
+.svg-wrapper.craft {
+    border-color: var(--color-topic-craft);
 }
 
-.connector.process-and-team {
-    background: var(--color-topic-process-and-team);
+.svg-wrapper.others {
+    border-color: var(--color-topic-others);
 }
 
-.connector.craft {
-    background: var(--color-topic-craft);
-}
-
-.connector.others {
-    background: var(--color-topic-others);
+.svg-wrapper {
+    height: 2.7rem;
+    border-width: 2px;
+    border-style: solid;
+    padding: .5rem;
+    border-radius: 8px;
 }
