@@ -395,7 +395,7 @@ h2:hover a .anchor-hint {
     background: var(--color-topic-others);
 }
 
-.block.topic-users .topic-icon .block-image {
+.block.topic-users .block-image {
     background: var(--color-topic-users);
 }
 
