@@ -457,6 +457,7 @@ h2:hover a .anchor-hint {
 }
 
 .svg-wrapper {
+    max-width: 2.7rem;
     height: 2.7rem;
     border-width: 2px;
     border-style: solid;
