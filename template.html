@@ -7,7 +7,7 @@
         default-src 'none';
         font-src 'none';
         img-src 'self';
-        script-src 'self' 'sha256-Ae3eHf6iH3HmkxQ5VMpiwB2ZZoFXcpdPgXGAyxoGFBk=';
+        script-src 'self' 'sha256-ju5UOuDZFvTUxWwsCfWIzD55zQJOFPMLu3pMjeoPCqg=';
         style-src 'self';
       ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,17 +17,22 @@
     <link rel="stylesheet" href="/style.css">
     <link rel="icon" href="/favicon.png?v=1">
   </head>
-  <body>
+  <body id="viewToggle">
     <!--
       So this is the source of The Infi Way!
       Do you also know the way?
       En wil je ergens werken waar de voertaal Nederlands is?
       Kijk dan eens op https://werkenbij.infi.nl
     -->
-    <nav class="language-select">
-      {{#each languages}}
-      <span class="{{#if isCurrentLanguage}}current{{/if}}"><a hreflang="{{code}}" href="{{href}}">{{name}}</a></span>
-      {{/each}}
+    <nav class="utility-bar">
+      <button class="details-toggle" title="{{utilityBar.toggleView}}">
+        <span class="sr-only">{{utilityBar.toggleView}}</span>
+      </button>
+      <div class="language-select">
+        {{#each languages}}
+        <span class="{{#if isCurrentLanguage}}current{{/if}}"><a hreflang="{{code}}" href="{{href}}">{{name}}</a></span>
+        {{/each}}
+      </div>
     </nav>
     <header>
       <h1><a href="#">
@@ -36,7 +41,7 @@
       <p role="doc-subtitle">{{header.subtitle}}</p>
     </header>
 
-    <main class="wrapper" id="viewToggle">
+    <main class="wrapper">
       <section class="intro">
         <div class="infi-test">
           <span id="infi-test" class="block-anchor-with-offset"></span>
@@ -72,7 +77,6 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.users.subtitle}}</p>
-              <button class="details-toggle" data-toggle-target="users"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
               <h3>{{topic.users.how-title}}</h3>
@@ -118,7 +122,6 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.principles.subtitle}}</p>
-              <button class="details-toggle" data-toggle-target="principles"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
               <h3>{{topic.principles.how-title}}</h3>
@@ -160,7 +163,6 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.source-code.subtitle}}</p>
-              <button class="details-toggle" data-toggle-target="source-code"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
               <h3>{{topic.source-code.how-title}}</h3>
@@ -206,7 +208,6 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.technology.subtitle}}</p>
-              <button class="details-toggle" data-toggle-target="technology"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
               <h3>{{topic.technology.how-title}}</h3>
@@ -248,7 +249,6 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.process-and-team.subtitle}}</p>
-              <button class="details-toggle" data-toggle-target="process-and-team"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
               <h3>{{topic.process-and-team.how-title}}</h3>
@@ -287,7 +287,6 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.craft.subtitle}}</p>
-              <button class="details-toggle" data-toggle-target="craft"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
               <h3>{{topic.craft.how-title}}</h3>
@@ -332,7 +331,6 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.others.subtitle}}</p>
-              <button class="details-toggle" data-toggle-target="others"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
               <h3>{{topic.others.how-title}}</h3>
@@ -384,10 +382,8 @@
       // need for 'unsafe-inline'.
       document.addEventListener("DOMContentLoaded", () => {
         [...document.querySelectorAll(".details-toggle")].forEach(element => {
-          const anchor = element.dataset.toggleTarget;
           element.addEventListener('click', () => {
             document.getElementById('viewToggle').classList.toggle('view-overview');
-            location.hash = anchor;
           });
         });
       });

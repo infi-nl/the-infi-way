@@ -198,36 +198,6 @@ h2:hover a .anchor-hint {
     fill: var(--color-white);
 }
 
-.details-toggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 2em;
-    height: 2em;
-    opacity: 0.5;
-    background: none !important;
-    padding: 0 !important;
-    font-size: inherit;
-    font-family: inherit;
-    cursor: pointer;
-    color: var(--color-text-light);
-    border: 2px solid var(--color-text-light);
-    border-radius: 50%;
-    text-align: center;
-}
-
-.details-toggle:hover {
-    opacity: 1;
-}
-
-.details-toggle:before {
-    content: '▲';
-}
-
-.view-overview .details-toggle:before {
-    content: '▼'
-}
-
 .details {
     font-size: 0.8rem;
     line-height: 1.2rem;
@@ -265,10 +235,44 @@ h2:hover a .anchor-hint {
     grid-column: 1 / span 2;
 }
 
+.utility-bar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.details-toggle {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 0.25rem;
+    opacity: 0.5;
+    background: none;
+    padding: 0 !important;
+    font-size: inherit;
+    font-family: inherit;
+    cursor: pointer;
+    color: var(--color-text-light);
+    border: 2px solid var(--color-text-light);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.details-toggle:hover {
+    background: var(--color-orange);
+    opacity: 1;
+}
+
+.details-toggle:before {
+    display: block;
+    content: '-';
+    margin-top: -.25rem;
+}
+
+.view-overview .details-toggle:before {
+    content: '+';
+}
+
 .language-select {
-    position: absolute;
-    top: 0;
-    right: 0;
     padding-top: 0.15rem;
     padding-right: 0.4rem;
 }
@@ -279,15 +283,6 @@ h2:hover a .anchor-hint {
 
 .language-select span.current {
     font-weight: bold;
-}
-
-@media (max-width: 1024px) {
-    .details-toggle {
-        top: 10px;
-        right: 10px;
-        width: 1.5em;
-        height: 1.5em;
-    }
 }
 
 @media (max-width: 768px) {
