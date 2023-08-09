@@ -238,6 +238,7 @@ h2:hover a .anchor-hint {
 .utility-bar {
     display: flex;
     justify-content: flex-end;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
