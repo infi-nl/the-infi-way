@@ -128,21 +128,24 @@ footer {
 }
 
 .infi-test ol li {
-    margin-bottom: 0.7rem;
+    margin-bottom: 1.7rem;
     display: flex;
-    align-items: baseline;
+    align-items: center;
+    
+}
+
+.infi-test ol li::before, .topic-icon {
+    flex: 0 0 1.7rem;
+    height: 1.7rem;
+    border-radius: 8px 0px 0px 8px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .infi-test ol li::before {
     counter-increment: infi-test;
     content: counter(infi-test);
-    margin-right: 0.7rem;
-    flex: 0 0 1.7rem;
-    height: 1.7rem;
-    border-radius: 8px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .block {
@@ -192,10 +195,9 @@ h2:hover a .anchor-hint {
     box-shadow: var(--box-shadow);
 }
 
-.block-image svg {
+.block-image img {
     width: 132px;
     height: 132px;
-    fill: var(--color-white);
 }
 
 .details-toggle {
@@ -364,31 +366,31 @@ h2:hover a .anchor-hint {
     }
 }
 
-.infi-test ol .topic-users::before {
+.infi-test ol .topic-users::before, .topic-users.topic-icon {
     background: var(--color-topic-users);
 }
 
-.infi-test ol .topic-principles::before {
+.infi-test ol .topic-principles::before, .topic-principles.topic-icon {
     background: var(--color-topic-principles);
 }
 
-.infi-test ol .topic-source-code::before {
+.infi-test ol .topic-source-code::before, .topic-source-code.topic-icon {
     background: var(--color-topic-source-code);
 }
 
-.infi-test ol .topic-technology::before {
+.infi-test ol .topic-technology::before, .topic-technology.topic-icon {
     background: var(--color-topic-technology);
 }
 
-.infi-test ol .topic-process-and-team::before {
+.infi-test ol .topic-process-and-team::before, .topic-process-and-team.topic-icon {
     background: var(--color-topic-process-and-team);
 }
 
-.infi-test ol .topic-craft::before {
+.infi-test ol .topic-craft::before, .topic-craft.topic-icon {
     background: var(--color-topic-craft);
 }
 
-.infi-test ol .topic-others::before {
+.infi-test ol .topic-others::before, .topic-others.topic-icon {
     background: var(--color-topic-others);
 }
 
@@ -418,4 +420,46 @@ h2:hover a .anchor-hint {
 
 .block.topic-others .block-image {
     background: var(--color-topic-others);
+}
+
+.topic-icon {
+    margin-right: .7rem;
+    align-items: center;
+}
+
+.svg-wrapper.users {
+    border-color: var(--color-topic-users);
+}
+
+.svg-wrapper.principles {
+    border-color: var(--color-topic-principles);
+}
+
+.svg-wrapper.source-code{
+    border-color: var(--color-topic-source-code);
+}
+
+.svg-wrapper.technology {
+    border-color: var(--color-topic-technology);
+}
+
+.svg-wrapper.process-and-team {
+    border-color: var(--color-topic-process-and-team);
+}
+
+.svg-wrapper.craft {
+    border-color: var(--color-topic-craft);
+}
+
+.svg-wrapper.others {
+    border-color: var(--color-topic-others);
+}
+
+.svg-wrapper {
+    max-width: 2.7rem;
+    height: 2.7rem;
+    border-width: 2px;
+    border-style: solid;
+    padding: .5rem;
+    border-radius: 8px;
 }
