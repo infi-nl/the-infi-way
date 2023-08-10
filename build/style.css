@@ -195,10 +195,9 @@ h2:hover a .anchor-hint {
     box-shadow: var(--box-shadow);
 }
 
-.block-image svg {
+.block-image img {
     width: 132px;
     height: 132px;
-    fill: var(--color-white);
 }
 
 .details-toggle {
