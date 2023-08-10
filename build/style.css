@@ -477,6 +477,15 @@ h2:hover a .anchor-hint {
         text-shadow: none;
     }
 
+    .infi-test li::before {
+        print-color-adjust: exact;
+    }
+
+    .infi-test .topic-icon img {
+        print-color-adjust: exact;
+        background-color: var(--color-block);
+    }
+
     .details-toggle {
         display: none;
     }
