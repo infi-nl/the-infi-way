@@ -131,7 +131,6 @@ footer {
     margin-bottom: 1.7rem;
     display: flex;
     align-items: center;
-    
 }
 
 .infi-test ol li::before, .topic-icon {
@@ -462,4 +461,30 @@ h2:hover a .anchor-hint {
     border-style: solid;
     padding: .5rem;
     border-radius: 8px;
+}
+
+@media print {
+    :root {
+        --box-shadow: none;
+    }
+
+    .language-select {
+        display: none;
+    }
+
+    html, body {
+        text-shadow: none;
+    }
+
+    .details-toggle {
+        display: none;
+    }
+
+    .block {
+        page-break-before: always;
+    }
+
+    a {
+        text-decoration: none;
+    }
 }
