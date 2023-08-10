@@ -129,14 +129,13 @@ footer {
 }
 
 .infi-test ol li {
-    margin-bottom: 1.7rem;
+    margin-bottom: 0.7rem;
     display: flex;
     align-items: center;
 }
 
 .infi-test ol li::before, .topic-icon {
     flex: 0 0 1.7rem;
-    height: 1.7rem;
     border-radius: 8px 0px 0px 8px;
     display: inline-flex;
     justify-content: center;
@@ -144,6 +143,7 @@ footer {
 }
 
 .infi-test ol li::before {
+    height: 1.7rem;
     counter-increment: infi-test;
     content: counter(infi-test);
 }
@@ -475,6 +475,10 @@ h2:hover a .anchor-hint {
 
     html, body {
         text-shadow: none;
+    }
+
+    .infi-test li {
+        page-break-inside: avoid;
     }
 
     .infi-test li::before {
