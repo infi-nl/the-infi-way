@@ -146,6 +146,9 @@ footer {
     height: 1.7rem;
     counter-increment: infi-test;
     content: counter(infi-test);
+
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
 }
 
 .block {
@@ -193,6 +196,9 @@ h2:hover a .anchor-hint {
     align-items: center;
     justify-content: center;
     box-shadow: var(--box-shadow);
+
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
 }
 
 .block-image img {
@@ -475,6 +481,7 @@ h2:hover a .anchor-hint {
 
     html, body {
         text-shadow: none;
+        color: var(--color-black);
     }
 
     .infi-test li {
@@ -482,11 +489,12 @@ h2:hover a .anchor-hint {
     }
 
     .infi-test li::before {
-        print-color-adjust: exact;
+        color: var(--color-text-light);
     }
 
     .infi-test .topic-icon img {
         print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
         background-color: var(--color-block);
     }
 
@@ -499,7 +507,6 @@ h2:hover a .anchor-hint {
     }
 
     .block-image {
-        print-color-adjust: exact;
         margin-top: 0;
     }
 
