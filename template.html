@@ -7,7 +7,7 @@
         default-src 'none';
         font-src 'none';
         img-src 'self';
-        script-src 'self' 'sha256-ZadF+Baj9gTnmh4rF4Erb/7X5Om+zHtYPDjgPUXxrLs=';
+        script-src 'self' 'sha256-+crcbs+XwEF8PjOLQ+0P7OPV3mrFg5jEYM/KfJ9lybE=';
         style-src 'self';
       ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +25,7 @@
       Kijk dan eens op https://werkenbij.infi.nl
     -->
     <nav class="utility-bar">
-      <button class="details-toggle" title="{{utilityBar.toggleView}}">
+      <button class="summary-toggle" data-toggle="summary" title="{{utilityBar.toggleView}}">
         <span class="sr-only">{{utilityBar.toggleView}}</span>
       </button>
       <div class="language-select">
@@ -388,7 +388,7 @@
           document.getElementById('viewToggle').classList.toggle('view-summary');
         }
 
-        document.querySelector(".details-toggle").addEventListener('click', toggleDetailView);
+        document.querySelector('[data-toggle="summary"]').addEventListener('click', toggleDetailView);
       });
 
       function toggleDetailView() {

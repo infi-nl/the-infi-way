@@ -242,7 +242,7 @@ h2:hover a .anchor-hint {
     gap: 1rem;
 }
 
-.details-toggle {
+.summary-toggle {
     width: 1.5rem;
     height: 1.5rem;
     margin-top: 0.25rem;
@@ -258,18 +258,18 @@ h2:hover a .anchor-hint {
     text-align: center;
 }
 
-.details-toggle:hover {
+.summary-toggle:hover {
     background: var(--color-orange);
     opacity: 1;
 }
 
-.details-toggle:before {
+.summary-toggle:before {
     display: block;
     content: '-';
     margin-top: -.25rem;
 }
 
-.view-summary .details-toggle:before {
+.view-summary .summary-toggle:before {
     content: '+';
 }
 
