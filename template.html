@@ -7,7 +7,7 @@
         default-src 'none';
         font-src 'none';
         img-src 'self';
-        script-src 'self' 'sha256-ju5UOuDZFvTUxWwsCfWIzD55zQJOFPMLu3pMjeoPCqg=';
+        script-src 'self' 'sha256-ZadF+Baj9gTnmh4rF4Erb/7X5Om+zHtYPDjgPUXxrLs=';
         style-src 'self';
       ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -376,17 +376,35 @@
     </footer>
 
     <script>
-      // ⚠ Contents of this script block are hashed and used in
-      // the CSP meta tag. Any change (including white space) will
-      // require update of the CSP tag. All this to prevent the
-      // need for 'unsafe-inline'.
+      // ⚠ Contents of this script block are hashed and used in the CSP meta tag. 
+      // Any change (including white space) will require update of the CSP tag. 
+      // All this to prevent the need for 'unsafe-inline'.
+
       document.addEventListener("DOMContentLoaded", () => {
-        [...document.querySelectorAll(".details-toggle")].forEach(element => {
-          element.addEventListener('click', () => {
-            document.getElementById('viewToggle').classList.toggle('view-overview');
-          });
-        });
+
+        const url = new URL(window.location.href);
+
+        if (url.searchParams.get('summary') === 'true') {
+          document.getElementById('viewToggle').classList.toggle('view-summary');
+        }
+
+        document.querySelector(".details-toggle").addEventListener('click', toggleDetailView);
       });
+
+      function toggleDetailView() {
+        const viewToggleElem = document.getElementById('viewToggle');
+        viewToggleElem.classList.toggle('view-summary');
+
+        const url = new URL(window.location.href);
+
+        if (url.searchParams.get('summary') === 'true') {
+          url.searchParams.delete('summary');
+        } else {
+          url.searchParams.set('summary', 'true');
+        }
+
+        window.history.replaceState({}, '', url);
+      }
     </script>
   </body>
 </html>

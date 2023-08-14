@@ -210,28 +210,28 @@ h2:hover a .anchor-hint {
     margin-bottom: 0.2rem;
 }
 
-.view-overview .details,
-.view-overview .block-image {
+.view-summary .details,
+.view-summary .block-image {
     display: none;
 }
 
-.view-overview .headline {
+.view-summary .headline {
     max-width: none;
     margin-bottom: 0;
 }
 
-.view-overview .blocks {
+.view-summary .blocks {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.5rem;
     margin: 0 0.5rem;
 }
 
-.view-overview .blocks .block {
+.view-summary .blocks .block {
     margin: 0;
 }
 
-.view-overview .blocks .block:last-child {
+.view-summary .blocks .block:last-child {
     grid-column: 1 / span 2;
 }
 
@@ -269,7 +269,7 @@ h2:hover a .anchor-hint {
     margin-top: -.25rem;
 }
 
-.view-overview .details-toggle:before {
+.view-summary .details-toggle:before {
     content: '+';
 }
 
@@ -349,13 +349,13 @@ h2:hover a .anchor-hint {
         margin-left: 0;
     }
 
-    .view-overview .blocks {
+    .view-summary .blocks {
         grid-template-columns: 1fr;
         margin-left: 0;
         margin-right: 0;
     }
 
-    .view-overview .blocks .block:last-child {
+    .view-summary .blocks .block:last-child {
         grid-column: auto;
     }
 }
