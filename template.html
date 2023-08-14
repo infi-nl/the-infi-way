@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{lang}}">
   <head>
-    <meta
+    <!-- <meta
       http-equiv="Content-Security-Policy"
       content="
         default-src 'none';
@@ -9,7 +9,7 @@
         img-src 'self';
         script-src 'self' 'sha256-wqS3QgaqzXdqm0OxtHFHCRpiLMYJOQ2mlgZX+KiswX0=';
         style-src 'self';
-      ">
+      "> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="description" content="{{description}}">
@@ -25,7 +25,15 @@
       Kijk dan eens op https://werkenbij.infi.nl
     -->
     <nav class="utility-bar">
-      <button class="summary-toggle" data-toggle="summary" title="{{utilityBar.toggleView}}">
+      <button
+        title="{{utilityBar.toggleView}}"
+        class="summary-toggle"
+        data-toggle="summary"
+        role="switch"
+        aria-checked="true"
+        aria-label="{{utilityBar.toggleView}}"
+        aria-expanded="true"
+      >
         <span class="sr-only">{{utilityBar.toggleView}}</span>
       </button>
       <div class="language-select">
@@ -383,17 +391,24 @@
       document.addEventListener("DOMContentLoaded", () => {
 
         const url = new URL(window.location.href);
+        const button = document.querySelector('[data-toggle="summary"]');
 
         if (url.searchParams.get('summary') === 'true') {
           document.getElementById('viewToggle').classList.toggle('view-summary');
+          button.setAttribute('aria-checked', 'false');
+          button.setAttribute('aria-expanded', 'false');
         }
 
-        document.querySelector('[data-toggle="summary"]').addEventListener('click', toggleDetailView);
+        button.addEventListener('click', toggleDetailView);
       });
 
       function toggleDetailView() {
         const viewToggleElem = document.getElementById('viewToggle');
         viewToggleElem.classList.toggle('view-summary');
+
+        const button = document.querySelector('[data-toggle="summary"]');
+        button.setAttribute('aria-checked', button.getAttribute('aria-checked') === 'true' ? 'false' : 'true');
+        button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
 
         const url = new URL(window.location.href);
 
