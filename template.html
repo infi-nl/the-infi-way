@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="/style.css">
     <link rel="icon" href="/favicon.png?v=1">
   </head>
-  <body id="viewToggle">
+  <body>
     <!--
       So this is the source of The Infi Way!
       Do you also know the way?
@@ -388,12 +388,11 @@
       // All this to prevent the need for 'unsafe-inline'.
 
       document.addEventListener("DOMContentLoaded", () => {
-
         const url = new URL(window.location.href);
         const button = document.querySelector('[data-toggle="summary"]');
 
         if (url.searchParams.get('summary') === 'true') {
-          document.getElementById('viewToggle').classList.toggle('view-summary');
+          document.body.classList.toggle('view-summary');
           button.setAttribute('aria-expanded', 'false');
         }
 
@@ -401,8 +400,7 @@
       });
 
       function toggleDetailView() {
-        const viewToggleElem = document.getElementById('viewToggle');
-        viewToggleElem.classList.toggle('view-summary');
+        document.body.classList.toggle('view-summary');
 
         const button = document.querySelector('[data-toggle="summary"]');
         button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
