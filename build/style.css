@@ -23,10 +23,6 @@
     box-sizing: border-box;
 }
 
-@page {
-    margin: 0 1.3cm;
-}
-
 html, body {
     margin: 0;
     padding: 0;
@@ -474,6 +470,10 @@ h2:hover a .anchor-hint {
     padding: .5rem;
 }
 
+@page {
+    margin: 7mm 13mm;
+}
+
 @media print {
     :root {
         --box-shadow: none;
@@ -488,8 +488,31 @@ h2:hover a .anchor-hint {
         color: var(--color-black);
     }
 
-    .infi-test li {
+    header {
+        margin: 0 0 1rem;
+    }
+
+    header h1 {
+        margin-bottom: 0.5rem;
+    }
+
+    .infi-test {
+        padding: 0;
+        page-break-after: always;
+    }
+
+    .infi-test h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0;
+    }
+
+    .infi-test p {
+        font-size: 0.9rem;
+    }
+
+    .infi-test ol li {
         page-break-inside: avoid;
+        margin-bottom: 0.5rem;
     }
 
     .infi-test li::before {
@@ -505,8 +528,7 @@ h2:hover a .anchor-hint {
     }
 
     .block {
-        page-break-before: always;
-        padding-top: 1.3cm;
+        page-break-after: always;
     }
 
     .block-image {
@@ -515,9 +537,5 @@ h2:hover a .anchor-hint {
 
     a {
         text-decoration: none;
-    }
-
-    footer {
-        page-break-before: always;
     }
 }
