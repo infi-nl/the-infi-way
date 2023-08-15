@@ -30,7 +30,6 @@
         class="summary-toggle"
         data-toggle="summary"
         role="switch"
-        aria-checked="true"
         aria-label="{{utilityBar.toggleView}}"
         aria-expanded="true"
       >
@@ -395,7 +394,6 @@
 
         if (url.searchParams.get('summary') === 'true') {
           document.getElementById('viewToggle').classList.toggle('view-summary');
-          button.setAttribute('aria-checked', 'false');
           button.setAttribute('aria-expanded', 'false');
         }
 
@@ -407,7 +405,6 @@
         viewToggleElem.classList.toggle('view-summary');
 
         const button = document.querySelector('[data-toggle="summary"]');
-        button.setAttribute('aria-checked', button.getAttribute('aria-checked') === 'true' ? 'false' : 'true');
         button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
 
         const url = new URL(window.location.href);
