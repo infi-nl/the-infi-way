@@ -23,6 +23,10 @@
     box-sizing: border-box;
 }
 
+@page {
+    margin: 0 1.3cm;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -431,43 +435,43 @@ h2:hover a .anchor-hint {
 .topic-icon {
     margin-right: .7rem;
     align-items: center;
+    border-radius: 8px;
+    border-width: 2px;
+    border-style: solid;
 }
 
-.svg-wrapper.users {
+.topic-icon.users {
     border-color: var(--color-topic-users);
 }
 
-.svg-wrapper.principles {
+.topic-icon.principles {
     border-color: var(--color-topic-principles);
 }
 
-.svg-wrapper.source-code {
+.topic-icon.source-code {
     border-color: var(--color-topic-source-code);
 }
 
-.svg-wrapper.technology {
+.topic-icon.technology {
     border-color: var(--color-topic-technology);
 }
 
-.svg-wrapper.process-and-team {
+.topic-icon.process-and-team {
     border-color: var(--color-topic-process-and-team);
 }
 
-.svg-wrapper.craft {
+.topic-icon.craft {
     border-color: var(--color-topic-craft);
 }
 
-.svg-wrapper.others {
+.topic-icon.others {
     border-color: var(--color-topic-others);
 }
 
-.svg-wrapper {
-    max-width: 2.7rem;
-    height: 2.7rem;
-    border-width: 2px;
-    border-style: solid;
+.topic-icon img {
+    max-width: 2.5rem;
+    height: 2.5rem;
     padding: .5rem;
-    border-radius: 8px;
 }
 
 @media print {
@@ -493,9 +497,7 @@ h2:hover a .anchor-hint {
     }
 
     .infi-test .topic-icon img {
-        print-color-adjust: exact;
-        -webkit-print-color-adjust: exact;
-        background-color: var(--color-block);
+        filter: invert(100%);
     }
 
     .details-toggle {
@@ -504,6 +506,7 @@ h2:hover a .anchor-hint {
 
     .block {
         page-break-before: always;
+        padding-top: 1.3cm;
     }
 
     .block-image {
