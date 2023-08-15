@@ -470,6 +470,10 @@ h2:hover a .anchor-hint {
     padding: .5rem;
 }
 
+.print-only {
+    display: none;
+}
+
 @page {
     margin: 7mm 13mm;
 }
@@ -537,5 +541,22 @@ h2:hover a .anchor-hint {
 
     a {
         text-decoration: none;
+    }
+
+    .no-print {
+        display: none;
+    }
+
+    .print-only {
+        display: initial;
+    }
+
+    footer {
+        text-align: left;
+    }
+
+    footer :last-child {
+        /* For some reason, without this, there a small "bite" out of the last line of text. */
+        padding-bottom: 1rem;
     }
 }
