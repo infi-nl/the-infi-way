@@ -70,8 +70,9 @@
           <ol>
             {{#each test.checks}}
             <li class="topic-{{topic}}">
-              <div class="topic-icon">
-                <img class="svg-wrapper {{topic}}" src="/resources/{{topic}}.svg" alt="icon of {{topic}}" type="image/svg+xml"></div>
+              <div class="topic-icon {{topic}}">
+                <img src="/resources/{{topic}}.svg" alt="icon of {{topic}}" type="image/svg+xml">
+              </div>
               <span>{{question}}</span>
             </li>
             {{/each}}
@@ -84,7 +85,7 @@
         <div class="block topic-users">
           <span id="users" class="block-anchor-with-offset"></span>
           <div class="block-image">
-            <img height="132px" src="/resources/users.svg" alt="large icon of users"/>
+            <img src="/resources/users.svg" alt="large icon of users"/>
           </div>
           <div class="block-content">
             <section class="headline">
@@ -120,7 +121,7 @@
         <div class="block topic-principles">
           <span id="principles" class="block-anchor-with-offset"></span>
           <div class="block-image">
-            <img height="132px" src="/resources/principles.svg" alt="large icon of principles"/>
+            <img src="/resources/principles.svg" alt="large icon of principles"/>
           </div>
           <div class="block-content">
             <section class="headline">
@@ -156,7 +157,7 @@
         <div class="block topic-source-code">
           <span id="source-code" class="block-anchor-with-offset"></span>
           <div class="block-image">
-            <img height="132px" src="/resources/source-code.svg" alt="large icon of source code"/>
+            <img src="/resources/source-code.svg" alt="large icon of source code"/>
           </div>
           <div class="block-content">
             <section class="headline">
@@ -192,7 +193,7 @@
         <div class="block topic-technology">
           <span id="technology" class="block-anchor-with-offset"></span>
           <div class="block-image">
-            <img height="132px" src="/resources/technology.svg" alt="large icon of tecnology"/>
+            <img src="/resources/technology.svg" alt="large icon of tecnology"/>
           </div>
           <div class="block-content">
             <section class="headline">
@@ -228,7 +229,7 @@
         <div class="block topic-process-and-team">
           <span id="process-and-team" class="block-anchor-with-offset"></span>
           <div class="block-image">
-            <img height="132px" src="/resources/process-and-team.svg" alt="large icon of process and team"/>
+            <img src="/resources/process-and-team.svg" alt="large icon of process and team"/>
           </div>
           <div class="block-content">
             <section class="headline">
@@ -264,7 +265,7 @@
         <div class="block topic-craft">
           <span id="craft" class="block-anchor-with-offset"></span>
           <div class="block-image">
-            <img height="132px" src="/resources/craft.svg" alt="large icon of craft"/>
+            <img src="/resources/craft.svg" alt="large icon of craft"/>
           </div>
           <div class="block-content">
             <section class="headline">
@@ -300,7 +301,7 @@
         <div class="block topic-others">
           <span id="others" class="block-anchor-with-offset"></span>
           <div class="block-image">
-            <img height="132px" src="/resources/others.svg" alt="large icon of others"/>
+            <img src="/resources/others.svg" alt="large icon of others"/>
           </div>
           <div class="block-content">
             <section class="headline">
@@ -335,7 +336,7 @@
       </section>
     </main>
 
-    <footer>
+    <footer class="no-print">
       © 2022, Infi
       | <a href="https://github.com/infi-nl/the-infi-way" target="_blank">Source</a>
       | <a href="https://infi.nl" target="_blank">infi.nl</a>
@@ -347,10 +348,19 @@
         by
         <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/infi-nl">Infi</a>
         is licensed under
-        <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="license noopener noreferrer">
+        <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="license noopener noreferrer">
           CC BY-NC-ND 4.0
         </a>
       </p>
+    </footer>
+
+    <footer class="print-only">
+      <p>© 2022, Infi</p>
+      <p>Source: github.com/infi-nl/the-infi-way</p>
+      <p>infi.nl</p>
+      <p>werkenbij.infi.nl</p>
+      <p>{{footer.questions}} jeroen@infi.nl</p>
+      <p>The Infi Way by Infi is licensed under CC BY-NC-ND 4.0</p>
     </footer>
 
     <script>

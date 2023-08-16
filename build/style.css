@@ -16,6 +16,7 @@
     --color-block: #212121;
 
     --box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    --block-image-height: 176px;
 }
 
 * {
@@ -128,15 +129,13 @@ footer {
 }
 
 .infi-test ol li {
-    margin-bottom: 1.7rem;
+    margin-bottom: 0.7rem;
     display: flex;
     align-items: center;
-    
 }
 
 .infi-test ol li::before, .topic-icon {
     flex: 0 0 1.7rem;
-    height: 1.7rem;
     border-radius: 8px 0px 0px 8px;
     display: inline-flex;
     justify-content: center;
@@ -144,8 +143,12 @@ footer {
 }
 
 .infi-test ol li::before {
+    height: 1.7rem;
     counter-increment: infi-test;
     content: counter(infi-test);
+
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
 }
 
 .block {
@@ -185,14 +188,17 @@ h2:hover a .anchor-hint {
 }
 
 .block-image {
-    margin: 2rem 0 0 -88px;
+    margin: 2rem 0 0 calc(var(--block-image-height) / -2);
     border-radius: 50%;
-    flex: 0 0 176px;
-    height: 176px;
+    flex: 0 0 var(--block-image-height);
+    height: var(--block-image-height);
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: var(--box-shadow);
+
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
 }
 
 .block-image img {
@@ -368,8 +374,8 @@ h2:hover a .anchor-hint {
     }
 
     .block-image {
-        margin: -88px auto 0;
-        width: 176px;
+        margin: calc(var(--block-image-height) / -2) auto 0;
+        width: var(--block-image-height);
     }
 
     .block-content {
@@ -378,7 +384,7 @@ h2:hover a .anchor-hint {
     }
 
     .block-anchor-with-offset {
-        top: -88px;
+        top: calc(var(--block-image-height) / -2);
     }
 
     .details {
@@ -455,41 +461,135 @@ h2:hover a .anchor-hint {
 .topic-icon {
     margin-right: .7rem;
     align-items: center;
+    border-radius: 8px;
+    border-width: 2px;
+    border-style: solid;
 }
 
-.svg-wrapper.users {
+.topic-icon.users {
     border-color: var(--color-topic-users);
 }
 
-.svg-wrapper.principles {
+.topic-icon.principles {
     border-color: var(--color-topic-principles);
 }
 
-.svg-wrapper.source-code{
+.topic-icon.source-code {
     border-color: var(--color-topic-source-code);
 }
 
-.svg-wrapper.technology {
+.topic-icon.technology {
     border-color: var(--color-topic-technology);
 }
 
-.svg-wrapper.process-and-team {
+.topic-icon.process-and-team {
     border-color: var(--color-topic-process-and-team);
 }
 
-.svg-wrapper.craft {
+.topic-icon.craft {
     border-color: var(--color-topic-craft);
 }
 
-.svg-wrapper.others {
+.topic-icon.others {
     border-color: var(--color-topic-others);
 }
 
-.svg-wrapper {
-    max-width: 2.7rem;
-    height: 2.7rem;
-    border-width: 2px;
-    border-style: solid;
+.topic-icon img {
+    max-width: 2.5rem;
+    height: 2.5rem;
     padding: .5rem;
-    border-radius: 8px;
+}
+
+.print-only {
+    display: none;
+}
+
+@page {
+    margin: 7mm 13mm;
+}
+
+@media print {
+    :root {
+        --box-shadow: none;
+    }
+
+    .utility-bar {
+        display: none;
+    }
+
+    html, body {
+        text-shadow: none;
+        color: var(--color-black);
+    }
+
+    header {
+        margin-top: 0;
+    }
+
+    header h1 {
+        margin-bottom: 0.5rem;
+    }
+
+    .infi-test {
+        padding: 0;
+        page-break-after: always;
+    }
+
+    .infi-test h2 {
+        font-size: 1.5rem;
+    }
+
+    .infi-test p {
+        font-size: 0.9rem;
+    }
+
+    .infi-test ol li {
+        page-break-inside: avoid;
+    }
+
+    .infi-test ol li::before {
+        color: var(--color-text-light);
+        border-radius: 8px;
+    }
+
+    .infi-test .topic-icon {
+        border: none;
+    }
+
+    .infi-test .topic-icon img {
+        filter: invert(100%);
+        height: 1.5rem;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-right: 0;
+    }
+
+    .block {
+        page-break-after: always;
+    }
+
+    .block-image {
+        margin-top: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .no-print {
+        display: none;
+    }
+
+    .print-only {
+        display: initial;
+    }
+
+    footer {
+        text-align: left;
+    }
+
+    footer :last-child {
+        /* For some reason, without this, there a small "bite" out of the last line of text. */
+        padding-bottom: 1rem;
+    }
 }
