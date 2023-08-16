@@ -629,10 +629,15 @@ h2:hover a .anchor-hint {
         background: var(--color-block-light);
     }
 
-    .details-toggle {
+    .summary-toggle {
         color: var(--color-text-dark);
         border-color: var(--color-text-dark);
         opacity: 0.7;
+    }
+
+    .summary-toggle .grid-view div,
+    .view-summary .summary-toggle .list-view div {
+        background: var(--color-text-dark);
     }
 
     footer {
