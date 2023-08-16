@@ -1,4 +1,7 @@
 {
+  "utilityBar": {
+    "toggleView": "Expand / collapse details..."
+  },
   "language": "🇬🇧 English",
   "description": "An overview of how we like to build software: which techniques and technology we like to use, and which principles we follow.",
   "header": {

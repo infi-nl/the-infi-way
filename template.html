@@ -7,7 +7,7 @@
         default-src 'none';
         font-src 'none';
         img-src 'self';
-        script-src 'self' 'sha256-Ae3eHf6iH3HmkxQ5VMpiwB2ZZoFXcpdPgXGAyxoGFBk=';
+        script-src 'self' 'sha256-QIO/JKO6nn9l5q1faq4A06sEzbRLkirNwdq3+qJzJVQ=';
         style-src 'self';
       ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,10 +24,32 @@
       En wil je ergens werken waar de voertaal Nederlands is?
       Kijk dan eens op https://werkenbij.infi.nl
     -->
-    <nav class="language-select">
-      {{#each languages}}
-      <span class="{{#if isCurrentLanguage}}current{{/if}}"><a hreflang="{{code}}" href="{{href}}">{{name}}</a></span>
-      {{/each}}
+    <nav class="utility-bar">
+      <button
+        title="{{utilityBar.toggleView}}"
+        class="summary-toggle"
+        data-toggle="summary"
+        role="switch"
+        aria-label="{{utilityBar.toggleView}}"
+        aria-expanded="true"
+      >
+        <div class="grid-view">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="list-view">
+          <div></div>
+          <div></div>
+        </div>
+        <span class="sr-only">{{utilityBar.toggleView}}</span>
+      </button>
+      <div class="language-select">
+        {{#each languages}}
+        <span class="{{#if isCurrentLanguage}}current{{/if}}"><a hreflang="{{code}}" href="{{href}}">{{name}}</a></span>
+        {{/each}}
+      </div>
     </nav>
     <header>
       <h1><a href="#">
@@ -36,7 +58,7 @@
       <p role="doc-subtitle">{{header.subtitle}}</p>
     </header>
 
-    <main class="wrapper" id="viewToggle">
+    <main class="wrapper">
       <section class="intro">
         <div class="infi-test">
           <span id="infi-test" class="block-anchor-with-offset"></span>
@@ -72,7 +94,6 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.users.subtitle}}</p>
-              <button class="details-toggle" data-toggle-target="users"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
               <h3>{{topic.users.how-title}}</h3>
@@ -109,7 +130,6 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.principles.subtitle}}</p>
-              <button class="details-toggle" data-toggle-target="principles"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
               <h3>{{topic.principles.how-title}}</h3>
@@ -146,7 +166,6 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.source-code.subtitle}}</p>
-              <button class="details-toggle" data-toggle-target="source-code"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
               <h3>{{topic.source-code.how-title}}</h3>
@@ -183,7 +202,6 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.technology.subtitle}}</p>
-              <button class="details-toggle" data-toggle-target="technology"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
               <h3>{{topic.technology.how-title}}</h3>
@@ -220,7 +238,6 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.process-and-team.subtitle}}</p>
-              <button class="details-toggle" data-toggle-target="process-and-team"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
               <h3>{{topic.process-and-team.how-title}}</h3>
@@ -257,7 +274,6 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.craft.subtitle}}</p>
-              <button class="details-toggle" data-toggle-target="craft"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
               <h3>{{topic.craft.how-title}}</h3>
@@ -294,7 +310,6 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.others.subtitle}}</p>
-              <button class="details-toggle" data-toggle-target="others"><span class="sr-only">Details in-/uitklappen...</span></button>
             </section>
             <section class="details">
               <h3>{{topic.others.how-title}}</h3>
@@ -349,19 +364,38 @@
     </footer>
 
     <script>
-      // ⚠ Contents of this script block are hashed and used in
-      // the CSP meta tag. Any change (including white space) will
-      // require update of the CSP tag. All this to prevent the
-      // need for 'unsafe-inline'.
+      // ⚠ The contents of this script block are hashed and used in the CSP meta tag. 
+      // Any change (including white space) will require an update of the CSP tag. 
+      // All this to prevent the need for 'unsafe-inline'.
+
       document.addEventListener("DOMContentLoaded", () => {
-        [...document.querySelectorAll(".details-toggle")].forEach(element => {
-          const anchor = element.dataset.toggleTarget;
-          element.addEventListener('click', () => {
-            document.getElementById('viewToggle').classList.toggle('view-overview');
-            location.hash = anchor;
-          });
-        });
+        const url = new URL(window.location.href);
+        const button = document.querySelector('[data-toggle="summary"]');
+
+        if (url.searchParams.get('summary') === 'true') {
+          document.body.classList.toggle('view-summary');
+          button.setAttribute('aria-expanded', 'false');
+        }
+
+        button.addEventListener('click', toggleDetailView);
       });
+
+      function toggleDetailView() {
+        document.body.classList.toggle('view-summary');
+
+        const button = document.querySelector('[data-toggle="summary"]');
+        button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+
+        const url = new URL(window.location.href);
+
+        if (url.searchParams.get('summary') === 'true') {
+          url.searchParams.delete('summary');
+        } else {
+          url.searchParams.set('summary', 'true');
+        }
+
+        window.history.replaceState({}, '', url);
+      }
     </script>
   </body>
 </html>
