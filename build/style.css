@@ -523,7 +523,7 @@ h2:hover a .anchor-hint {
     }
 
     header {
-        margin: 0 0 1rem;
+        margin-top: 0;
     }
 
     header h1 {
@@ -537,7 +537,6 @@ h2:hover a .anchor-hint {
 
     .infi-test h2 {
         font-size: 1.5rem;
-        margin-bottom: 0;
     }
 
     .infi-test p {
@@ -546,15 +545,23 @@ h2:hover a .anchor-hint {
 
     .infi-test ol li {
         page-break-inside: avoid;
-        margin-bottom: 0.5rem;
     }
 
-    .infi-test li::before {
+    .infi-test ol li::before {
         color: var(--color-text-light);
+        border-radius: 8px;
+    }
+
+    .infi-test .topic-icon {
+        border: none;
     }
 
     .infi-test .topic-icon img {
         filter: invert(100%);
+        height: 1.5rem;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-right: 0;
     }
 
     .block {
