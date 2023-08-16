@@ -513,7 +513,7 @@ h2:hover a .anchor-hint {
         --box-shadow: none;
     }
 
-    .language-select {
+    .utility-bar {
         display: none;
     }
 
@@ -555,10 +555,6 @@ h2:hover a .anchor-hint {
 
     .infi-test .topic-icon img {
         filter: invert(100%);
-    }
-
-    .details-toggle {
-        display: none;
     }
 
     .block {
