@@ -1,4 +1,7 @@
 {
+  "utilityBar": {
+    "toggleView": "Details in-/uitklappen..."
+  },
   "language": "🇳🇱 Nederlands",
   "description": "Een overzicht van hoe wij graag software bouwen: welke technieken en technologie we graag gebruiken, en welke principes we volgen.",
   "header": {
