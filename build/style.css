@@ -228,6 +228,51 @@ h2:hover a .anchor-hint {
     margin-bottom: 1rem;
 }
 
+.details-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 2em;
+    height: 2em;
+    opacity: 0.5;
+    background: none !important;
+    padding: 0 !important;
+    font-size: inherit;
+    font-family: inherit;
+    cursor: pointer;
+    color: var(--color-text-light);
+    border: 2px solid var(--color-text-light);
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+}
+
+.details-toggle:hover {
+    opacity: 1;
+}
+
+.details-toggle:before {
+    content: '';
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    margin: auto;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.view-summary .details-toggle:before {
+    content: '';
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    margin: auto;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
 .block-image {
     margin: 2rem 0 0 calc(var(--block-image-height) / -2);
     border-radius: 50%;
