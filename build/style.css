@@ -143,8 +143,7 @@ footer {
     align-items: center;
 }
 
-.topic-icon:hover {
-    
+.index-item:hover .topic-icon {
     background-color: var(--color-gray);
 }
 
@@ -170,16 +169,22 @@ footer {
     padding: 3rem 2rem;
 }
 
+.index-item a {
+    text-decoration: none;
+    align-items: center;
+    display: flex
+}
+
 h2 a,
 header a {
     text-decoration: none;
 }
 
-h2 a .anchor-hint {
+h2 a .anchor-hint, .index-item .anchor-hint {
     visibility: hidden;
 }
 
-h2:hover a .anchor-hint {
+h2:hover a .anchor-hint, .index-item:hover .anchor-hint {
     visibility: visible;
 }
 
@@ -549,11 +554,11 @@ h2:hover a .anchor-hint {
         font-size: 0.9rem;
     }
 
-    .infi-test ol li {
+    .infi-test ol li a {
         page-break-inside: avoid;
     }
 
-    .infi-test ol li::before {
+    .infi-test ol li a::before {
         color: var(--color-text-light);
         border-radius: 8px;
     }
