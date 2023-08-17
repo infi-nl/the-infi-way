@@ -10,6 +10,7 @@
     --color-black: #121212;
     --color-white: rgba(255, 255, 255, 0.95);
     --color-orange: #f67905;
+    --color-gray: #6f6f6f;
 
     --color-background: var(--color-black);
     --color-text-light: var(--color-white);
@@ -140,6 +141,11 @@ footer {
     display: inline-flex;
     justify-content: center;
     align-items: center;
+}
+
+.topic-icon:hover {
+    
+    background-color: var(--color-gray);
 }
 
 .infi-test ol li::before {
@@ -575,7 +581,7 @@ h2:hover a .anchor-hint {
     a {
         text-decoration: none;
     }
-
+    
     .no-print {
         display: none;
     }
