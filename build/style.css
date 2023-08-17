@@ -180,11 +180,11 @@ header a {
     text-decoration: none;
 }
 
-h2 a .anchor-hint, .index-item .anchor-hint {
+h2 a .anchor-hint {
     visibility: hidden;
 }
 
-h2:hover a .anchor-hint, .index-item:hover .anchor-hint {
+h2:hover a .anchor-hint {
     visibility: visible;
 }
 
