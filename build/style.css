@@ -282,6 +282,134 @@ h2:hover a .anchor-hint {
     gap: .5rem;
 }
 
+.theme-toggle {
+    position: relative;
+    overflow: clip;
+    appearance: none;
+    cursor: pointer;
+    background: linear-gradient(var(--day-bg-color), var(--day-bg-color-2));
+    width: var(--toggle-width);
+    height: var(--toggle-height);
+    border-radius: calc(var(--toggle-height) / 2);
+    transition: all 0.5s ease-in-out;
+    box-shadow: 
+        inset -1px  1px 0.1px 1px rgba(0,0,0,0.05), 
+        inset  1px -1px 0.1px 1px rgba(255,255,255,0.6); 
+}
+
+.theme-toggle:checked {
+    background: linear-gradient(var(--night-bg-color), var(--night-bg-color-2));
+    box-shadow: 
+        inset  1px  1px 0.1px 1px rgba(0,0,0,0.2),
+        inset -1px -1px 0.1px 1px rgba(255,255,255,0.3), 
+        inset 0px 0px 20px 8px rgba(0,0,0,0.5)
+        ;
+}
+
+.theme-toggle::before {
+    content: '🟄';
+    position: absolute;
+    transition: all 0.3s;
+    left: 0px;
+    top: 0px;
+    font-size: 9px;
+    color: transparent;
+    text-shadow: 
+        0px 0px 0px transparent,
+
+        23px 6px 0px transparent,
+        23px 6px 0px transparent,
+
+        -15px 14px 0px transparent,
+        -15px 14px 0px transparent,
+
+        15px 26px 0px transparent,
+        15px 26px 0px transparent
+    ;
+}
+
+.theme-toggle:checked::before {
+    color: #ccccd0;
+    left: 27px;
+    top: 6px;
+    transition: all 0.7s;
+    transition-delay: 0.2s;
+    transition-timing-function: cubic-bezier(.22,.61,.36,1);
+    text-shadow: 
+        0px 0px 4px white,
+
+        23px 6px 0px #dddddd,
+        23px 6px 3px #fdfdfd,
+
+        -15px 14px 0px #bdbdbd,
+        -15px 14px 4px #dddddd,
+
+        12px 26px 0px #bdbdbd,
+        12px 26px 5px white
+    ;
+}
+
+/* Sun */
+.theme-toggle::after {
+    content:'';
+    position:absolute;
+    width: var(--toggle-size);
+    height: var(--toggle-size);
+    border-radius: 50%;
+    background: var(--sun-color);
+    left: var(--gap-size);
+    top: var(--gap-size);
+    transition: all 0.4s ease-in-out;
+    box-shadow: 
+        0px 0px 5px 2px rgba(247, 218, 150, 0.65),
+    
+        /* clouds */
+        25px 34px 0px 5px var(--cloud-color),
+        55px 18px 0px 3px var(--cloud-color),
+        75px 28px 0px 3px var(--cloud-color),
+
+        /* sun glow */
+        0px 0px 0.8px 5px rgba(255,255,255,0.1),
+        0px 0px 0.5px 15px rgba(255,255,255,0.1),
+        0px 0px 0.2px 25px rgba(255,255,255,0.1),
+        0px 0px 0.1px 35px rgba(255,255,255,0.08),
+        0px 0px 0.1px 45px rgba(255,255,255,0.08),
+        0px 0px 0.1px 55px rgba(255,255,255,0.05),
+
+        inset 0px 0px 4px 0.5px rgba(255,255,255,0.5),
+        inset 0px 0px 0px 0.5px rgba(255,255,255,0.2)
+        ;
+}
+
+/* Moon */
+.theme-toggle:checked::after {
+    /*left: 55px;*/
+    left: calc(var(--toggle-width) - var(--toggle-size) - 1.5 * var(--gap-size));
+    background: var(--moon-color-unlit);
+    box-shadow: 
+        0px 0px 12px 2px rgba(255,255,255,0.3),
+
+        /* clouds */
+        45px 34px 0px 5px var(--cloud-color),
+        85px 18px 0px 3px var(--cloud-color),
+        95px 38px 0px 3px var(--cloud-color),
+
+        /* moon glow */
+        0px 0px 0.8px 5px rgba(255,255,255,0.01),
+        0px 0px 0.5px 15px rgba(255,255,255,0.01),
+        0px 0px 0.2px 25px rgba(255,255,255,0.01),
+        0px 0px 0.1px 35px rgba(255,255,255,0.01),
+        0px 0px 0.1px 45px rgba(255,255,255,0.01),
+        0px 0px 0.1px 55px rgba(255,255,255,0.01),
+
+        /* moon shadow */
+        inset -2px -2px 4px 1px rgba(0,0,0,0.1),
+
+        /* moon crescent */
+        inset -5.0px -2.8px 0px 4.6px rgba(235,235,235,0.8)
+        ;
+}
+
 .summary-toggle {
     width: 1.5rem;
     height: 1.5rem;
@@ -706,130 +834,35 @@ h2:hover a .anchor-hint {
     }
 }
 
-.theme-toggle {
-    position: relative;
-    overflow: clip;
-    appearance: none;
-    cursor: pointer;
-    background: linear-gradient(var(--day-bg-color), var(--day-bg-color-2));
-    width: var(--toggle-width);
-    height: var(--toggle-height);
-    border-radius: calc(var(--toggle-height) / 2);
-    transition: all 0.5s ease-in-out;
-    box-shadow: 
-        inset -1px  1px 0.1px 1px rgba(0,0,0,0.05), 
-        inset  1px -1px 0.1px 1px rgba(255,255,255,0.6); 
+body.light-mode {
+    color: var(--color-text-dark);
+    text-shadow: 2px 2px 3px rgba(50, 50, 50, 0.1);
+    background: var(--color-background-light) url("bg_icons_lightmode.svg");
 }
 
-.theme-toggle:checked {
-    background: linear-gradient(var(--night-bg-color), var(--night-bg-color-2));
-    box-shadow: 
-        inset  1px  1px 0.1px 1px rgba(0,0,0,0.2),
-        inset -1px -1px 0.1px 1px rgba(255,255,255,0.3), 
-        inset 0px 0px 20px 8px rgba(0,0,0,0.5)
-        ;
+body.light-mode .infi-test {
+    background: var(--color-block-light);
 }
 
-.theme-toggle::before {
-    content: '🟄';
-    position: absolute;
-    transition: all 0.3s;
-    left: 0px;
-    top: 0px;
-    font-size: 9px;
-    color: transparent;
-    text-shadow: 
-        0px 0px 0px transparent,
-
-        23px 6px 0px transparent,
-        23px 6px 0px transparent,
-
-        -15px 14px 0px transparent,
-        -15px 14px 0px transparent,
-
-        15px 26px 0px transparent,
-        15px 26px 0px transparent
-    ;
+body.light-mode .block {
+    background: var(--color-block-light);
 }
 
-.theme-toggle:checked::before {
-    color: #ccccd0;
-    left: 27px;
-    top: 6px;
-    transition: all 0.7s;
-    transition-delay: 0.2s;
-    transition-timing-function: cubic-bezier(.22,.61,.36,1);
-    text-shadow: 
-        0px 0px 4px white,
-
-        23px 6px 0px #dddddd,
-        23px 6px 3px #fdfdfd,
-
-        -15px 14px 0px #bdbdbd,
-        -15px 14px 4px #dddddd,
-
-        12px 26px 0px #bdbdbd,
-        12px 26px 5px white
-    ;
+body.light-mode .summary-toggle {
+    color: var(--color-text-dark);
+    border-color: var(--color-text-dark);
+    opacity: 0.7;
 }
 
-/* Sun */
-.theme-toggle::after {
-    content:'';
-    position:absolute;
-    width: var(--toggle-size);
-    height: var(--toggle-size);
-    border-radius: 50%;
-    background: var(--sun-color);
-    left: var(--gap-size);
-    top: var(--gap-size);
-    transition: all 0.4s ease-in-out;
-    box-shadow: 
-        0px 0px 5px 2px rgba(247, 218, 150, 0.65),
-    
-        /* clouds */
-        25px 34px 0px 5px var(--cloud-color),
-        55px 18px 0px 3px var(--cloud-color),
-        75px 28px 0px 3px var(--cloud-color),
-
-        /* sun glow */
-        0px 0px 0.8px 5px rgba(255,255,255,0.1),
-        0px 0px 0.5px 15px rgba(255,255,255,0.1),
-        0px 0px 0.2px 25px rgba(255,255,255,0.1),
-        0px 0px 0.1px 35px rgba(255,255,255,0.08),
-        0px 0px 0.1px 45px rgba(255,255,255,0.08),
-        0px 0px 0.1px 55px rgba(255,255,255,0.05),
-
-        inset 0px 0px 4px 0.5px rgba(255,255,255,0.5),
-        inset 0px 0px 0px 0.5px rgba(255,255,255,0.2)
-        ;
+body.light-mode .summary-toggle .grid-view div,
+body.light-mode.view-summary .summary-toggle .list-view div {
+    background: var(--color-text-dark);
 }
 
-/* Moon */
-.theme-toggle:checked::after {
-    /*left: 55px;*/
-    left: calc(var(--toggle-width) - var(--toggle-size) - 1.5 * var(--gap-size));
-    background: var(--moon-color-unlit);
-    box-shadow: 
-        0px 0px 12px 2px rgba(255,255,255,0.3),
-​
-        /* clouds */
-        45px 34px 0px 5px var(--cloud-color),
-        85px 18px 0px 3px var(--cloud-color),
-        95px 38px 0px 3px var(--cloud-color),
-​
-        /* moon glow */
-        0px 0px 0.8px 5px rgba(255,255,255,0.01),
-        0px 0px 0.5px 15px rgba(255,255,255,0.01),
-        0px 0px 0.2px 25px rgba(255,255,255,0.01),
-        0px 0px 0.1px 35px rgba(255,255,255,0.01),
-        0px 0px 0.1px 45px rgba(255,255,255,0.01),
-        0px 0px 0.1px 55px rgba(255,255,255,0.01),
-​
-        /* moon shadow */
-        inset -2px -2px 4px 1px rgba(0,0,0,0.1),
-​
-        /* moon crescent */
-        inset -5.0px -2.8px 0px 4.6px rgba(235,235,235,0.8)
-        ;
+body.light-mode footer {
+    background: var(--color-block-light);
+}
+
+body.light-mode .infi-test ol li::before {
+    color: var(--color-text-light);
 }

@@ -27,7 +27,10 @@
     <nav class="utility-bar">
       <input
         class="theme-toggle"
+        data-toggle="theme"
         type="checkbox"
+        checked="true"
+        role="switch"
         aria-label="{{utilityBar.toggleTheme}}"
         aria-checked="true"
       >
@@ -377,15 +380,39 @@
 
       document.addEventListener("DOMContentLoaded", () => {
         const url = new URL(window.location.href);
-        const button = document.querySelector('[data-toggle="summary"]');
+        const themeToggleButton = document.querySelector('[data-toggle="theme"]');
+        const summaryToggleButton = document.querySelector('[data-toggle="summary"]');
+
+        if (localStorage.getItem('theme') === 'light') {
+          document.body.classList.toggle('light-mode');
+          themeToggleButton.setAttribute('aria-checked', 'false');
+          themeToggleButton.setAttribute('checked', 'false');
+          themeToggleButton.checked = false;
+        }
 
         if (url.searchParams.get('summary') === 'true') {
           document.body.classList.toggle('view-summary');
-          button.setAttribute('aria-expanded', 'false');
+          summaryToggleButton.setAttribute('aria-expanded', 'false');
         }
-
-        button.addEventListener('click', toggleDetailView);
+        
+        themeToggleButton.addEventListener('click', toggleLightMode);
+        summaryToggleButton.addEventListener('click', toggleDetailView);
       });
+
+      function toggleLightMode() {
+        document.body.classList.toggle('light-mode');
+
+        const button = document.querySelector('[data-toggle="theme"]');
+        button.setAttribute('aria-checked', button.getAttribute('aria-checked') === 'true' ? 'false' : 'true');
+
+        const url = new URL(window.location.href);
+
+        if (document.body.classList.contains('light-mode')) {
+          localStorage.setItem('theme', 'light');
+        } else {
+          localStorage.setItem('theme', 'dark');
+        }
+      }
 
       function toggleDetailView() {
         document.body.classList.toggle('view-summary');
