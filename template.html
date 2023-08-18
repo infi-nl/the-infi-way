@@ -25,7 +25,12 @@
       Kijk dan eens op https://werkenbij.infi.nl
     -->
     <nav class="utility-bar">
-      <input class="theme-toggle" type="checkbox">
+      <input
+        class="theme-toggle"
+        type="checkbox"
+        aria-label="{{utilityBar.toggleTheme}}"
+        aria-checked="true"
+      >
       <button
         title="{{utilityBar.toggleView}}"
         class="summary-toggle"
