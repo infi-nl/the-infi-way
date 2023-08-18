@@ -401,6 +401,7 @@
 
       function toggleLightMode() {
         document.body.classList.toggle('light-mode');
+        document.body.classList.add('transition');
 
         const button = document.querySelector('[data-toggle="theme"]');
         button.setAttribute('aria-checked', button.getAttribute('aria-checked') === 'true' ? 'false' : 'true');

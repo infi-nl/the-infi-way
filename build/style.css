@@ -59,6 +59,10 @@ body {
     background: var(--color-background) url("bg_icons.svg") fixed;
 }
 
+body.transition {
+    transition: background 0.2s linear, color 0.2s linear;
+}
+
 h1, h2, h3, h4, h5, h6, p, ol, ul {
     margin: 0.2rem 0;
     padding: 0;
