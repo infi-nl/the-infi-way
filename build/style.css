@@ -32,6 +32,7 @@ html, body {
     line-height: 1.35rem;
     color: var(--color-text-light);
     text-shadow: 2px 2px 3px rgba(50, 50, 50, 0.5);
+    scroll-behavior: smooth;
 }
 
 body {
