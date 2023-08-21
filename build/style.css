@@ -772,6 +772,10 @@ body.light-mode .block {
     background: var(--color-block-light);
 }
 
+body.light-mode .topic-icon img {
+    filter: invert(100%);
+}
+
 body.light-mode .summary-toggle {
     color: var(--color-text-dark);
     border-color: var(--color-text-dark);
