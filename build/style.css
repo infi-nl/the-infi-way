@@ -777,8 +777,32 @@ body.light-mode .block {
     background: var(--color-block-light);
 }
 
-body.light-mode .index-item:hover .topic-icon {
-    background-color: var(--color-white);
+body.light-mode .index-item:hover .topic-icon.users {
+    background: color-mix(in srgb, var(--color-topic-users) 25%, transparent);
+}
+
+body.light-mode .index-item:hover .topic-icon.principles {
+    background: color-mix(in srgb, var(--color-topic-principles) 25%, transparent);
+}
+
+body.light-mode .index-item:hover .topic-icon.source-code {
+    background: color-mix(in srgb, var(--color-topic-source-code) 25%, transparent);
+}
+
+body.light-mode .index-item:hover .topic-icon.technology {
+    background: color-mix(in srgb, var(--color-topic-technology) 25%, transparent);
+}
+
+body.light-mode .index-item:hover .topic-icon.process-and-team {
+    background: color-mix(in srgb, var(--color-topic-process-and-team) 25%, transparent);
+}
+
+body.light-mode .index-item:hover .topic-icon.craft {
+    background: color-mix(in srgb, var(--color-topic-craft) 25%, transparent);
+}
+
+body.light-mode .index-item:hover .topic-icon.others {
+    background: color-mix(in srgb, var(--color-topic-others) 25%, transparent);
 }
 
 body.light-mode .topic-icon img {
