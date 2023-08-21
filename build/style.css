@@ -499,7 +499,7 @@ h2:hover a .anchor-hint {
     padding: .25rem;
 }
 
-.summary-toggle .grid-view div {
+.grid-view div {
     background: white;
     border-radius: 1px;
     width: 5px;
@@ -511,18 +511,18 @@ h2:hover a .anchor-hint {
     display: none;
 }
 
-.view-summary .summary-toggle .grid-view {
+.view-summary .grid-view {
     display: none;
 }
 
-.view-summary .summary-toggle .list-view {
+.view-summary .list-view {
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
     padding: 0 .25rem;
 }
 
-.view-summary .summary-toggle .list-view div {
+.view-summary .list-view div {
     background: white;
     border-radius: 1px;
     width: 100%;

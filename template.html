@@ -415,9 +415,12 @@
           themeToggleButton.setAttribute('checked', 'false');
           themeToggleButton.checked = false;
         }
-
+        
+        const blocks = document.querySelectorAll('.block');
         if (url.searchParams.get('summary') === 'true') {
-          document.body.classList.toggle('view-summary');
+          blocks.forEach(block => {
+            block.classList.toggle('view-summary');
+          })
           summaryToggleButton.setAttribute('aria-expanded', 'false');
         }
         
@@ -447,10 +450,20 @@
       }
 
       function toggleDetailView() {
-        document.body.classList.toggle('view-summary');
-
         const button = document.querySelector('[data-toggle="summary"]');
+        button.classList.toggle('view-summary');
+
+        const buttonState = button.getAttribute('aria-expanded') === 'true';
         button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+
+        const blocks = document.querySelectorAll('.block');
+        blocks.forEach(block => {
+            if (buttonState)
+              block.classList.add('view-summary');
+            else
+              block.classList.remove('view-summary');
+          })
+
 
         const url = new URL(window.location.href);
 
@@ -464,17 +477,12 @@
       }
 
       function toggleTopic(topic) {
-        const button = document.querySelector(`[data-toggle="${topic}"]`);
+        const button = document.querySelector(`.topic-${topic} button`);
         const viewState = button.getAttribute('aria-expanded') === 'true';
+
         button.setAttribute('aria-expanded', viewState ? 'false' : 'true');
         button.classList.toggle('view-summary');
-        var target;
-        if (viewState) {
-          target = document.querySelector(`[class="block topic-${topic}"]`)
-        }
-        else {
-          target = document.querySelector(`[class="block topic-${topic} view-summary"]`);
-        }
+        const target = document.querySelector(`.block.topic-${topic}`);
         target.classList.toggle('view-summary');
       }
     </script>
