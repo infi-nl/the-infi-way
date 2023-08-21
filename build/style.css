@@ -772,6 +772,10 @@ body.light-mode .block {
     background: var(--color-block-light);
 }
 
+body.light-mode .index-item:hover .topic-icon {
+    background-color: var(--color-white);
+}
+
 body.light-mode .topic-icon img {
     filter: invert(100%);
 }
