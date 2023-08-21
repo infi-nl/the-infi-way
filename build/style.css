@@ -170,6 +170,7 @@ footer {
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    color: var(--color-text-light);
 }
 
 .index-item:hover .topic-icon {
@@ -797,8 +798,4 @@ body.light-mode.view-summary .summary-toggle .list-view div {
 
 body.light-mode footer {
     background: var(--color-block-light);
-}
-
-body.light-mode .infi-test ol li::before {
-    color: var(--color-text-light);
 }
