@@ -160,6 +160,10 @@ footer {
     align-items: center;
 }
 
+.topic-icon {
+    transition: background-color 0.2s ease-in-out;
+}
+
 .infi-test ol li::before, .topic-icon {
     flex: 0 0 1.7rem;
     border-radius: 8px 0px 0px 8px;
