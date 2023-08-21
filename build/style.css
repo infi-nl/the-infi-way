@@ -10,6 +10,7 @@
     --color-black: #121212;
     --color-white: rgba(255, 255, 255, 0.95);
     --color-orange: #f67905;
+    --color-gray: #6f6f6f;
 
     --color-background: var(--color-black);
     --color-text-light: var(--color-white);
@@ -31,6 +32,7 @@ html, body {
     line-height: 1.35rem;
     color: var(--color-text-light);
     text-shadow: 2px 2px 3px rgba(50, 50, 50, 0.5);
+    scroll-behavior: smooth;
 }
 
 body {
@@ -142,6 +144,10 @@ footer {
     align-items: center;
 }
 
+.index-item:hover .topic-icon {
+    background-color: var(--color-gray);
+}
+
 .infi-test ol li::before {
     height: 1.7rem;
     counter-increment: infi-test;
@@ -162,6 +168,12 @@ footer {
 .block-content {
     display: flex;
     padding: 3rem 2rem;
+}
+
+.index-item a {
+    text-decoration: none;
+    align-items: center;
+    display: flex
 }
 
 h2 a,
@@ -543,11 +555,11 @@ h2:hover a .anchor-hint {
         font-size: 0.9rem;
     }
 
-    .infi-test ol li {
+    .infi-test ol li a {
         page-break-inside: avoid;
     }
 
-    .infi-test ol li::before {
+    .infi-test ol li a::before {
         color: var(--color-text-light);
         border-radius: 8px;
     }
@@ -575,7 +587,7 @@ h2:hover a .anchor-hint {
     a {
         text-decoration: none;
     }
-
+    
     .no-print {
         display: none;
     }

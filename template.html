@@ -69,11 +69,12 @@
           <p>{{test.subtitle}}</p>
           <ol>
             {{#each test.checks}}
-            <li class="topic-{{topic}}">
-              <div class="topic-icon {{topic}}">
+            <li class="topic-{{topic}} index-item">
+              <a href=#{{topic}}><div class="topic-icon {{topic}}">
                 <img src="/resources/{{topic}}.svg" alt="icon of {{topic}}" type="image/svg+xml">
               </div>
               <span>{{question}}</span>
+              </a>
             </li>
             {{/each}}
           </ol>
