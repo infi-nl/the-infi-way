@@ -7,7 +7,7 @@
         default-src 'none';
         font-src 'none';
         img-src 'self';
-        script-src 'self' 'sha256-QIO/JKO6nn9l5q1faq4A06sEzbRLkirNwdq3+qJzJVQ=';
+        script-src 'self' 'sha256-2/QKLWlaEonykBQzCaz09TJQ67MCUYMSIMkg/C1tReU=';
         style-src 'self';
       ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,6 +25,15 @@
       Kijk dan eens op https://werkenbij.infi.nl
     -->
     <nav class="utility-bar">
+      <input
+        class="theme-toggle"
+        data-toggle="theme"
+        type="checkbox"
+        checked="true"
+        role="switch"
+        aria-label="{{utilityBar.toggleTheme}}"
+        aria-checked="true"
+      >
       <button
         title="{{utilityBar.toggleView}}"
         class="summary-toggle"
@@ -69,11 +78,12 @@
           <p>{{test.subtitle}}</p>
           <ol>
             {{#each test.checks}}
-            <li class="topic-{{topic}}">
-              <div class="topic-icon {{topic}}">
+            <li class="topic-{{topic}} index-item">
+              <a href=#{{topic}}><div class="topic-icon {{topic}}">
                 <img src="/resources/{{topic}}.svg" alt="icon of {{topic}}" type="image/svg+xml">
               </div>
               <span>{{question}}</span>
+              </a>
             </li>
             {{/each}}
           </ol>
@@ -337,7 +347,7 @@
     </main>
 
     <footer class="no-print">
-      © 2022, Infi
+      © 2023, Infi
       | <a href="https://github.com/infi-nl/the-infi-way" target="_blank">Source</a>
       | <a href="https://infi.nl" target="_blank">infi.nl</a>
       | <a href="https://werkenbij.infi.nl" target="_blank">werkenbij.infi.nl</a>
@@ -370,15 +380,40 @@
 
       document.addEventListener("DOMContentLoaded", () => {
         const url = new URL(window.location.href);
-        const button = document.querySelector('[data-toggle="summary"]');
+        const themeToggleButton = document.querySelector('[data-toggle="theme"]');
+        const summaryToggleButton = document.querySelector('[data-toggle="summary"]');
+
+        if (localStorage.getItem('theme') === 'light') {
+          document.body.classList.toggle('light-mode');
+          themeToggleButton.setAttribute('aria-checked', 'false');
+          themeToggleButton.setAttribute('checked', 'false');
+          themeToggleButton.checked = false;
+        }
 
         if (url.searchParams.get('summary') === 'true') {
           document.body.classList.toggle('view-summary');
-          button.setAttribute('aria-expanded', 'false');
+          summaryToggleButton.setAttribute('aria-expanded', 'false');
         }
-
-        button.addEventListener('click', toggleDetailView);
+        
+        themeToggleButton.addEventListener('click', toggleLightMode);
+        summaryToggleButton.addEventListener('click', toggleDetailView);
       });
+
+      function toggleLightMode() {
+        document.body.classList.toggle('light-mode');
+        document.body.classList.add('transition');
+
+        const button = document.querySelector('[data-toggle="theme"]');
+        button.setAttribute('aria-checked', button.getAttribute('aria-checked') === 'true' ? 'false' : 'true');
+
+        const url = new URL(window.location.href);
+
+        if (document.body.classList.contains('light-mode')) {
+          localStorage.setItem('theme', 'light');
+        } else {
+          localStorage.setItem('theme', 'dark');
+        }
+      }
 
       function toggleDetailView() {
         document.body.classList.toggle('view-summary');
