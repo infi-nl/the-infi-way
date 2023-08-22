@@ -716,7 +716,7 @@ h2:hover a .anchor-hint {
         page-break-inside: avoid;
     }
 
-    .infi-test ol li a::before {
+    .infi-test ol li::before {
         color: var(--color-text-light);
         border-radius: 8px;
     }
