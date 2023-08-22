@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 162 162" fill="white">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 162 162">
+  <style> * { fill: white; } @media (prefers-color-scheme: light) { * { fill: black; } } </style>
   <g>
     <rect y="55.69153" width="18" height="9"/>
     <rect x="45" y="55.69153" width="53.31" height="9"/>
