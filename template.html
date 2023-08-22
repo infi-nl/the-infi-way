@@ -484,6 +484,43 @@
         button.classList.toggle('view-summary');
         const target = document.querySelector(`.block.topic-${topic}`);
         target.classList.toggle('view-summary');
+
+        checkSummaryState();
+      }
+
+      function checkSummaryState() {
+        const blocks = document.querySelectorAll('.block');
+        const states = Array.from(blocks).map(block => block.classList.contains('view-summary'));
+
+        if (states.includes(true) && states.includes(false)) {
+          return;
+        }
+        if (states.includes(true)) {
+          console.log("summary: true");
+          setButtonState(true);
+        } else {
+          console.log("summary: false")
+          setButtonState(false);
+        }
+      }
+
+      function setButtonState(state) {
+        const button = document.querySelector('[data-toggle="summary"]');
+        if (state)
+          button.classList.add('view-summary');
+        else
+          button.classList.remove('view-summary');
+        button.setAttribute('aria-expanded', !state ? 'true' : 'false');
+
+        const url = new URL(window.location.href);
+
+        if (state) {
+          url.searchParams.set('summary', 'true');
+        } else {
+          url.searchParams.delete('summary');
+        }
+
+        window.history.replaceState({}, '', url);
       }
     </script>
   </body>
