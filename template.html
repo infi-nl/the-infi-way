@@ -35,26 +35,6 @@
         aria-label="{{utilityBar.toggleTheme}}"
         aria-checked="true"
       >
-      <button
-        title="{{utilityBar.toggleView}}"
-        class="summary-toggle"
-        data-toggle="summary"
-        role="switch"
-        aria-label="{{utilityBar.toggleView}}"
-        aria-expanded="true"
-      >
-        <div class="grid-view">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <div class="list-view">
-          <div></div>
-          <div></div>
-        </div>
-        <span class="sr-only">{{utilityBar.toggleView}}</span>
-      </button>
       <div class="language-select">
         {{#each languages}}
         <span class="{{#if isCurrentLanguage}}current{{/if}}"><a hreflang="{{code}}" href="{{href}}">{{name}}</a></span>
@@ -93,6 +73,28 @@
       </section>
 
       <section class="blocks">
+        <nav class="blocks-bar">
+            <button
+              title="{{utilityBar.toggleView}}"
+              class="summary-toggle"
+              data-toggle="summary"
+              role="switch"
+              aria-label="{{utilityBar.toggleView}}"
+              aria-expanded="true"
+            >
+              <div class="grid-view">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div class="list-view">
+                <div></div>
+                <div></div>
+              </div>
+              <span class="sr-only">{{utilityBar.toggleView}}</span>
+            </button>
+        </nav>
         <div class="block topic-users">
           <span id="users" class="block-anchor-with-offset"></span>
           <div class="block-image">

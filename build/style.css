@@ -329,6 +329,15 @@ h2:hover a .anchor-hint {
     grid-column: 1 / span 2;
 }
 
+.blocks-bar {
+    padding: .5rem;
+    display: flex;
+}
+
+.blocks-bar button {
+    margin-left: auto;
+}
+
 .utility-bar {
     display: flex;
     justify-content: flex-end;
