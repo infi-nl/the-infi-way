@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="{{lang}}">
-  <head>
+  <head
+    content="
+    default-src 'none';
+    font-src 'none';
+    img-src 'self';
+    script-src 'self' 'sha256-kd96wWfNr64yfWThIC7Czx1Fa5GNYqw6aym25kIkPYw=';
+    style-src 'self';
+  ">
     <meta
       http-equiv="Content-Security-Policy"
-      content="
-        default-src 'none';
-        font-src 'none';
-        img-src 'self';
-        script-src 'self' 'sha256-2/QKLWlaEonykBQzCaz09TJQ67MCUYMSIMkg/C1tReU=';
-        style-src 'self';
-      ">
+      >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="description" content="{{description}}">
@@ -34,26 +35,6 @@
         aria-label="{{utilityBar.toggleTheme}}"
         aria-checked="true"
       >
-      <button
-        title="{{utilityBar.toggleView}}"
-        class="summary-toggle"
-        data-toggle="summary"
-        role="switch"
-        aria-label="{{utilityBar.toggleView}}"
-        aria-expanded="true"
-      >
-        <div class="grid-view">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <div class="list-view">
-          <div></div>
-          <div></div>
-        </div>
-        <span class="sr-only">{{utilityBar.toggleView}}</span>
-      </button>
       <div class="language-select">
         {{#each languages}}
         <span class="{{#if isCurrentLanguage}}current{{/if}}"><a hreflang="{{code}}" href="{{href}}">{{name}}</a></span>
@@ -92,6 +73,28 @@
       </section>
 
       <section class="blocks">
+        <nav class="blocks-bar">
+            <button
+              title="{{utilityBar.toggleView}}"
+              class="summary-toggle"
+              data-toggle="summary"
+              role="switch"
+              aria-label="{{utilityBar.toggleView}}"
+              aria-expanded="true"
+            >
+              <div class="grid-view">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div class="list-view">
+                <div></div>
+                <div></div>
+              </div>
+              <span class="sr-only">{{utilityBar.toggleView}}</span>
+            </button>
+        </nav>
         <div class="block topic-users">
           <span id="users" class="block-anchor-with-offset"></span>
           <div class="block-image">
@@ -104,6 +107,13 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.users.subtitle}}</p>
+                <button 
+                  role="switch" class="details-toggle"
+                  data-toggle="users"
+                  aria-expanded="true"
+                  >
+                  <span class="sr-only">Details in-/uitklappen...</span>
+                </button>
             </section>
             <section class="details">
               <h3>{{topic.users.how-title}}</h3>
@@ -140,6 +150,9 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.principles.subtitle}}</p>
+              <button class="details-toggle" data-toggle="principles" aria-expanded="true">
+                <span class="sr-only">Details in-/uitklappen...</span>
+              </button>
             </section>
             <section class="details">
               <h3>{{topic.principles.how-title}}</h3>
@@ -176,6 +189,9 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.source-code.subtitle}}</p>
+              <button class="details-toggle" data-toggle="source-code" aria-expanded="true">
+                <span class="sr-only">Details in-/uitklappen...</span>
+              </button>
             </section>
             <section class="details">
               <h3>{{topic.source-code.how-title}}</h3>
@@ -212,6 +228,9 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.technology.subtitle}}</p>
+              <button class="details-toggle" data-toggle="technology" aria-expanded="true">
+                <span class="sr-only">Details in-/uitklappen...</span>
+              </button>
             </section>
             <section class="details">
               <h3>{{topic.technology.how-title}}</h3>
@@ -248,6 +267,9 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.process-and-team.subtitle}}</p>
+              <button class="details-toggle" data-toggle="process-and-team" aria-expanded="true">
+                <span class="sr-only">Details in-/uitklappen...</span>
+              </button>
             </section>
             <section class="details">
               <h3>{{topic.process-and-team.how-title}}</h3>
@@ -284,6 +306,9 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.craft.subtitle}}</p>
+              <button class="details-toggle" data-toggle="craft" aria-expanded="true">
+                <span class="sr-only">Details in-/uitklappen...</span>
+              </button>
             </section>
             <section class="details">
               <h3>{{topic.craft.how-title}}</h3>
@@ -320,6 +345,9 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.others.subtitle}}</p>
+              <button class="details-toggle" data-toggle="others" aria-expanded="true">
+                <span class="sr-only">Details in-/uitklappen...</span>
+              </button>
             </section>
             <section class="details">
               <h3>{{topic.others.how-title}}</h3>
@@ -389,14 +417,22 @@
           themeToggleButton.setAttribute('checked', 'false');
           themeToggleButton.checked = false;
         }
-
+        
+        const blocks = document.querySelectorAll('.block');
         if (url.searchParams.get('summary') === 'true') {
-          document.body.classList.toggle('view-summary');
+          blocks.forEach(block => {
+            block.classList.toggle('view-summary');
+          })
           summaryToggleButton.setAttribute('aria-expanded', 'false');
         }
         
         themeToggleButton.addEventListener('click', toggleLightMode);
         summaryToggleButton.addEventListener('click', toggleDetailView);
+
+        const detailTogglers = document.querySelectorAll('[class="details-toggle"]');
+        detailTogglers.forEach(button => {
+          button.addEventListener('click', () => toggleTopic(button.getAttribute('data-toggle')))
+        });
       });
 
       function toggleLightMode() {
@@ -416,10 +452,20 @@
       }
 
       function toggleDetailView() {
-        document.body.classList.toggle('view-summary');
-
         const button = document.querySelector('[data-toggle="summary"]');
+        button.classList.toggle('view-summary');
+
+        const buttonState = button.getAttribute('aria-expanded') === 'true';
         button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+
+        const blocks = document.querySelectorAll('.block');
+        blocks.forEach(block => {
+            if (buttonState)
+              block.classList.add('view-summary');
+            else
+              block.classList.remove('view-summary');
+          })
+
 
         const url = new URL(window.location.href);
 
@@ -427,6 +473,51 @@
           url.searchParams.delete('summary');
         } else {
           url.searchParams.set('summary', 'true');
+        }
+
+        window.history.replaceState({}, '', url);
+      }
+
+      function toggleTopic(topic) {
+        const button = document.querySelector(`.topic-${topic} button`);
+        const viewState = button.getAttribute('aria-expanded') === 'true';
+
+        button.setAttribute('aria-expanded', viewState ? 'false' : 'true');
+        button.classList.toggle('view-summary');
+        const target = document.querySelector(`.block.topic-${topic}`);
+        target.classList.toggle('view-summary');
+
+        checkSummaryState();
+      }
+
+      function checkSummaryState() {
+        const blocks = document.querySelectorAll('.block');
+        const states = Array.from(blocks).map(block => block.classList.contains('view-summary'));
+
+        if (states.includes(true) && states.includes(false)) {
+          return;
+        }
+        if (states.includes(true)) {
+          setButtonState(true);
+        } else {
+          setButtonState(false);
+        }
+      }
+
+      function setButtonState(state) {
+        const button = document.querySelector('[data-toggle="summary"]');
+        if (state)
+          button.classList.add('view-summary');
+        else
+          button.classList.remove('view-summary');
+        button.setAttribute('aria-expanded', !state ? 'true' : 'false');
+
+        const url = new URL(window.location.href);
+
+        if (state) {
+          url.searchParams.set('summary', 'true');
+        } else {
+          url.searchParams.delete('summary');
         }
 
         window.history.replaceState({}, '', url);
