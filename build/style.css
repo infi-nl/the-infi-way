@@ -370,7 +370,7 @@ h2:hover a .anchor-hint {
 }
 
 .theme-toggle::before {
-    content: '🟄';
+    content: '✯';
     position: absolute;
     transition: all 0.3s;
     left: 0px;
