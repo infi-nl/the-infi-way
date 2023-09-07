@@ -17,7 +17,7 @@ function tryBuild() {
 
 async function build() {
   console.log('Starting build...');
-  await fs.mkdir(outputDir, {recursive: true});
+  await fs.mkdir(outputDir, { recursive: true });
   const template = (await fs.readFile(templateFile)).toString();
   const processor = new TemplateProcessor();
   const compiledTemplate = processor.compile(template);
@@ -50,7 +50,7 @@ async function build() {
     console.log('    Input processed');
 
     const languageDir = path.join(outputDir, language.outPath);
-    fs.mkdir(languageDir, {recursive: true});
+    fs.mkdir(languageDir, { recursive: true });
     console.log(`    Writing to ${languageDir}/index.html`);
     await fs.writeFile(path.join(languageDir, 'index.html'), processed);
 
@@ -62,7 +62,7 @@ async function build() {
 
   console.log('Copying resources');
   await fs.copyFile(path.resolve(srcDir, 'style.css'), path.resolve(outputDir, 'style.css'));
-  await fs.mkdir(outputResourcesDir, {recursive: true});
+  await fs.mkdir(outputResourcesDir, { recursive: true });
   const resFiles = await fs.readdir(resourcesDir);
   for (const resFile of resFiles) {
     await fs.copyFile(
@@ -154,7 +154,7 @@ class TemplateProcessor {
     let index = startIndex;
     let tagStartIndex = -1;
     while ((tagStartIndex = template.indexOf('{{', index)) >= 0) {
-      compiled.push({type: TemplateProcessor.#TOKEN_TYPE_LITERAL, value: template.substring(index, tagStartIndex)});
+      compiled.push({ type: TemplateProcessor.#TOKEN_TYPE_LITERAL, value: template.substring(index, tagStartIndex) });
 
       index = template.indexOf('}}', tagStartIndex) + 2;
       const tag = template.substring(tagStartIndex, index);
@@ -167,11 +167,11 @@ class TemplateProcessor {
           throw new Error(`Unknown tag function "${name}"`);
         }
 
-        const subTag = {name, args};
+        const subTag = { name, args };
         const [sub, subEndIndex] = this.#doCompile(template, index, subTag);
 
         index = subEndIndex;
-        compiled.push({type: TemplateProcessor.#TOKEN_TYPE_FUNC, tag: subTag, value: sub});
+        compiled.push({ type: TemplateProcessor.#TOKEN_TYPE_FUNC, tag: subTag, value: sub });
       } else if (tag[2] === '/') {
         // The tag is closing a function block.
         const name = tagContent.substring(1);
@@ -182,7 +182,7 @@ class TemplateProcessor {
         return [compiled, index];
       } else {
         // The tag is a reference.
-        compiled.push({type: TemplateProcessor.#TOKEN_TYPE_REFERENCE, value: tagContent});
+        compiled.push({ type: TemplateProcessor.#TOKEN_TYPE_REFERENCE, value: tagContent });
       }
     }
 
@@ -190,7 +190,7 @@ class TemplateProcessor {
       throw new Error(`Unclosed tag: ${openingTag.name}`);
     }
 
-    compiled.push({type: TemplateProcessor.#TOKEN_TYPE_LITERAL, value: template.substring(index)});
+    compiled.push({ type: TemplateProcessor.#TOKEN_TYPE_LITERAL, value: template.substring(index) });
     return [compiled];
   }
 
@@ -234,7 +234,7 @@ class TemplateProcessor {
    */
   #resolveContentReference(content, reference) {
     if (typeof content === 'string') {
-      return this.#resolveContentReference({this: content}, reference);
+      return this.#resolveContentReference({ this: content }, reference);
     }
 
     if (reference.includes('.')) {
