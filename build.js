@@ -2,9 +2,12 @@
 const fs = require('fs/promises');
 const path = require("path");
 
-const templateFile = `${__dirname}/template.html`;
-const contentDir = `${__dirname}/content`;
-const outputDir = `${__dirname}/build`;
+const srcDir = path.resolve(__dirname, 'src');
+const templateFile = path.resolve(srcDir, 'template.html');
+const contentDir = path.resolve(srcDir, 'content');
+const resourcesDir = path.resolve(srcDir, 'resources');
+const outputDir = path.resolve(__dirname, 'build');
+const outputResourcesDir = path.resolve(outputDir, 'resources');
 
 tryBuild();
 
@@ -14,6 +17,7 @@ function tryBuild() {
 
 async function build() {
   console.log('Starting build...');
+  await fs.mkdir(outputDir, {recursive: true});
   const template = (await fs.readFile(templateFile)).toString();
   const processor = new TemplateProcessor();
   const compiledTemplate = processor.compile(template);
@@ -27,7 +31,7 @@ async function build() {
     const code = language.code;
     const isDefault = code === defaultLanguage;
     const name = language.name;
-    const contentFile =  path.join(contentDir, language.contentFile);
+    const contentFile = path.join(contentDir, language.contentFile);
 
     console.log(`  - ${code} ${name}${isDefault ? ' (default)' : ''} from ${contentFile}`);
 
@@ -56,9 +60,36 @@ async function build() {
     }
   }
 
+  console.log('Copying resources');
+  await fs.mkdir(outputResourcesDir, {recursive: true});
+  const resFiles = await fs.readdir(resourcesDir);
+  for (const resFile of resFiles) {
+    await fs.copyFile(
+      path.resolve(resourcesDir, resFile),
+      path.resolve(outputResourcesDir, resFile),
+    );
+  }
+
   console.log(`Build finished at ${new Date().toLocaleString('en-GB')}`);
 }
 
+/**
+ * The TemplateProcessor class is a very lightweight templating engine.
+ * It's based on the Handlebars syntax.
+ *
+ * Usage:
+ *
+ * ```
+ * const templateString = 'A {{value}} string';
+ * const templateValues = { value: 'template' };
+ *
+ * const processor = new TemplateProcessor();
+ * const compiled = processor.compile(templateString);
+ * const result = processor.process(compiled, templateValues);
+ *
+ * // Result now contains: 'A template string'.
+ * ```
+ */
 class TemplateProcessor {
   static #TOKEN_TYPE_LITERAL = 'literal';
   static #TOKEN_TYPE_REFERENCE = 'reference';
@@ -122,7 +153,7 @@ class TemplateProcessor {
     let index = startIndex;
     let tagStartIndex = -1;
     while ((tagStartIndex = template.indexOf('{{', index)) >= 0) {
-      compiled.push({ type: TemplateProcessor.#TOKEN_TYPE_LITERAL, value: template.substring(index, tagStartIndex) });
+      compiled.push({type: TemplateProcessor.#TOKEN_TYPE_LITERAL, value: template.substring(index, tagStartIndex)});
 
       index = template.indexOf('}}', tagStartIndex) + 2;
       const tag = template.substring(tagStartIndex, index);
@@ -135,11 +166,11 @@ class TemplateProcessor {
           throw new Error(`Unknown tag function "${name}"`);
         }
 
-        const subTag = { name, args };
+        const subTag = {name, args};
         const [sub, subEndIndex] = this.#doCompile(template, index, subTag);
 
         index = subEndIndex;
-        compiled.push({ type: TemplateProcessor.#TOKEN_TYPE_FUNC, tag: subTag, value: sub });
+        compiled.push({type: TemplateProcessor.#TOKEN_TYPE_FUNC, tag: subTag, value: sub});
       } else if (tag[2] === '/') {
         // The tag is closing a function block.
         const name = tagContent.substring(1);
@@ -150,7 +181,7 @@ class TemplateProcessor {
         return [compiled, index];
       } else {
         // The tag is a reference.
-        compiled.push({ type: TemplateProcessor.#TOKEN_TYPE_REFERENCE, value: tagContent });
+        compiled.push({type: TemplateProcessor.#TOKEN_TYPE_REFERENCE, value: tagContent});
       }
     }
 
@@ -158,7 +189,7 @@ class TemplateProcessor {
       throw new Error(`Unclosed tag: ${openingTag.name}`);
     }
 
-    compiled.push({ type: TemplateProcessor.#TOKEN_TYPE_LITERAL, value: template.substring(index) });
+    compiled.push({type: TemplateProcessor.#TOKEN_TYPE_LITERAL, value: template.substring(index)});
     return [compiled];
   }
 
@@ -202,7 +233,7 @@ class TemplateProcessor {
    */
   #resolveContentReference(content, reference) {
     if (typeof content === 'string') {
-      return this.#resolveContentReference({ this: content }, reference);
+      return this.#resolveContentReference({this: content}, reference);
     }
 
     if (reference.includes('.')) {

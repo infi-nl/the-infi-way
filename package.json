@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "node build.js",
-    "build:watch": "nodemon -L -w template.html -w content build.js -w build/style.css",
+    "build:watch": "nodemon -L -w src/template.html -w src/content build.js -w src/style.css",
     "start": "concurrently \"npm run build:watch\" \"npm run serve\"",
     "serve": "http-server build"
   }

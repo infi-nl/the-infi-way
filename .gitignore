@@ -3,9 +3,7 @@
 .vscode/
 
 # Build artifacts
-build/*.html
-build/en/
-build/nl/
+build/
 
 # Node
 node_modules/
