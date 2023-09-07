@@ -35,9 +35,9 @@ npm start
 ```
 The packages included are used to host the web page locally and make the http server respond to changes. In `package.json` you can see what files are being watched. You may have to reload the page for the changes to take effect.
 
-This script uses `template.html` and the files from the `content` folder to generate a `build` folder with one page per language (one of them default as `index.html`).
-This `build` folder also contains all static assets such as the stylesheet.
-When the build is done you can open the HTML files in this folder (optionally via a dev server) in your favorite browser, and you're good to go!
+This script uses `src/template.html` and the files from the `src/content` folder to generate a `build` folder with one page per language (one of them default as `index.html`).
+All resources (images and svg files) can be found in the `src/resources` directory.
+When the build is done you can open the HTML files in the `build` folder (optionally via a dev server) in your favorite browser, and you're good to go!
 
 The templating is something lightweight and homebrew, inspired by [Handlebars](https://handlebarsjs.com).
 This entire engine is part of `build.js`.
