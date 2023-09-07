@@ -61,6 +61,7 @@ async function build() {
   }
 
   console.log('Copying resources');
+  await fs.copyFile(path.resolve(srcDir, 'style.css'), path.resolve(outputDir, 'style.css'));
   await fs.mkdir(outputResourcesDir, {recursive: true});
   const resFiles = await fs.readdir(resourcesDir);
   for (const resFile of resFiles) {

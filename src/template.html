@@ -16,7 +16,7 @@
     <meta name="description" content="{{description}}">
     <title>The Infi Way</title>
     <link rel="stylesheet" href="/style.css">
-    <link rel="icon" href="/favicon.png?v=1">
+    <link rel="icon" href="/resources/favicon.png?v=1">
   </head>
   <body>
     <!--
@@ -43,7 +43,7 @@
     </nav>
     <header>
       <h1><a href="#">
-        <span lang="en">The <img src="/logo_infi.svg" alt="Infi"> Way</span>
+        <span lang="en">The <img src="/resources/logo_infi.svg" alt="Infi"> Way</span>
       </a></h1>
       <p role="doc-subtitle">{{header.subtitle}}</p>
     </header>
@@ -107,7 +107,7 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.users.subtitle}}</p>
-                <button 
+                <button
                   role="switch" class="details-toggle"
                   data-toggle="users"
                   aria-expanded="true"
@@ -402,8 +402,8 @@
     </footer>
 
     <script>
-      // ⚠ The contents of this script block are hashed and used in the CSP meta tag. 
-      // Any change (including white space) will require an update of the CSP tag. 
+      // ⚠ The contents of this script block are hashed and used in the CSP meta tag.
+      // Any change (including white space) will require an update of the CSP tag.
       // All this to prevent the need for 'unsafe-inline'.
 
       document.addEventListener("DOMContentLoaded", () => {
@@ -417,7 +417,7 @@
           themeToggleButton.setAttribute('checked', 'false');
           themeToggleButton.checked = false;
         }
-        
+
         const blocks = document.querySelectorAll('.block');
         if (url.searchParams.get('summary') === 'true') {
           blocks.forEach(block => {
@@ -425,7 +425,7 @@
           })
           summaryToggleButton.setAttribute('aria-expanded', 'false');
         }
-        
+
         themeToggleButton.addEventListener('click', toggleLightMode);
         summaryToggleButton.addEventListener('click', toggleDetailView);
 

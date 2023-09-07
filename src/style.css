@@ -56,7 +56,7 @@ html, body {
 }
 
 body {
-    background: var(--color-background) url("bg_icons.svg") fixed;
+    background: var(--color-background) url("resources/bg_icons.svg") fixed;
 }
 
 body.transition {
@@ -355,16 +355,16 @@ h2:hover a .anchor-hint {
     height: var(--toggle-height);
     border-radius: calc(var(--toggle-height) / 2);
     transition: all 0.5s ease-in-out;
-    box-shadow: 
-        inset -1px  1px 0.1px 1px rgba(0,0,0,0.05), 
-        inset  1px -1px 0.1px 1px rgba(255,255,255,0.6); 
+    box-shadow:
+        inset -1px  1px 0.1px 1px rgba(0,0,0,0.05),
+        inset  1px -1px 0.1px 1px rgba(255,255,255,0.6);
 }
 
 .theme-toggle:checked {
     background: linear-gradient(var(--night-bg-color), var(--night-bg-color-2));
-    box-shadow: 
+    box-shadow:
         inset  1px  1px 0.1px 1px rgba(0,0,0,0.2),
-        inset -1px -1px 0.1px 1px rgba(255,255,255,0.3), 
+        inset -1px -1px 0.1px 1px rgba(255,255,255,0.3),
         inset 0px 0px 20px 8px rgba(0,0,0,0.5)
         ;
 }
@@ -377,7 +377,7 @@ h2:hover a .anchor-hint {
     top: 0px;
     font-size: 9px;
     color: transparent;
-    text-shadow: 
+    text-shadow:
         0px 0px 0px transparent,
 
         23px 6px 0px transparent,
@@ -398,7 +398,7 @@ h2:hover a .anchor-hint {
     transition: all 0.7s;
     transition-delay: 0.2s;
     transition-timing-function: cubic-bezier(.22,.61,.36,1);
-    text-shadow: 
+    text-shadow:
         0px 0px 4px white,
 
         23px 6px 0px #dddddd,
@@ -423,9 +423,9 @@ h2:hover a .anchor-hint {
     left: var(--gap-size);
     top: var(--gap-size);
     transition: all 0.4s ease-in-out;
-    box-shadow: 
+    box-shadow:
         0px 0px 5px 2px rgba(247, 218, 150, 0.65),
-    
+
         /* clouds */
         25px 34px 0px 5px var(--cloud-color),
         55px 18px 0px 3px var(--cloud-color),
@@ -449,7 +449,7 @@ h2:hover a .anchor-hint {
     /*left: 55px;*/
     left: calc(var(--toggle-width) - var(--toggle-size) - 1.5 * var(--gap-size));
     background: var(--moon-color-unlit);
-    box-shadow: 
+    box-shadow:
         0px 0px 12px 2px rgba(255,255,255,0.3),
 
         /* clouds */
@@ -798,7 +798,7 @@ h2:hover a .anchor-hint {
     a {
         text-decoration: none;
     }
-    
+
     .no-print {
         display: none;
     }
@@ -820,7 +820,7 @@ h2:hover a .anchor-hint {
 body.light-mode {
     color: var(--color-text-dark);
     text-shadow: 2px 2px 3px rgba(50, 50, 50, 0.1);
-    background: var(--color-background-light) url("bg_icons_lightmode.svg");
+    background: var(--color-background-light) url("resources/bg_icons_lightmode.svg");
 }
 
 body.light-mode .infi-test {
