@@ -2,9 +2,12 @@
 const fs = require('fs/promises');
 const path = require("path");
 
-const templateFile = `${__dirname}/template.html`;
-const contentDir = `${__dirname}/content`;
-const outputDir = `${__dirname}/build`;
+const srcDir = path.resolve(__dirname, 'src');
+const templateFile = path.resolve(srcDir, 'template.html');
+const contentDir = path.resolve(srcDir, 'content');
+const resourcesDir = path.resolve(srcDir, 'resources');
+const outputDir = path.resolve(__dirname, 'build');
+const outputResourcesDir = path.resolve(outputDir, 'resources');
 
 tryBuild();
 
@@ -14,6 +17,7 @@ function tryBuild() {
 
 async function build() {
   console.log('Starting build...');
+  await fs.mkdir(outputDir, { recursive: true });
   const template = (await fs.readFile(templateFile)).toString();
   const processor = new TemplateProcessor();
   const compiledTemplate = processor.compile(template);
@@ -27,7 +31,7 @@ async function build() {
     const code = language.code;
     const isDefault = code === defaultLanguage;
     const name = language.name;
-    const contentFile =  path.join(contentDir, language.contentFile);
+    const contentFile = path.join(contentDir, language.contentFile);
 
     console.log(`  - ${code} ${name}${isDefault ? ' (default)' : ''} from ${contentFile}`);
 
@@ -46,7 +50,7 @@ async function build() {
     console.log('    Input processed');
 
     const languageDir = path.join(outputDir, language.outPath);
-    fs.mkdir(languageDir, {recursive: true});
+    fs.mkdir(languageDir, { recursive: true });
     console.log(`    Writing to ${languageDir}/index.html`);
     await fs.writeFile(path.join(languageDir, 'index.html'), processed);
 
@@ -56,9 +60,37 @@ async function build() {
     }
   }
 
+  console.log('Copying resources');
+  await fs.copyFile(path.resolve(srcDir, 'style.css'), path.resolve(outputDir, 'style.css'));
+  await fs.mkdir(outputResourcesDir, { recursive: true });
+  const resFiles = await fs.readdir(resourcesDir);
+  for (const resFile of resFiles) {
+    await fs.copyFile(
+      path.resolve(resourcesDir, resFile),
+      path.resolve(outputResourcesDir, resFile),
+    );
+  }
+
   console.log(`Build finished at ${new Date().toLocaleString('en-GB')}`);
 }
 
+/**
+ * The TemplateProcessor class is a very lightweight templating engine.
+ * It's based on the Handlebars syntax.
+ *
+ * Usage:
+ *
+ * ```
+ * const templateString = 'A {{value}} string';
+ * const templateValues = { value: 'template' };
+ *
+ * const processor = new TemplateProcessor();
+ * const compiled = processor.compile(templateString);
+ * const result = processor.process(compiled, templateValues);
+ *
+ * // Result now contains: 'A template string'.
+ * ```
+ */
 class TemplateProcessor {
   static #TOKEN_TYPE_LITERAL = 'literal';
   static #TOKEN_TYPE_REFERENCE = 'reference';
