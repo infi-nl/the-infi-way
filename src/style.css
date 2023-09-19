@@ -391,6 +391,17 @@ h2:hover a .anchor-hint {
     background: var(--dark-bg-color);
 }
 
+.theme-toggle::before {
+    content: "☀";
+    position: absolute;
+    width: var(--toggle-size);
+    height: var(--toggle-size);
+    top: 0;
+    left: var(--gap-size);
+    color: var(--sun-color);
+    font-size: 1rem;
+}
+
 /* Sun */
 .theme-toggle::after {
     content: "";
@@ -398,14 +409,24 @@ h2:hover a .anchor-hint {
     width: var(--toggle-size);
     height: var(--toggle-size);
     border-radius: 50%;
-    background: var(--sun-color);
+    opacity: 0;
+    background: var(--moon-color-unlit);
     left: var(--gap-size);
     top: var(--gap-size);
 }
 
+.theme-toggle.transition::before,
 .theme-toggle.transition::after {
-    transition: left 0.4s ease-in-out, top 0.4s ease-in-out,
-        background 0.4s ease-in-out;
+    transition-property: left, top, background, color, opacity;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+
+.theme-toggle:checked::before {
+    left: calc(
+        var(--toggle-width) - var(--toggle-size) - 1.5 * var(--gap-size)
+    );
+    opacity: 0;
 }
 
 /* Moon */
@@ -414,7 +435,8 @@ h2:hover a .anchor-hint {
     left: calc(
         var(--toggle-width) - var(--toggle-size) - 1.5 * var(--gap-size)
     );
-    background: var(--moon-color-unlit);
+    opacity: 1;
+    top: var(--gap-size);
     box-shadow: 
         /* moon crescent */ inset -5px -2.8px 0px 4.6px #000;
 }
