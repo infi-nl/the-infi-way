@@ -1,17 +1,17 @@
 {
   "default": "en-US",
   "languages": [
-     {
-       "code": "en-US",
-       "name": "🇺🇸 English",
-       "contentFile": "en.json",
-       "outPath": "en"
+    {
+      "code": "en-US",
+      "name": "EN",
+      "contentFile": "en.json",
+      "outPath": "en"
     },
-     {
-       "code": "nl-NL",
-       "name": "🇳🇱 Nederlands",
-       "contentFile": "nl.json",
-       "outPath": "nl"
+    {
+      "code": "nl-NL",
+      "name": "NL",
+      "contentFile": "nl.json",
+      "outPath": "nl"
     }
   ]
 }

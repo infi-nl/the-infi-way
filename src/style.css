@@ -364,7 +364,8 @@ h2:hover a .anchor-hint {
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 1.5rem;
+    padding: 1.5rem;
 }
 
 .theme-toggle {
@@ -376,7 +377,15 @@ h2:hover a .anchor-hint {
     width: var(--toggle-width);
     height: var(--toggle-height);
     border-radius: calc(var(--toggle-height) / 2);
-    transition: all 0.5s ease-in-out;
+}
+
+.theme-toggle.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+.theme-toggle.transition {
+    transition: background 0.5s ease-in-out;
 }
 
 .theme-toggle:checked {
@@ -393,7 +402,11 @@ h2:hover a .anchor-hint {
     background: var(--sun-color);
     left: var(--gap-size);
     top: var(--gap-size);
-    transition: all 0.4s ease-in-out;
+}
+
+.theme-toggle.transition::after {
+    transition: left 0.4s ease-in-out, top 0.4s ease-in-out,
+        background 0.4s ease-in-out;
 }
 
 /* Moon */
@@ -473,16 +486,22 @@ h2:hover a .anchor-hint {
 }
 
 .language-select {
-    padding-top: 0.15rem;
-    padding-right: 0.4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.language-select span:not(.current) a {
+    text-decoration: unset;
 }
 
 .language-select span:not(:last-child):after {
     content: " | ";
+    padding-left: 0.75rem;
 }
 
 .language-select span.current {
-    font-weight: bold;
 }
 
 @media (max-width: 768px) {

@@ -7,16 +7,15 @@
     img-src 'self';
     script-src 'self' 'sha256-kd96wWfNr64yfWThIC7Czx1Fa5GNYqw6aym25kIkPYw=';
     style-src 'self';
-  ">
-    <meta
-      http-equiv="Content-Security-Policy"
-      >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <meta name="description" content="{{description}}">
+  "
+  >
+    <meta http-equiv="Content-Security-Policy" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="description" content="{{description}}" />
     <title>The Infi Way</title>
-    <link rel="stylesheet" href="/style.css">
-    <link rel="icon" href="/resources/favicon.png?v=1">
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" href="/resources/favicon.png?v=1" />
   </head>
   <body>
     <!--
@@ -27,24 +26,37 @@
     -->
     <nav class="utility-bar">
       <input
-        class="theme-toggle"
+        class="theme-toggle hidden"
         data-toggle="theme"
         type="checkbox"
         checked="true"
         role="switch"
         aria-label="{{utilityBar.toggleTheme}}"
         aria-checked="true"
-      >
+      />
       <div class="language-select">
         {{#each languages}}
-        <span class="{{#if isCurrentLanguage}}current{{/if}}"><a hreflang="{{code}}" href="{{href}}">{{name}}</a></span>
+        <span class="{{#if isCurrentLanguage}}current{{/if}}"
+          ><a hreflang="{{code}}" href="{{href}}">{{name}}</a></span
+        >
         {{/each}}
       </div>
     </nav>
     <header>
-      <h1><a href="#">
-        <span lang="en">The <img src="/resources/logo_infi.svg" alt="Infi"> Way</span>
-      </a></h1>
+      <h1>
+        <a href="#">
+          <span lang="en"
+            >The
+            <img
+              src="/resources/logo_infi.svg"
+              alt="Infi"
+              width="145.28"
+              height="70"
+            />
+            Way</span
+          >
+        </a>
+      </h1>
       <p role="doc-subtitle">{{header.subtitle}}</p>
     </header>
 
@@ -52,18 +64,27 @@
       <section class="intro">
         <div class="infi-test">
           <span id="infi-test" class="block-anchor-with-offset"></span>
-          <h2><a href="#infi-test">
-            {{test.title}}
-            <span class="anchor-hint">#</span>
-          </a></h2>
+          <h2>
+            <a href="#infi-test">
+              {{test.title}}
+              <span class="anchor-hint">#</span>
+            </a>
+          </h2>
           <p>{{test.subtitle}}</p>
           <ol>
             {{#each test.checks}}
             <li class="topic-{{topic}} index-item">
-              <a href=#{{topic}}><div class="topic-icon {{topic}}">
-                <img src="/resources/{{topic}}.svg" alt="icon of {{topic}}" type="image/svg+xml">
-              </div>
-              <span>{{question}}</span>
+              <a href="#{{topic}}"
+                ><div class="topic-icon {{topic}}">
+                  <img
+                    src="/resources/{{topic}}.svg"
+                    alt="icon of {{topic}}"
+                    type="image/svg+xml"
+                    width="50"
+                    height="50"
+                  />
+                </div>
+                <span>{{question}}</span>
               </a>
             </li>
             {{/each}}
@@ -74,46 +95,49 @@
 
       <section class="blocks">
         <nav class="blocks-bar">
-            <button
-              title="{{utilityBar.toggleView}}"
-              class="summary-toggle"
-              data-toggle="summary"
-              role="switch"
-              aria-label="{{utilityBar.toggleView}}"
-              aria-expanded="true"
-            >
-              <div class="grid-view">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
-              <div class="list-view">
-                <div></div>
-                <div></div>
-              </div>
-              <span class="sr-only">{{utilityBar.toggleView}}</span>
-            </button>
+          <button
+            title="{{utilityBar.toggleView}}"
+            class="summary-toggle"
+            data-toggle="summary"
+            role="switch"
+            aria-label="{{utilityBar.toggleView}}"
+            aria-expanded="true"
+          >
+            <div class="grid-view">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="list-view">
+              <div></div>
+              <div></div>
+            </div>
+            <span class="sr-only">{{utilityBar.toggleView}}</span>
+          </button>
         </nav>
         <div class="block topic-users">
           <span id="users" class="block-anchor-with-offset"></span>
           <div class="block-image">
-            <img src="/resources/users.svg" alt="large icon of users"/>
+            <img src="/resources/users.svg" alt="large icon of users" />
           </div>
           <div class="block-content">
             <section class="headline">
-              <h2><a href="#users">
-                {{topic.users.title}}
-                <span class="anchor-hint">#</span>
-              </a></h2>
+              <h2>
+                <a href="#users">
+                  {{topic.users.title}}
+                  <span class="anchor-hint">#</span>
+                </a>
+              </h2>
               <p>{{topic.users.subtitle}}</p>
-                <button
-                  role="switch" class="details-toggle"
-                  data-toggle="users"
-                  aria-expanded="true"
-                  >
-                  <span class="sr-only">Details in-/uitklappen...</span>
-                </button>
+              <button
+                role="switch"
+                class="details-toggle"
+                data-toggle="users"
+                aria-expanded="true"
+              >
+                <span class="sr-only">Details in-/uitklappen...</span>
+              </button>
             </section>
             <section class="details">
               <h3>{{topic.users.how-title}}</h3>
@@ -141,16 +165,25 @@
         <div class="block topic-principles">
           <span id="principles" class="block-anchor-with-offset"></span>
           <div class="block-image">
-            <img src="/resources/principles.svg" alt="large icon of principles"/>
+            <img
+              src="/resources/principles.svg"
+              alt="large icon of principles"
+            />
           </div>
           <div class="block-content">
             <section class="headline">
-              <h2><a href="#principles">
-                {{topic.principles.title}}
-                <span class="anchor-hint">#</span>
-              </a></h2>
+              <h2>
+                <a href="#principles">
+                  {{topic.principles.title}}
+                  <span class="anchor-hint">#</span>
+                </a>
+              </h2>
               <p>{{topic.principles.subtitle}}</p>
-              <button class="details-toggle" data-toggle="principles" aria-expanded="true">
+              <button
+                class="details-toggle"
+                data-toggle="principles"
+                aria-expanded="true"
+              >
                 <span class="sr-only">Details in-/uitklappen...</span>
               </button>
             </section>
@@ -180,16 +213,25 @@
         <div class="block topic-source-code">
           <span id="source-code" class="block-anchor-with-offset"></span>
           <div class="block-image">
-            <img src="/resources/source-code.svg" alt="large icon of source code"/>
+            <img
+              src="/resources/source-code.svg"
+              alt="large icon of source code"
+            />
           </div>
           <div class="block-content">
             <section class="headline">
-              <h2><a href="#source-code">
-                {{topic.source-code.title}}
-                <span class="anchor-hint">#</span>
-              </a></h2>
+              <h2>
+                <a href="#source-code">
+                  {{topic.source-code.title}}
+                  <span class="anchor-hint">#</span>
+                </a>
+              </h2>
               <p>{{topic.source-code.subtitle}}</p>
-              <button class="details-toggle" data-toggle="source-code" aria-expanded="true">
+              <button
+                class="details-toggle"
+                data-toggle="source-code"
+                aria-expanded="true"
+              >
                 <span class="sr-only">Details in-/uitklappen...</span>
               </button>
             </section>
@@ -219,16 +261,25 @@
         <div class="block topic-technology">
           <span id="technology" class="block-anchor-with-offset"></span>
           <div class="block-image">
-            <img src="/resources/technology.svg" alt="large icon of tecnology"/>
+            <img
+              src="/resources/technology.svg"
+              alt="large icon of tecnology"
+            />
           </div>
           <div class="block-content">
             <section class="headline">
-              <h2><a href="#technology">
-                {{topic.technology.title}}
-                <span class="anchor-hint">#</span>
-              </a></h2>
+              <h2>
+                <a href="#technology">
+                  {{topic.technology.title}}
+                  <span class="anchor-hint">#</span>
+                </a>
+              </h2>
               <p>{{topic.technology.subtitle}}</p>
-              <button class="details-toggle" data-toggle="technology" aria-expanded="true">
+              <button
+                class="details-toggle"
+                data-toggle="technology"
+                aria-expanded="true"
+              >
                 <span class="sr-only">Details in-/uitklappen...</span>
               </button>
             </section>
@@ -258,16 +309,25 @@
         <div class="block topic-process-and-team">
           <span id="process-and-team" class="block-anchor-with-offset"></span>
           <div class="block-image">
-            <img src="/resources/process-and-team.svg" alt="large icon of process and team"/>
+            <img
+              src="/resources/process-and-team.svg"
+              alt="large icon of process and team"
+            />
           </div>
           <div class="block-content">
             <section class="headline">
-              <h2><a href="#process-and-team">
-                {{topic.process-and-team.title}}
-                <span class="anchor-hint">#</span>
-              </a></h2>
+              <h2>
+                <a href="#process-and-team">
+                  {{topic.process-and-team.title}}
+                  <span class="anchor-hint">#</span>
+                </a>
+              </h2>
               <p>{{topic.process-and-team.subtitle}}</p>
-              <button class="details-toggle" data-toggle="process-and-team" aria-expanded="true">
+              <button
+                class="details-toggle"
+                data-toggle="process-and-team"
+                aria-expanded="true"
+              >
                 <span class="sr-only">Details in-/uitklappen...</span>
               </button>
             </section>
@@ -297,16 +357,22 @@
         <div class="block topic-craft">
           <span id="craft" class="block-anchor-with-offset"></span>
           <div class="block-image">
-            <img src="/resources/craft.svg" alt="large icon of craft"/>
+            <img src="/resources/craft.svg" alt="large icon of craft" />
           </div>
           <div class="block-content">
             <section class="headline">
-              <h2><a href="#craft">
-                {{topic.craft.title}}
-                <span class="anchor-hint">#</span>
-              </a></h2>
+              <h2>
+                <a href="#craft">
+                  {{topic.craft.title}}
+                  <span class="anchor-hint">#</span>
+                </a>
+              </h2>
               <p>{{topic.craft.subtitle}}</p>
-              <button class="details-toggle" data-toggle="craft" aria-expanded="true">
+              <button
+                class="details-toggle"
+                data-toggle="craft"
+                aria-expanded="true"
+              >
                 <span class="sr-only">Details in-/uitklappen...</span>
               </button>
             </section>
@@ -336,16 +402,22 @@
         <div class="block topic-others">
           <span id="others" class="block-anchor-with-offset"></span>
           <div class="block-image">
-            <img src="/resources/others.svg" alt="large icon of others"/>
+            <img src="/resources/others.svg" alt="large icon of others" />
           </div>
           <div class="block-content">
             <section class="headline">
-              <h2><a href="#others">
-                {{topic.others.title}}
-                <span class="anchor-hint">#</span>
-              </a></h2>
+              <h2>
+                <a href="#others">
+                  {{topic.others.title}}
+                  <span class="anchor-hint">#</span>
+                </a>
+              </h2>
               <p>{{topic.others.subtitle}}</p>
-              <button class="details-toggle" data-toggle="others" aria-expanded="true">
+              <button
+                class="details-toggle"
+                data-toggle="others"
+                aria-expanded="true"
+              >
                 <span class="sr-only">Details in-/uitklappen...</span>
               </button>
             </section>
@@ -375,18 +447,37 @@
     </main>
 
     <footer class="no-print">
-      © 2023, Infi
-      | <a href="https://github.com/infi-nl/the-infi-way" target="_blank">Source</a>
-      | <a href="https://infi.nl" target="_blank">infi.nl</a>
-      | <a href="https://werkenbij.infi.nl" target="_blank">werkenbij.infi.nl</a>
+      © 2023, Infi |
+      <a href="https://github.com/infi-nl/the-infi-way" target="_blank"
+        >Source</a
+      >
+      | <a href="https://infi.nl" target="_blank">infi.nl</a> |
+      <a href="https://werkenbij.infi.nl" target="_blank">werkenbij.infi.nl</a>
       | {{footer.questions}} <a href="mailto:jeroen@infi.nl">jeroen@infi.nl</a>
       <p>---</p>
-      <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
-        <a property="dct:title" rel="cc:attributionURL" href="https://github.com/infi-nl/the-infi-way">The Infi Way</a>
+      <p
+        xmlns:cc="http://creativecommons.org/ns#"
+        xmlns:dct="http://purl.org/dc/terms/"
+      >
+        <a
+          property="dct:title"
+          rel="cc:attributionURL"
+          href="https://github.com/infi-nl/the-infi-way"
+          >The Infi Way</a
+        >
         by
-        <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/infi-nl">Infi</a>
+        <a
+          rel="cc:attributionURL dct:creator"
+          property="cc:attributionName"
+          href="https://github.com/infi-nl"
+          >Infi</a
+        >
         is licensed under
-        <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="license noopener noreferrer">
+        <a
+          href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
+          target="_blank"
+          rel="license noopener noreferrer"
+        >
           CC BY-NC-ND 4.0
         </a>
       </p>
@@ -408,91 +499,108 @@
 
       document.addEventListener("DOMContentLoaded", () => {
         const url = new URL(window.location.href);
-        const themeToggleButton = document.querySelector('[data-toggle="theme"]');
-        const summaryToggleButton = document.querySelector('[data-toggle="summary"]');
+        const themeToggleButton = document.querySelector(
+          '[data-toggle="theme"]'
+        );
+        const summaryToggleButton = document.querySelector(
+          '[data-toggle="summary"]'
+        );
 
-        if (localStorage.getItem('theme') === 'light') {
-          document.body.classList.toggle('light-mode');
-          themeToggleButton.setAttribute('aria-checked', 'false');
-          themeToggleButton.setAttribute('checked', 'false');
+        if (localStorage.getItem("theme") === "light") {
+          document.body.classList.toggle("light-mode");
+          themeToggleButton.setAttribute("aria-checked", "false");
+          themeToggleButton.setAttribute("checked", "false");
           themeToggleButton.checked = false;
         }
 
-        const blocks = document.querySelectorAll('.block');
-        if (url.searchParams.get('summary') === 'true') {
-          blocks.forEach(block => {
-            block.classList.toggle('view-summary');
-          })
-          summaryToggleButton.setAttribute('aria-expanded', 'false');
+        const blocks = document.querySelectorAll(".block");
+        if (url.searchParams.get("summary") === "true") {
+          blocks.forEach((block) => {
+            block.classList.toggle("view-summary");
+          });
+          summaryToggleButton.setAttribute("aria-expanded", "false");
         }
 
-        themeToggleButton.addEventListener('click', toggleLightMode);
-        summaryToggleButton.addEventListener('click', toggleDetailView);
+        setTimeout(() => {
+          themeToggleButton.classList.remove("hidden");
+          themeToggleButton.classList.add("transition");
+        }, 0);
+        themeToggleButton.addEventListener("click", toggleLightMode);
+        summaryToggleButton.addEventListener("click", toggleDetailView);
 
-        const detailTogglers = document.querySelectorAll('[class="details-toggle"]');
-        detailTogglers.forEach(button => {
-          button.addEventListener('click', () => toggleTopic(button.getAttribute('data-toggle')))
+        const detailTogglers = document.querySelectorAll(
+          '[class="details-toggle"]'
+        );
+        detailTogglers.forEach((button) => {
+          button.addEventListener("click", () =>
+            toggleTopic(button.getAttribute("data-toggle"))
+          );
         });
       });
 
       function toggleLightMode() {
-        document.body.classList.toggle('light-mode');
-        document.body.classList.add('transition');
+        document.body.classList.toggle("light-mode");
+        document.body.classList.add("transition");
 
         const button = document.querySelector('[data-toggle="theme"]');
-        button.setAttribute('aria-checked', button.getAttribute('aria-checked') === 'true' ? 'false' : 'true');
+        button.setAttribute(
+          "aria-checked",
+          button.getAttribute("aria-checked") === "true" ? "false" : "true"
+        );
 
         const url = new URL(window.location.href);
 
-        if (document.body.classList.contains('light-mode')) {
-          localStorage.setItem('theme', 'light');
+        if (document.body.classList.contains("light-mode")) {
+          localStorage.setItem("theme", "light");
         } else {
-          localStorage.setItem('theme', 'dark');
+          localStorage.setItem("theme", "dark");
         }
       }
 
       function toggleDetailView() {
         const button = document.querySelector('[data-toggle="summary"]');
-        button.classList.toggle('view-summary');
+        button.classList.toggle("view-summary");
 
-        const buttonState = button.getAttribute('aria-expanded') === 'true';
-        button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+        const buttonState = button.getAttribute("aria-expanded") === "true";
+        button.setAttribute(
+          "aria-expanded",
+          button.getAttribute("aria-expanded") === "true" ? "false" : "true"
+        );
 
-        const blocks = document.querySelectorAll('.block');
-        blocks.forEach(block => {
-            if (buttonState)
-              block.classList.add('view-summary');
-            else
-              block.classList.remove('view-summary');
-          })
-
+        const blocks = document.querySelectorAll(".block");
+        blocks.forEach((block) => {
+          if (buttonState) block.classList.add("view-summary");
+          else block.classList.remove("view-summary");
+        });
 
         const url = new URL(window.location.href);
 
-        if (url.searchParams.get('summary') === 'true') {
-          url.searchParams.delete('summary');
+        if (url.searchParams.get("summary") === "true") {
+          url.searchParams.delete("summary");
         } else {
-          url.searchParams.set('summary', 'true');
+          url.searchParams.set("summary", "true");
         }
 
-        window.history.replaceState({}, '', url);
+        window.history.replaceState({}, "", url);
       }
 
       function toggleTopic(topic) {
         const button = document.querySelector(`.topic-${topic} button`);
-        const viewState = button.getAttribute('aria-expanded') === 'true';
+        const viewState = button.getAttribute("aria-expanded") === "true";
 
-        button.setAttribute('aria-expanded', viewState ? 'false' : 'true');
-        button.classList.toggle('view-summary');
+        button.setAttribute("aria-expanded", viewState ? "false" : "true");
+        button.classList.toggle("view-summary");
         const target = document.querySelector(`.block.topic-${topic}`);
-        target.classList.toggle('view-summary');
+        target.classList.toggle("view-summary");
 
         checkSummaryState();
       }
 
       function checkSummaryState() {
-        const blocks = document.querySelectorAll('.block');
-        const states = Array.from(blocks).map(block => block.classList.contains('view-summary'));
+        const blocks = document.querySelectorAll(".block");
+        const states = Array.from(blocks).map((block) =>
+          block.classList.contains("view-summary")
+        );
 
         if (states.includes(true) && states.includes(false)) {
           return;
@@ -506,21 +614,19 @@
 
       function setButtonState(state) {
         const button = document.querySelector('[data-toggle="summary"]');
-        if (state)
-          button.classList.add('view-summary');
-        else
-          button.classList.remove('view-summary');
-        button.setAttribute('aria-expanded', !state ? 'true' : 'false');
+        if (state) button.classList.add("view-summary");
+        else button.classList.remove("view-summary");
+        button.setAttribute("aria-expanded", !state ? "true" : "false");
 
         const url = new URL(window.location.href);
 
         if (state) {
-          url.searchParams.set('summary', 'true');
+          url.searchParams.set("summary", "true");
         } else {
-          url.searchParams.delete('summary');
+          url.searchParams.delete("summary");
         }
 
-        window.history.replaceState({}, '', url);
+        window.history.replaceState({}, "", url);
       }
     </script>
   </body>
