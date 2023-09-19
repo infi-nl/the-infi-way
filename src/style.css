@@ -23,31 +23,33 @@
     --color-text-dark: var(--color-black);
     --color-block-light: #f7f7f7;
 
-    /** Day and Night Theme Toggle **/
-    --day-bg-color: #1f94e9;
-    --day-bg-color-2: #a1cceb;
-    --night-bg-color: #142944;
-    --night-bg-color-2: #181b49;
-    --moon-color-unlit: #525263;
-    --sun-color: #f1b553;
-    --cloud-color: #eef6fc;
+    /** Light and Dark Theme Toggle **/
+    --light-bg-color: #272727;
+    --dark-bg-color: #ffffff;
+    --moon-color-unlit: #ffffff;
+    --moon-color-lit: #000000;
+    --sun-color: #ffffff;
     --easer: ease-in-out;
 
-    --toggle-width: 77px;
-    --toggle-height: 35px;
-    --toggle-size: calc(0.7 * var(--toggle-height));
+    --toggle-width: 65px;
+    --toggle-height: 30px;
+    --toggle-size: calc(0.6 * var(--toggle-height));
     --gap-size: calc((var(--toggle-height) - var(--toggle-size)) / 2);
-    /** End Day and Night Theme Toggle **/
+    /** End Light and Dark Theme Toggle **/
 }
 
 * {
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Noto Sans", Ubuntu, Cantarell, "Helvetica Neue", sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
     font-size: 20px;
     line-height: 1.35rem;
     color: var(--color-text-light);
@@ -63,17 +65,31 @@ body.transition {
     transition: background 0.2s linear, color 0.2s linear;
 }
 
-h1, h2, h3, h4, h5, h6, p, ol, ul {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
     margin: 0.2rem 0;
     padding: 0;
 }
 
-ul, ol {
+ul,
+ol {
     padding-left: 2.5rem;
     margin: 0 0 0.75rem 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin-bottom: 0.5rem;
 }
 
@@ -83,11 +99,16 @@ a {
     text-underline-offset: 3px;
 }
 
-a, a:link, a:visited, a:focus, a:active {
+a,
+a:link,
+a:visited,
+a:focus,
+a:active {
     color: inherit;
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
     text-decoration-style: double;
 }
 
@@ -164,7 +185,8 @@ footer {
     transition: background-color 0.2s ease-in-out;
 }
 
-.infi-test ol li::before, .topic-icon {
+.infi-test ol li::before,
+.topic-icon {
     flex: 0 0 1.7rem;
     border-radius: 8px 0px 0px 8px;
     display: inline-flex;
@@ -202,7 +224,7 @@ footer {
 .index-item a {
     text-decoration: none;
     align-items: center;
-    display: flex
+    display: flex;
 }
 
 h2 a,
@@ -252,7 +274,7 @@ h2:hover a .anchor-hint {
 }
 
 .details-toggle:before {
-    content: '';
+    content: "";
     border: solid white;
     border-width: 0 3px 3px 0;
     display: inline-block;
@@ -263,7 +285,7 @@ h2:hover a .anchor-hint {
 }
 
 .view-summary .details-toggle:before {
-    content: '';
+    content: "";
     border: solid white;
     border-width: 0 3px 3px 0;
     display: inline-block;
@@ -330,7 +352,7 @@ h2:hover a .anchor-hint {
 }
 
 .blocks-bar {
-    padding: .5rem;
+    padding: 0.5rem;
     display: flex;
 }
 
@@ -342,7 +364,7 @@ h2:hover a .anchor-hint {
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
-    gap: .5rem;
+    gap: 0.5rem;
 }
 
 .theme-toggle {
@@ -350,72 +372,21 @@ h2:hover a .anchor-hint {
     overflow: clip;
     appearance: none;
     cursor: pointer;
-    background: linear-gradient(var(--day-bg-color), var(--day-bg-color-2));
+    background: var(--light-bg-color);
     width: var(--toggle-width);
     height: var(--toggle-height);
     border-radius: calc(var(--toggle-height) / 2);
     transition: all 0.5s ease-in-out;
-    box-shadow:
-        inset -1px  1px 0.1px 1px rgba(0,0,0,0.05),
-        inset  1px -1px 0.1px 1px rgba(255,255,255,0.6);
 }
 
 .theme-toggle:checked {
-    background: linear-gradient(var(--night-bg-color), var(--night-bg-color-2));
-    box-shadow:
-        inset  1px  1px 0.1px 1px rgba(0,0,0,0.2),
-        inset -1px -1px 0.1px 1px rgba(255,255,255,0.3),
-        inset 0px 0px 20px 8px rgba(0,0,0,0.5)
-        ;
-}
-
-.theme-toggle::before {
-    content: '✯';
-    position: absolute;
-    transition: all 0.3s;
-    left: 0px;
-    top: 0px;
-    font-size: 9px;
-    color: transparent;
-    text-shadow:
-        0px 0px 0px transparent,
-
-        23px 6px 0px transparent,
-        23px 6px 0px transparent,
-
-        -15px 14px 0px transparent,
-        -15px 14px 0px transparent,
-
-        15px 26px 0px transparent,
-        15px 26px 0px transparent
-    ;
-}
-
-.theme-toggle:checked::before {
-    color: #ccccd0;
-    left: 27px;
-    top: 6px;
-    transition: all 0.7s;
-    transition-delay: 0.2s;
-    transition-timing-function: cubic-bezier(.22,.61,.36,1);
-    text-shadow:
-        0px 0px 4px white,
-
-        23px 6px 0px #dddddd,
-        23px 6px 3px #fdfdfd,
-
-        -15px 14px 0px #bdbdbd,
-        -15px 14px 4px #dddddd,
-
-        12px 26px 0px #bdbdbd,
-        12px 26px 5px white
-    ;
+    background: var(--dark-bg-color);
 }
 
 /* Sun */
 .theme-toggle::after {
-    content:'';
-    position:absolute;
+    content: "";
+    position: absolute;
     width: var(--toggle-size);
     height: var(--toggle-size);
     border-radius: 50%;
@@ -423,54 +394,17 @@ h2:hover a .anchor-hint {
     left: var(--gap-size);
     top: var(--gap-size);
     transition: all 0.4s ease-in-out;
-    box-shadow:
-        0px 0px 5px 2px rgba(247, 218, 150, 0.65),
-
-        /* clouds */
-        25px 34px 0px 5px var(--cloud-color),
-        55px 18px 0px 3px var(--cloud-color),
-        75px 28px 0px 3px var(--cloud-color),
-
-        /* sun glow */
-        0px 0px 0.8px 5px rgba(255,255,255,0.1),
-        0px 0px 0.5px 15px rgba(255,255,255,0.1),
-        0px 0px 0.2px 25px rgba(255,255,255,0.1),
-        0px 0px 0.1px 35px rgba(255,255,255,0.08),
-        0px 0px 0.1px 45px rgba(255,255,255,0.08),
-        0px 0px 0.1px 55px rgba(255,255,255,0.05),
-
-        inset 0px 0px 4px 0.5px rgba(255,255,255,0.5),
-        inset 0px 0px 0px 0.5px rgba(255,255,255,0.2)
-        ;
 }
 
 /* Moon */
 .theme-toggle:checked::after {
     /*left: 55px;*/
-    left: calc(var(--toggle-width) - var(--toggle-size) - 1.5 * var(--gap-size));
+    left: calc(
+        var(--toggle-width) - var(--toggle-size) - 1.5 * var(--gap-size)
+    );
     background: var(--moon-color-unlit);
-    box-shadow:
-        0px 0px 12px 2px rgba(255,255,255,0.3),
-
-        /* clouds */
-        45px 34px 0px 5px var(--cloud-color),
-        85px 18px 0px 3px var(--cloud-color),
-        95px 38px 0px 3px var(--cloud-color),
-
-        /* moon glow */
-        0px 0px 0.8px 5px rgba(255,255,255,0.01),
-        0px 0px 0.5px 15px rgba(255,255,255,0.01),
-        0px 0px 0.2px 25px rgba(255,255,255,0.01),
-        0px 0px 0.1px 35px rgba(255,255,255,0.01),
-        0px 0px 0.1px 45px rgba(255,255,255,0.01),
-        0px 0px 0.1px 55px rgba(255,255,255,0.01),
-
-        /* moon shadow */
-        inset -2px -2px 4px 1px rgba(0,0,0,0.1),
-
-        /* moon crescent */
-        inset -5.0px -2.8px 0px 4.6px rgba(235,235,235,0.8)
-        ;
+    box-shadow: 
+        /* moon crescent */ inset -5px -2.8px 0px 4.6px #000;
 }
 
 .summary-toggle {
@@ -496,7 +430,7 @@ h2:hover a .anchor-hint {
 
 .summary-toggle:before {
     display: block;
-    margin-top: -.25rem;
+    margin-top: -0.25rem;
 }
 
 .summary-toggle .grid-view {
@@ -505,7 +439,7 @@ h2:hover a .anchor-hint {
     grid-template-rows: 1fr 1fr;
     gap: 0.3rem;
     margin: 0 auto;
-    padding: .25rem;
+    padding: 0.25rem;
 }
 
 .grid-view div {
@@ -528,7 +462,7 @@ h2:hover a .anchor-hint {
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
-    padding: 0 .25rem;
+    padding: 0 0.25rem;
 }
 
 .view-summary .list-view div {
@@ -585,7 +519,8 @@ h2:hover a .anchor-hint {
         max-width: none;
     }
 
-    .block, .infi-test {
+    .block,
+    .infi-test {
         border-width: 2px;
         margin-left: 0;
         margin-right: 0;
@@ -625,31 +560,38 @@ h2:hover a .anchor-hint {
     }
 }
 
-.infi-test ol .topic-users::before, .topic-users.topic-icon {
+.infi-test ol .topic-users::before,
+.topic-users.topic-icon {
     background: var(--color-topic-users);
 }
 
-.infi-test ol .topic-principles::before, .topic-principles.topic-icon {
+.infi-test ol .topic-principles::before,
+.topic-principles.topic-icon {
     background: var(--color-topic-principles);
 }
 
-.infi-test ol .topic-source-code::before, .topic-source-code.topic-icon {
+.infi-test ol .topic-source-code::before,
+.topic-source-code.topic-icon {
     background: var(--color-topic-source-code);
 }
 
-.infi-test ol .topic-technology::before, .topic-technology.topic-icon {
+.infi-test ol .topic-technology::before,
+.topic-technology.topic-icon {
     background: var(--color-topic-technology);
 }
 
-.infi-test ol .topic-process-and-team::before, .topic-process-and-team.topic-icon {
+.infi-test ol .topic-process-and-team::before,
+.topic-process-and-team.topic-icon {
     background: var(--color-topic-process-and-team);
 }
 
-.infi-test ol .topic-craft::before, .topic-craft.topic-icon {
+.infi-test ol .topic-craft::before,
+.topic-craft.topic-icon {
     background: var(--color-topic-craft);
 }
 
-.infi-test ol .topic-others::before, .topic-others.topic-icon {
+.infi-test ol .topic-others::before,
+.topic-others.topic-icon {
     background: var(--color-topic-others);
 }
 
@@ -682,7 +624,7 @@ h2:hover a .anchor-hint {
 }
 
 .topic-icon {
-    margin-right: .7rem;
+    margin-right: 0.7rem;
     align-items: center;
     border-radius: 8px;
     border-width: 2px;
@@ -720,7 +662,7 @@ h2:hover a .anchor-hint {
 .topic-icon img {
     max-width: 2.5rem;
     height: 2.5rem;
-    padding: .5rem;
+    padding: 0.5rem;
 }
 
 .print-only {
@@ -740,7 +682,8 @@ h2:hover a .anchor-hint {
         display: none;
     }
 
-    html, body {
+    html,
+    body {
         text-shadow: none;
         color: var(--color-black);
     }
@@ -820,7 +763,8 @@ h2:hover a .anchor-hint {
 body.light-mode {
     color: var(--color-text-dark);
     text-shadow: 2px 2px 3px rgba(50, 50, 50, 0.1);
-    background: var(--color-background-light) url("resources/bg_icons_lightmode.svg");
+    background: var(--color-background-light)
+        url("resources/bg_icons_lightmode.svg");
 }
 
 body.light-mode .infi-test {
@@ -836,19 +780,35 @@ body.light-mode .index-item:hover .topic-icon.users {
 }
 
 body.light-mode .index-item:hover .topic-icon.principles {
-    background: color-mix(in srgb, var(--color-topic-principles) 25%, transparent);
+    background: color-mix(
+        in srgb,
+        var(--color-topic-principles) 25%,
+        transparent
+    );
 }
 
 body.light-mode .index-item:hover .topic-icon.source-code {
-    background: color-mix(in srgb, var(--color-topic-source-code) 25%, transparent);
+    background: color-mix(
+        in srgb,
+        var(--color-topic-source-code) 25%,
+        transparent
+    );
 }
 
 body.light-mode .index-item:hover .topic-icon.technology {
-    background: color-mix(in srgb, var(--color-topic-technology) 25%, transparent);
+    background: color-mix(
+        in srgb,
+        var(--color-topic-technology) 25%,
+        transparent
+    );
 }
 
 body.light-mode .index-item:hover .topic-icon.process-and-team {
-    background: color-mix(in srgb, var(--color-topic-process-and-team) 25%, transparent);
+    background: color-mix(
+        in srgb,
+        var(--color-topic-process-and-team) 25%,
+        transparent
+    );
 }
 
 body.light-mode .index-item:hover .topic-icon.craft {
