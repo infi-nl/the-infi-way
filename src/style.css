@@ -380,7 +380,6 @@ h2:hover a .anchor-hint {
 }
 
 .theme-toggle.hidden {
-    display: none;
     visibility: hidden;
 }
 
