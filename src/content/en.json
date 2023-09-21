@@ -1,12 +1,16 @@
 {
   "utilityBar": {
-    "toggleTheme": "🌓 Toggle Dark / light theme",
-    "toggleView": "Expand / collapse details..."
+    "toggleTheme": "🌓 Toggle Dark / light theme"
   },
   "language": "🇬🇧 English",
   "description": "An overview of how we like to build software: which techniques and technology we like to use, and which principles we follow.",
   "header": {
     "subtitle": "At Infi we like to work the following way."
+  },
+  "toggleDetails": {
+    "expandAll": "Expand all",
+    "collapseAll": "Collapse all",
+    "expandCollapseDetails": "Expand / collapse details"
   },
   "test": {
     "title": "The Infi Test",

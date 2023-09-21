@@ -75,20 +75,20 @@
       <section class="blocks">
         <nav class="blocks-bar">
             <button
-              title="{{utilityBar.toggleView}}"
+              title="{{toggleDetails.expandCollapseDetails}}"
               class="summary-toggle"
               data-toggle="summary"
               role="switch"
-              aria-label="{{utilityBar.toggleView}}"
+              aria-label="{{toggleDetails.expandCollapseDetails}}"
               aria-checked="true"
             >
               <div class="grid-view">
-                Collapse all
+                {{toggleDetails.collapseAll}}
               </div>
               <div class="list-view">
-                Expand all
+                {{toggleDetails.expandAll}}
               </div>
-              <span class="sr-only">{{utilityBar.toggleView}}</span>
+              <span class="sr-only">{{toggleDetails.expandCollapseDetails}}</span>
             </button>
         </nav>
         <div class="block topic-users">
