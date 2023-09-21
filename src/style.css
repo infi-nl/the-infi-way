@@ -100,7 +100,7 @@ header h1 {
 }
 
 header img {
-    height: 3.5rem;
+    height: fit-content;
     margin: 0 0.5rem;
 }
 
@@ -516,6 +516,7 @@ h2:hover a .anchor-hint {
 
     header img {
         height: 1.7rem;
+        width: auto;
         margin-left: 0.2rem;
         margin-right: 0.2rem;
     }
