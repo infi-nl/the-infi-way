@@ -80,7 +80,7 @@
               data-toggle="summary"
               role="switch"
               aria-label="{{utilityBar.toggleView}}"
-              aria-expanded="true"
+              aria-checked="true"
             >
               <div class="grid-view">
                 Collapse all
@@ -419,7 +419,7 @@
           blocks.forEach(block => {
             block.classList.toggle('view-summary');
           })
-          summaryToggleButton.setAttribute('aria-expanded', 'false');
+          summaryToggleButton.setAttribute('aria-checked', 'false');
         }
 
         themeToggleButton.addEventListener('click', toggleLightMode);
@@ -451,8 +451,8 @@
         const button = document.querySelector('[data-toggle="summary"]');
         button.classList.toggle('view-summary');
 
-        const buttonState = button.getAttribute('aria-expanded') === 'true';
-        button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+        const buttonState = button.getAttribute('aria-checked') === 'true';
+        button.setAttribute('aria-checked', button.getAttribute('aria-checked') === 'true' ? 'false' : 'true');
 
         const blocks = document.querySelectorAll('.block');
         blocks.forEach(block => {
