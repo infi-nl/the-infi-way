@@ -507,13 +507,6 @@ h2:hover a .anchor-hint {
     display: block;
 }
 
-.view-summary .list-view div {
-    background: white;
-    border-radius: 1px;
-    width: 100%;
-    height: 5px;
-}
-
 .language-select {
     padding-top: 0.15rem;
     padding-right: 0.4rem;
