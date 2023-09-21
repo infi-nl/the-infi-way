@@ -3,13 +3,13 @@
   "languages": [
      {
        "code": "en-US",
-       "name": "🇺🇸 English",
+       "name": "EN",
        "contentFile": "en.json",
        "outPath": "en"
     },
      {
        "code": "nl-NL",
-       "name": "🇳🇱 Nederlands",
+       "name": "NL",
        "contentFile": "nl.json",
        "outPath": "nl"
     }

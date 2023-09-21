@@ -340,7 +340,9 @@ h2:hover a .anchor-hint {
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
-    gap: .5rem;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    padding-right:2rem;
 }
 
 .theme-toggle {
@@ -483,12 +485,19 @@ h2:hover a .anchor-hint {
 }
 
 .language-select {
-    padding-top: 0.15rem;
-    padding-right: 0.4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.language-select span:not(.current) a {
+    text-decoration: unset;
 }
 
 .language-select span:not(:last-child):after {
     content: " | ";
+    padding-left: 0.75rem;
 }
 
 .language-select span.current {
