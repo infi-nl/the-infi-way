@@ -27,7 +27,7 @@
     -->
     <nav class="utility-bar">
       <input
-        class="theme-toggle"
+        class="theme-toggle hidden"
         data-toggle="theme"
         type="checkbox"
         checked="true"
@@ -425,6 +425,11 @@
           })
           summaryToggleButton.setAttribute('aria-expanded', 'false');
         }
+
+        setTimeout(() => {
+          themeToggleButton.classList.remove("hidden");
+          themeToggleButton.classList.add("transition");
+        }, 0);
 
         themeToggleButton.addEventListener('click', toggleLightMode);
         summaryToggleButton.addEventListener('click', toggleDetailView);
