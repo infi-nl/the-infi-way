@@ -304,10 +304,13 @@ h2:hover a .anchor-hint {
     margin-bottom: 0.2rem;
 }
 
-.view-summary .details,
-.view-summary .block-image {
+.view-summary .details{
     display: none;
 }
+
+.view-summary .block-image {
+    margin-top:1rem;
+} 
 
 .view-summary .headline {
     max-width: none;
@@ -596,7 +599,8 @@ h2:hover a .anchor-hint {
         margin-top: 132px;
     }
 
-    .block-image {
+    .block-image,
+    .view-summary .block-image {
         margin: calc(var(--block-image-height) / -2) auto 0;
         width: var(--block-image-height);
     }
