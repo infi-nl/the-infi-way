@@ -23,21 +23,19 @@
     --color-text-dark: var(--color-black);
     --color-block-light: #f7f7f7;
 
-    /** Day and Night Theme Toggle **/
-    --day-bg-color: #1f94e9;
-    --day-bg-color-2: #a1cceb;
-    --night-bg-color: #142944;
-    --night-bg-color-2: #181b49;
-    --moon-color-unlit: #525263;
-    --sun-color: #f1b553;
-    --cloud-color: #eef6fc;
+    /** Light and Dark Theme Toggle **/
+    --light-bg-color: #272727;
+    --dark-bg-color: #ffffff;
+    --moon-color-unlit: #ffffff;
+    --moon-color-lit: #000000;
+    --sun-color: #ffffff;
     --easer: ease-in-out;
 
-    --toggle-width: 77px;
-    --toggle-height: 35px;
-    --toggle-size: calc(0.7 * var(--toggle-height));
+    --toggle-width: 65px;
+    --toggle-height: 30px;
+    --toggle-size: calc(0.6 * var(--toggle-height));
     --gap-size: calc((var(--toggle-height) - var(--toggle-size)) / 2);
-    /** End Day and Night Theme Toggle **/
+    /** End Light and Dark Theme Toggle **/
 }
 
 * {
@@ -102,7 +100,7 @@ header h1 {
 }
 
 header img {
-    height: 3.5rem;
+    height: fit-content;
     margin: 0 0.5rem;
 }
 
@@ -300,7 +298,9 @@ h2:hover a .anchor-hint {
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
-    gap: .5rem;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    padding-right:2rem;
 }
 
 .theme-toggle {
@@ -308,66 +308,33 @@ h2:hover a .anchor-hint {
     overflow: clip;
     appearance: none;
     cursor: pointer;
-    background: linear-gradient(var(--day-bg-color), var(--day-bg-color-2));
+    background: var(--light-bg-color);
     width: var(--toggle-width);
     height: var(--toggle-height);
     border-radius: calc(var(--toggle-height) / 2);
-    transition: all 0.5s ease-in-out;
-    box-shadow:
-        inset -1px  1px 0.1px 1px rgba(0,0,0,0.05),
-        inset  1px -1px 0.1px 1px rgba(255,255,255,0.6);
+}
+
+.theme-toggle.hidden {
+    visibility: hidden;
+}
+
+.theme-toggle.transition {
+    transition: background 0.5s ease-in-out;
 }
 
 .theme-toggle:checked {
-    background: linear-gradient(var(--night-bg-color), var(--night-bg-color-2));
-    box-shadow:
-        inset  1px  1px 0.1px 1px rgba(0,0,0,0.2),
-        inset -1px -1px 0.1px 1px rgba(255,255,255,0.3),
-        inset 0px 0px 20px 8px rgba(0,0,0,0.5)
-        ;
+    background: var(--dark-bg-color);
 }
 
 .theme-toggle::before {
-    content: '✯';
+    content: "☀";
     position: absolute;
-    transition: all 0.3s;
-    left: 0px;
-    top: 0px;
-    font-size: 9px;
-    color: transparent;
-    text-shadow:
-        0px 0px 0px transparent,
-
-        23px 6px 0px transparent,
-        23px 6px 0px transparent,
-
-        -15px 14px 0px transparent,
-        -15px 14px 0px transparent,
-
-        15px 26px 0px transparent,
-        15px 26px 0px transparent
-    ;
-}
-
-.theme-toggle:checked::before {
-    color: #ccccd0;
-    left: 27px;
-    top: 6px;
-    transition: all 0.7s;
-    transition-delay: 0.2s;
-    transition-timing-function: cubic-bezier(.22,.61,.36,1);
-    text-shadow:
-        0px 0px 4px white,
-
-        23px 6px 0px #dddddd,
-        23px 6px 3px #fdfdfd,
-
-        -15px 14px 0px #bdbdbd,
-        -15px 14px 4px #dddddd,
-
-        12px 26px 0px #bdbdbd,
-        12px 26px 5px white
-    ;
+    width: var(--toggle-size);
+    height: var(--toggle-size);
+    top: 0;
+    left: var(--gap-size);
+    color: var(--sun-color);
+    font-size: 1rem;
 }
 
 /* Sun */
@@ -377,58 +344,37 @@ h2:hover a .anchor-hint {
     width: var(--toggle-size);
     height: var(--toggle-size);
     border-radius: 50%;
-    background: var(--sun-color);
+    opacity: 0;
+    background: var(--moon-color-unlit);
     left: var(--gap-size);
     top: var(--gap-size);
     transition: all 0.4s ease-in-out;
-    box-shadow:
-        0px 0px 5px 2px rgba(247, 218, 150, 0.65),
+}
 
-        /* clouds */
-        25px 34px 0px 5px var(--cloud-color),
-        55px 18px 0px 3px var(--cloud-color),
-        75px 28px 0px 3px var(--cloud-color),
+.theme-toggle.transition::before,
+.theme-toggle.transition::after {
+    transition-property: left, top, background, color, opacity;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+}
 
-        /* sun glow */
-        0px 0px 0.8px 5px rgba(255,255,255,0.1),
-        0px 0px 0.5px 15px rgba(255,255,255,0.1),
-        0px 0px 0.2px 25px rgba(255,255,255,0.1),
-        0px 0px 0.1px 35px rgba(255,255,255,0.08),
-        0px 0px 0.1px 45px rgba(255,255,255,0.08),
-        0px 0px 0.1px 55px rgba(255,255,255,0.05),
-
-        inset 0px 0px 4px 0.5px rgba(255,255,255,0.5),
-        inset 0px 0px 0px 0.5px rgba(255,255,255,0.2)
-        ;
+.theme-toggle:checked::before {
+    left: calc(
+        var(--toggle-width) - var(--toggle-size) - 1.5 * var(--gap-size)
+    );
+    opacity: 0;
 }
 
 /* Moon */
 .theme-toggle:checked::after {
     /*left: 55px;*/
-    left: calc(var(--toggle-width) - var(--toggle-size) - 1.5 * var(--gap-size));
-    background: var(--moon-color-unlit);
-    box-shadow:
-        0px 0px 12px 2px rgba(255,255,255,0.3),
-
-        /* clouds */
-        45px 34px 0px 5px var(--cloud-color),
-        85px 18px 0px 3px var(--cloud-color),
-        95px 38px 0px 3px var(--cloud-color),
-
-        /* moon glow */
-        0px 0px 0.8px 5px rgba(255,255,255,0.01),
-        0px 0px 0.5px 15px rgba(255,255,255,0.01),
-        0px 0px 0.2px 25px rgba(255,255,255,0.01),
-        0px 0px 0.1px 35px rgba(255,255,255,0.01),
-        0px 0px 0.1px 45px rgba(255,255,255,0.01),
-        0px 0px 0.1px 55px rgba(255,255,255,0.01),
-
-        /* moon shadow */
-        inset -2px -2px 4px 1px rgba(0,0,0,0.1),
-
-        /* moon crescent */
-        inset -5.0px -2.8px 0px 4.6px rgba(235,235,235,0.8)
-        ;
+    left: calc(
+        var(--toggle-width) - var(--toggle-size) - 1.5 * var(--gap-size)
+    );
+    opacity: 1;
+    top: var(--gap-size);
+    box-shadow: 
+        /* moon crescent */ inset -5px -2.8px 0px 4.6px #000;
 }
 
 .summary-toggle {
@@ -466,18 +412,28 @@ h2:hover a .anchor-hint {
 }
 
 .language-select {
-    padding-top: 0.15rem;
-    padding-right: 0.4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 8px;
 }
 
 .language-select span:not(:last-child):after {
     content: " | ";
+    padding-left: 0.75rem;
 }
 
-.language-select span.current {
+.language-select span.current a{
     font-weight: bold;
+    text-decoration-style: double;
 }
-
+@media (max-width: 1024px) {
+    .utility-bar {
+        padding-top: 1rem;
+        padding-right: 1rem;
+    }
+}
 @media (max-width: 768px) {
     header {
         margin-top: 60px;
@@ -490,6 +446,7 @@ h2:hover a .anchor-hint {
 
     header img {
         height: 1.7rem;
+        width: auto;
         margin-left: 0.2rem;
         margin-right: 0.2rem;
     }

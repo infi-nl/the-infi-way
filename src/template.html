@@ -27,7 +27,7 @@
     -->
     <nav class="utility-bar">
       <input
-        class="theme-toggle"
+        class="theme-toggle hidden"
         data-toggle="theme"
         type="checkbox"
         checked="true"
@@ -43,7 +43,7 @@
     </nav>
     <header>
       <h1><a href="#">
-        <span lang="en">The <img src="/resources/logo_infi.svg" alt="Infi"> Way</span>
+        <span lang="en">The <img src="/resources/logo_infi.svg" alt="Infi" width="145" height="70"> Way</span>
       </a></h1>
       <p role="doc-subtitle">{{header.subtitle}}</p>
     </header>
@@ -94,7 +94,7 @@
         <div class="block topic-users">
           <span id="users" class="block-anchor-with-offset"></span>
           <div class="block-image">
-            <img src="/resources/users.svg" alt="large icon of users"/>
+            <img src="/resources/users.svg" alt="large icon of users" width="50" height="50"/>
           </div>
           <div class="block-content">
             <section class="headline">
@@ -130,7 +130,7 @@
         <div class="block topic-principles">
           <span id="principles" class="block-anchor-with-offset"></span>
           <div class="block-image">
-            <img src="/resources/principles.svg" alt="large icon of principles"/>
+            <img src="/resources/principles.svg" alt="large icon of principles" width="50" height="50"/>
           </div>
           <div class="block-content">
             <section class="headline">
@@ -166,7 +166,7 @@
         <div class="block topic-source-code">
           <span id="source-code" class="block-anchor-with-offset"></span>
           <div class="block-image">
-            <img src="/resources/source-code.svg" alt="large icon of source code"/>
+            <img src="/resources/source-code.svg" alt="large icon of source code" width="50" height="50"/>
           </div>
           <div class="block-content">
             <section class="headline">
@@ -202,7 +202,7 @@
         <div class="block topic-technology">
           <span id="technology" class="block-anchor-with-offset"></span>
           <div class="block-image">
-            <img src="/resources/technology.svg" alt="large icon of tecnology"/>
+            <img src="/resources/technology.svg" alt="large icon of tecnology" width="50" height="50"/>
           </div>
           <div class="block-content">
             <section class="headline">
@@ -238,7 +238,7 @@
         <div class="block topic-process-and-team">
           <span id="process-and-team" class="block-anchor-with-offset"></span>
           <div class="block-image">
-            <img src="/resources/process-and-team.svg" alt="large icon of process and team"/>
+            <img src="/resources/process-and-team.svg" alt="large icon of process and team" width="50" height="50"/>
           </div>
           <div class="block-content">
             <section class="headline">
@@ -274,7 +274,7 @@
         <div class="block topic-craft">
           <span id="craft" class="block-anchor-with-offset"></span>
           <div class="block-image">
-            <img src="/resources/craft.svg" alt="large icon of craft"/>
+            <img src="/resources/craft.svg" alt="large icon of craft" width="50" height="50"/>
           </div>
           <div class="block-content">
             <section class="headline">
@@ -310,7 +310,7 @@
         <div class="block topic-others">
           <span id="others" class="block-anchor-with-offset"></span>
           <div class="block-image">
-            <img src="/resources/others.svg" alt="large icon of others"/>
+            <img src="/resources/others.svg" alt="large icon of others" width="50" height="50"/>
           </div>
           <div class="block-content">
             <section class="headline">
@@ -397,6 +397,14 @@
           summaryToggleButton.setAttribute('aria-checked', 'false');
           summaryToggleButton.classList.toggle('view-summary');
         }
+
+        // Workaround to prevent the toggle from doing a tiny animation
+        // when the page loads. We can try to get rid of this workaround
+        // some time in the future.
+        setTimeout(() => {
+          themeToggleButton.classList.remove("hidden");
+          themeToggleButton.classList.add("transition");
+        }, 0);
 
         themeToggleButton.addEventListener('click', toggleLightMode);
         summaryToggleButton.addEventListener('click', toggleDetailView);
