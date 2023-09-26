@@ -489,6 +489,7 @@ h2:hover a .anchor-hint {
     flex-direction: row;
     align-items: center;
     gap: 0.75rem;
+    margin-bottom: 8px;
 }
 
 .language-select span:not(:last-child):after {
