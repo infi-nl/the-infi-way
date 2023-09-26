@@ -228,51 +228,6 @@ h2:hover a .anchor-hint {
     margin-bottom: 1rem;
 }
 
-.details-toggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 2em;
-    height: 2em;
-    opacity: 0.5;
-    background: none !important;
-    padding: 0 !important;
-    font-size: inherit;
-    font-family: inherit;
-    cursor: pointer;
-    color: var(--color-text-light);
-    border: 2px solid var(--color-text-light);
-    border-radius: 50%;
-    text-align: center;
-    display: flex;
-}
-
-.details-toggle:hover {
-    opacity: 1;
-}
-
-.details-toggle:before {
-    content: '';
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
-    margin: auto;
-    transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
-}
-
-.view-summary .details-toggle:before {
-    content: '';
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
-    margin: auto;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-}
-
 .block-image {
     margin: 2rem 0 0 calc(var(--block-image-height) / -2);
     border-radius: 50%;
@@ -474,46 +429,25 @@ h2:hover a .anchor-hint {
 }
 
 .summary-toggle {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-top: 0.25rem;
-    opacity: 0.5;
     background: none;
     padding: 0 !important;
+    margin-right: 2rem;
     font-size: inherit;
     font-family: inherit;
     cursor: pointer;
     color: var(--color-text-light);
-    border: 2px solid var(--color-text-light);
-    border-radius: 8px;
-    text-align: center;
+    border: 0;
+    text-align: right;
 }
 
-.summary-toggle:hover {
-    background: var(--color-orange);
-    opacity: 1;
+.list-view, .grid-view {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-offset: 3px;
 }
 
-.summary-toggle:before {
-    display: block;
-    margin-top: -.25rem;
-}
-
-.summary-toggle .grid-view {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0.3rem;
-    margin: 0 auto;
-    padding: .25rem;
-}
-
-.grid-view div {
-    background: white;
-    border-radius: 1px;
-    width: 5px;
-    height: 5px;
-    margin: 0 auto;
+.list-view:hover, .grid-view:hover {
+    text-decoration-style: double;
 }
 
 .summary-toggle .list-view {
@@ -525,17 +459,7 @@ h2:hover a .anchor-hint {
 }
 
 .view-summary .list-view {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    padding: 0 .25rem;
-}
-
-.view-summary .list-view div {
-    background: white;
-    border-radius: 1px;
-    width: 100%;
-    height: 5px;
+    display: block;
 }
 
 .language-select {

@@ -75,24 +75,20 @@
       <section class="blocks">
         <nav class="blocks-bar">
             <button
-              title="{{utilityBar.toggleView}}"
+              title="{{toggleDetails.expandCollapseDetails}}"
               class="summary-toggle"
               data-toggle="summary"
               role="switch"
-              aria-label="{{utilityBar.toggleView}}"
-              aria-expanded="true"
+              aria-label="{{toggleDetails.expandCollapseDetails}}"
+              aria-checked="true"
             >
               <div class="grid-view">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+                {{toggleDetails.collapseAll}}
               </div>
               <div class="list-view">
-                <div></div>
-                <div></div>
+                {{toggleDetails.expandAll}}
               </div>
-              <span class="sr-only">{{utilityBar.toggleView}}</span>
+              <span class="sr-only">{{toggleDetails.expandCollapseDetails}}</span>
             </button>
         </nav>
         <div class="block topic-users">
@@ -107,13 +103,6 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.users.subtitle}}</p>
-                <button
-                  role="switch" class="details-toggle"
-                  data-toggle="users"
-                  aria-expanded="true"
-                  >
-                  <span class="sr-only">Details in-/uitklappen...</span>
-                </button>
             </section>
             <section class="details">
               <h3>{{topic.users.how-title}}</h3>
@@ -150,9 +139,6 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.principles.subtitle}}</p>
-              <button class="details-toggle" data-toggle="principles" aria-expanded="true">
-                <span class="sr-only">Details in-/uitklappen...</span>
-              </button>
             </section>
             <section class="details">
               <h3>{{topic.principles.how-title}}</h3>
@@ -189,9 +175,6 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.source-code.subtitle}}</p>
-              <button class="details-toggle" data-toggle="source-code" aria-expanded="true">
-                <span class="sr-only">Details in-/uitklappen...</span>
-              </button>
             </section>
             <section class="details">
               <h3>{{topic.source-code.how-title}}</h3>
@@ -228,9 +211,6 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.technology.subtitle}}</p>
-              <button class="details-toggle" data-toggle="technology" aria-expanded="true">
-                <span class="sr-only">Details in-/uitklappen...</span>
-              </button>
             </section>
             <section class="details">
               <h3>{{topic.technology.how-title}}</h3>
@@ -267,9 +247,6 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.process-and-team.subtitle}}</p>
-              <button class="details-toggle" data-toggle="process-and-team" aria-expanded="true">
-                <span class="sr-only">Details in-/uitklappen...</span>
-              </button>
             </section>
             <section class="details">
               <h3>{{topic.process-and-team.how-title}}</h3>
@@ -306,9 +283,6 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.craft.subtitle}}</p>
-              <button class="details-toggle" data-toggle="craft" aria-expanded="true">
-                <span class="sr-only">Details in-/uitklappen...</span>
-              </button>
             </section>
             <section class="details">
               <h3>{{topic.craft.how-title}}</h3>
@@ -345,9 +319,6 @@
                 <span class="anchor-hint">#</span>
               </a></h2>
               <p>{{topic.others.subtitle}}</p>
-              <button class="details-toggle" data-toggle="others" aria-expanded="true">
-                <span class="sr-only">Details in-/uitklappen...</span>
-              </button>
             </section>
             <section class="details">
               <h3>{{topic.others.how-title}}</h3>
@@ -423,16 +394,12 @@
           blocks.forEach(block => {
             block.classList.toggle('view-summary');
           })
-          summaryToggleButton.setAttribute('aria-expanded', 'false');
+          summaryToggleButton.setAttribute('aria-checked', 'false');
+          summaryToggleButton.classList.toggle('view-summary');
         }
 
         themeToggleButton.addEventListener('click', toggleLightMode);
         summaryToggleButton.addEventListener('click', toggleDetailView);
-
-        const detailTogglers = document.querySelectorAll('[class="details-toggle"]');
-        detailTogglers.forEach(button => {
-          button.addEventListener('click', () => toggleTopic(button.getAttribute('data-toggle')))
-        });
       });
 
       function toggleLightMode() {
@@ -455,8 +422,8 @@
         const button = document.querySelector('[data-toggle="summary"]');
         button.classList.toggle('view-summary');
 
-        const buttonState = button.getAttribute('aria-expanded') === 'true';
-        button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+        const buttonState = button.getAttribute('aria-checked') === 'true';
+        button.setAttribute('aria-checked', button.getAttribute('aria-checked') === 'true' ? 'false' : 'true');
 
         const blocks = document.querySelectorAll('.block');
         blocks.forEach(block => {
@@ -473,51 +440,6 @@
           url.searchParams.delete('summary');
         } else {
           url.searchParams.set('summary', 'true');
-        }
-
-        window.history.replaceState({}, '', url);
-      }
-
-      function toggleTopic(topic) {
-        const button = document.querySelector(`.topic-${topic} button`);
-        const viewState = button.getAttribute('aria-expanded') === 'true';
-
-        button.setAttribute('aria-expanded', viewState ? 'false' : 'true');
-        button.classList.toggle('view-summary');
-        const target = document.querySelector(`.block.topic-${topic}`);
-        target.classList.toggle('view-summary');
-
-        checkSummaryState();
-      }
-
-      function checkSummaryState() {
-        const blocks = document.querySelectorAll('.block');
-        const states = Array.from(blocks).map(block => block.classList.contains('view-summary'));
-
-        if (states.includes(true) && states.includes(false)) {
-          return;
-        }
-        if (states.includes(true)) {
-          setButtonState(true);
-        } else {
-          setButtonState(false);
-        }
-      }
-
-      function setButtonState(state) {
-        const button = document.querySelector('[data-toggle="summary"]');
-        if (state)
-          button.classList.add('view-summary');
-        else
-          button.classList.remove('view-summary');
-        button.setAttribute('aria-expanded', !state ? 'true' : 'false');
-
-        const url = new URL(window.location.href);
-
-        if (state) {
-          url.searchParams.set('summary', 'true');
-        } else {
-          url.searchParams.delete('summary');
         }
 
         window.history.replaceState({}, '', url);
