@@ -501,7 +501,12 @@ h2:hover a .anchor-hint {
     font-weight: bold;
     text-decoration-style: double;
 }
-
+@media (max-width: 1024px) {
+    .utility-bar {
+        padding-top: 1rem;
+        padding-right: 1rem;
+    }
+}
 @media (max-width: 768px) {
     header {
         margin-top: 60px;
