@@ -17,7 +17,7 @@
     --color-block: #212121;
 
     --box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
-    --block-image-height: 176px;
+    --block-image-height: 140px;
 
     --color-background-light: var(--color-white);
     --color-text-dark: var(--color-black);
@@ -243,8 +243,8 @@ h2:hover a .anchor-hint {
 }
 
 .block-image img {
-    width: 132px;
-    height: 132px;
+    width: 105px;
+    height: 105px;
 }
 
 .details {
@@ -259,10 +259,13 @@ h2:hover a .anchor-hint {
     margin-bottom: 0.2rem;
 }
 
-.view-summary .details,
-.view-summary .block-image {
+.view-summary .details{
     display: none;
 }
+
+.view-summary .block-image {
+    margin-top:2rem;
+} 
 
 .view-summary .headline {
     max-width: none;
@@ -520,7 +523,8 @@ h2:hover a .anchor-hint {
         margin-top: 132px;
     }
 
-    .block-image {
+    .block-image,
+    .view-summary .block-image {
         margin: calc(var(--block-image-height) / -2) auto 0;
         width: var(--block-image-height);
     }
