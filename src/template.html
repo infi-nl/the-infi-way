@@ -426,6 +426,9 @@
           summaryToggleButton.setAttribute('aria-expanded', 'false');
         }
 
+        // Workaround to prevent the toggle from doing a tiny animation
+        // when the page loads. We can try to get rid of this workaround
+        // some time in the future.
         setTimeout(() => {
           themeToggleButton.classList.remove("hidden");
           themeToggleButton.classList.add("transition");
