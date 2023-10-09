@@ -21,7 +21,7 @@
 
     --color-background-light: var(--color-white);
     --color-text-dark: var(--color-black);
-    --color-block-light: #edeff0;
+    --color-block-light: #efefef;
 
     /** Light and Dark Theme Toggle **/
     --light-bg-color: #272727;
