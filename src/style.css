@@ -8,6 +8,7 @@
     --color-topic-others: #569f34;
 
     --color-black: #121212;
+    --color-black-light: #202122;
     --color-white: rgba(255, 255, 255, 0.95);
     --color-orange: #f67905;
     --color-gray: #6f6f6f;
@@ -20,11 +21,11 @@
     --block-image-height: 140px;
 
     --color-background-light: var(--color-white);
-    --color-text-dark: var(--color-black);
-    --color-block-light: #f7f7f7;
+    --color-text-dark: var(--color-black-light);
+    --color-block-light: #efefef;
 
     /** Light and Dark Theme Toggle **/
-    --light-bg-color: #272727;
+    --light-bg-color: var(--color-black-light);
     --dark-bg-color: #ffffff;
     --moon-color-unlit: #ffffff;
     --moon-color-lit: #000000;
