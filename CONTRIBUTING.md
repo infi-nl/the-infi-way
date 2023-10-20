@@ -41,7 +41,3 @@ When the build is done you can open the HTML files in the `build` folder (option
 
 The templating is something lightweight and homebrew, inspired by [Handlebars](https://handlebarsjs.com).
 This entire engine is part of `build.js`.
-
-Some functionality is set up using an inline `script` tag in `src/template.html`.
-Whenever this changes, the script hash in the content security policy also needs to be updated.
-This can be done automatically using the `generate-csp.js` script.
