@@ -41,5 +41,3 @@ When the build is done you can open the HTML files in the `build` folder (option
 
 The templating is something lightweight and homebrew, inspired by [Handlebars](https://handlebarsjs.com).
 This entire engine is part of `build.js`.
-
-

@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{lang}}">
-  <head
-    content="
-    default-src 'none';
-    font-src 'none';
-    img-src 'self';
-    script-src 'self' 'sha256-kd96wWfNr64yfWThIC7Czx1Fa5GNYqw6aym25kIkPYw=';
-    style-src 'self';
-  ">
+  <head>
     <meta
       http-equiv="Content-Security-Policy"
-      >
+      content="
+        default-src 'none';
+        font-src 'none';
+        img-src 'self';
+        script-src 'self' '{{scriptHash}}';
+        style-src 'self';
+      ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="description" content="{{description}}">
@@ -372,10 +371,6 @@
     </footer>
 
     <script>
-      // ⚠ The contents of this script block are hashed and used in the CSP meta tag.
-      // Any change (including white space) will require an update of the CSP tag.
-      // All this to prevent the need for 'unsafe-inline'.
-
       document.addEventListener("DOMContentLoaded", () => {
         const url = new URL(window.location.href);
         const themeToggleButton = document.querySelector('[data-toggle="theme"]');
