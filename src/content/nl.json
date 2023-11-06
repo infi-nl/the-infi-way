@@ -5,7 +5,7 @@
   "language": "🇳🇱 Nederlands",
   "description": "Een overzicht van hoe wij graag software bouwen: welke technieken en technologie we graag gebruiken, en welke principes we volgen.",
   "header": {
-    "subtitle": "Bij Infi werken we graag op de volgende manier"
+    "subtitle": "Bij Infi werken we graag op de volgende manier."
   },
   "toggleDetails": {
     "expandAll": "Uitklappen",
@@ -111,7 +111,7 @@
       "examples": [
         "Git (flow op project afgestemd)",
         "<span lang=\"en\">Unit tests, integration tests, end-to-end tests</span>",
-        "<a href=\"https://www.sonarqube.org/\" target=\"_blank\">Sonarqube</a>, <a href=\"https://eslint.org/\" target=\"_blank\">ESLint</a>, etc.",
+        "<a href=\"https://www.sonarqube.org/\" target=\"_blank\">SonarQube</a>, <a href=\"https://eslint.org/\" target=\"_blank\">ESLint</a>, etc.",
         "<a href=\"https://en.wikipedia.org/wiki/SOLID\" target=\"_blank\"><abbr>SOLID</abbr></a> (of <a href=\"https://stackoverflow.com/q/6453235\" target=\"_blank\"><abbr>DAMP</abbr></a>), <a href=\"https://martinfowler.com/bliki/Yagni.html\" target=\"_blank\"><abbr>YAGNI</abbr></a>, <a href=\"https://en.wikipedia.org/wiki/KISS_principle\" target=\"_blank\"><abbr>KISS</abbr></a>",
         "<a href=\"https://www.goodreads.com/en/book/show/179133.Domain_Driven_Design\" target=\"_blank\"><span lang=\"en\">Domain-Driven Design</span></a>"
       ],
@@ -131,15 +131,14 @@
         "Clone &amp; run repositories",
         "<a href=\"https://en.wikipedia.org/wiki/Continuous_integration\" target=\"_blank\"><span lang=\"en\">Continuous integration</span></a>, <a href=\"https://en.wikipedia.org/wiki/Continuous_delivery\" target=\"_blank\"><span lang=\"en\">continuous delivery</span></a>",
         "<a href=\"https://nl.wikipedia.org/wiki/OTAP\" target=\"_blank\">OTAP</a>",
-        "<span lang=\"en\">Continuous integration, continuous delivery</span>",
         "Infrastructuur, scripts, en monitoring in de code"
       ],
       "examples-title": "Denk aan bijvoorbeeld:",
       "examples": [
-        "<a href=\"https://adr.github.io/\" target=\"_blank\"><span lang=\"en\">Architecural Decision Records</span></a>, <a href=\"https://c4model.com/\" target=\"_blank\">C4 Model</a>",
+        "<a href=\"https://adr.github.io/\" target=\"_blank\"><span lang=\"en\">Architectural Decision Records</span></a>, <a href=\"https://c4model.com/\" target=\"_blank\">C4 Model</a>",
         "<a href=\"https://www.ansible.com/\" target=\"_blank\">Ansible</a>, <a href=\"https://www.docker.com/\" target=\"_blank\">Docker</a>, <a href=\"https://www.terraform.io/\" target=\"_blank\">Terraform</a>",
         "<a href=\"https://gitlab.com/\" target=\"_blank\">GitLab</a> (SAAS of self-hosted), <a href=\"https://github.com/\" target=\"_blank\">GitHub</a>",
-        "<a href=\"https://docs.gitlab.com/ee/ci/\" target=\"_blank\"><span lang=\"en\">GitLab CI</span></a>, <a href=\"https://github.com/features/actions\" target=\"_blank\"><span lang=\"en\">GitHub Actions</span></a>, <a href=\"https://azure.microsoft.com/en-us/services/devops/\" target=\"_blank\"><span lang=\"en\">Azure Devops</span></a>, <a href=\"https://circleci.com/\" target=\"_blank\"><span lang=\"en\">CircleCI</span></a>, <a href=\"https://octopus.com/\" target=\"_blank\"><span lang=\"en\">Octopus</span></a>"
+        "<a href=\"https://docs.gitlab.com/ee/ci/\" target=\"_blank\"><span lang=\"en\">GitLab CI</span></a>, <a href=\"https://github.com/features/actions\" target=\"_blank\"><span lang=\"en\">GitHub Actions</span></a>, <a href=\"https://azure.microsoft.com/en-us/services/devops/\" target=\"_blank\"><span lang=\"en\">Azure DevOps</span></a>, <a href=\"https://circleci.com/\" target=\"_blank\"><span lang=\"en\">CircleCI</span></a>, <a href=\"https://octopus.com/\" target=\"_blank\"><span lang=\"en\">Octopus Deploy</span></a>"
       ],
       "by-us-title": "Van onze hand:",
       "by-us": [
@@ -198,7 +197,7 @@
       ],
       "by-us-title": "Van onze hand:",
       "by-us": [
-        "<a href=\"https://infi.nl/nieuws/effectief-aan-de-slag-met-retro-uitkomsten/\" target=\"_blank\">Blog: Retro Uitkomsten</a>",
+        "<a href=\"https://infi.nl/nieuws/effectief-aan-de-slag-met-retro-uitkomsten/\" target=\"_blank\">Blog: Retro-uitkomsten</a>",
         "<a href=\"https://infi.nl/nieuws/5-tips-voor-de-perfecte-user-story/\" target=\"_blank\">Blog: Perfecte <span lang=\"en\">user stories</span></a>",
         "<a href=\"https://infi.nl/nieuws/vijf-tips-voor-remote-demos/\" target=\"_blank\">Blog: Tips voor <span lang=\"en\">remote demos</span></a>",
         "<a href=\"https://infi.nl/nieuws/liever-kanban-dan-scrum/\" target=\"_blank\">Blog: Kanban vs Scrum</a>",
