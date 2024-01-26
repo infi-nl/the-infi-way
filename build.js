@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const fs = require('fs/promises');
-const path = require("path");
+const path = require('path');
 const crypto = require('crypto');
 
 const srcDir = path.resolve(__dirname, 'src');
@@ -19,13 +19,15 @@ function tryBuild() {
 async function build() {
   console.log('Starting build...');
   await fs.mkdir(outputDir, { recursive: true });
-  const template = (await fs.readFile(templateFile)).toString();
+  const template = (await fs.readFile(templateFile)).toString().replaceAll('\r', '');
   const processor = new TemplateProcessor();
   const compiledTemplate = processor.compile(template);
 
-  console.log('Generating script hash');
-  const scriptContent = template.split(/<\/?script>/)[1].replaceAll('\r', '');
-  const scriptHash = `sha256-${crypto.createHash('sha256').update(scriptContent).digest('base64')}`;
+  console.log('Generating script hashes');
+  const scriptHashes = template.split('<script>')
+    .slice(1) // Remove the first element: this is the document start.
+    .map((part) => part.split('</script>', 2)[0]) // Get the section until the script end tag.
+    .map((script) => `sha256-${crypto.createHash('sha256').update(script).digest('base64')}`);
 
   console.log('Loading languages');
   const languages = JSON.parse((await fs.readFile(path.join(contentDir, 'languages.json'))).toString());
@@ -49,7 +51,7 @@ async function build() {
         href: (l.code === defaultLanguage) ? '/' : `/${l.outPath}`,
         isCurrentLanguage: l.code === code,
       })),
-      scriptHash,
+      scriptHashes,
     };
 
     const processed = processor.process(compiledTemplate, content);
