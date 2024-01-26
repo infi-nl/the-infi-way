@@ -9,6 +9,7 @@
         img-src 'self';
         script-src 'self' http://cdn.matomo.cloud/infi.matomo.cloud/matomo.js {{#each scriptHashes}} '{{this}}'{{/each}};
         style-src 'self';
+        connect-src https://infi.matomo.cloud;
       ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
