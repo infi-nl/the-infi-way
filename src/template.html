@@ -7,7 +7,7 @@
         default-src 'none';
         font-src 'none';
         img-src 'self';
-        script-src 'self'{{#each scriptHashes}} '{{this}}'{{/each}};
+        script-src 'self' http://cdn.matomo.cloud/infi.matomo.cloud/matomo.js {{#each scriptHashes}} '{{this}}'{{/each}};
         style-src 'self';
       ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
