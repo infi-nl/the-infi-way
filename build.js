@@ -23,7 +23,8 @@ async function build() {
   const processor = new TemplateProcessor();
   const compiledTemplate = processor.compile(template);
 
-  console.log('Generating script hash');
+  console.log('Generating script hashes');
+  // TODO: Generate all script hashes
   const scriptContent = template.split(/<\/?script>/)[1].replaceAll('\r', '');
   const scriptHash = `sha256-${crypto.createHash('sha256').update(scriptContent).digest('base64')}`;
 
@@ -49,7 +50,7 @@ async function build() {
         href: (l.code === defaultLanguage) ? '/' : `/${l.outPath}`,
         isCurrentLanguage: l.code === code,
       })),
-      scriptHash,
+      scriptHashes: [scriptHash], // TODO
     };
 
     const processed = processor.process(compiledTemplate, content);
