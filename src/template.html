@@ -7,7 +7,7 @@
         default-src 'none';
         font-src 'none';
         img-src 'self';
-        script-src 'self' http://cdn.matomo.cloud/infi.matomo.cloud/matomo.js {{#each scriptHashes}} '{{this}}'{{/each}};
+        script-src 'self' https://cdn.matomo.cloud/infi.matomo.cloud/matomo.js {{#each scriptHashes}} '{{this}}'{{/each}};
         style-src 'self';
         connect-src https://infi.matomo.cloud;
       ">
