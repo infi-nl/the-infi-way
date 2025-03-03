@@ -152,6 +152,7 @@
       "how-title": "How we like to do this:",
       "how": [
         "OS is a personal choice per developer",
+        "LLM coding assistant is a personal choice per developer",
         "We build custom software and aid with buy-over-build",
         "Hosting in the cloud",
         "Back-end in a modern stack",
