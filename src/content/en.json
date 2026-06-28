@@ -77,7 +77,7 @@
       "subtitle": "We work for <em>the client of our client</em>. They use software to achieve <em>their</em> goals, our goal is to help them with that.",
       "how-title": "How we like to do this:",
       "how": [
-        "<em>Direct contact</em> with users",
+        "Direct contact with (end) users",
         "Prototyping, iterate quickly",
         "Work user-centric",
         "Close collaboration with designers",
@@ -99,16 +99,17 @@
       "subtitle": "We work in a modern way, aiming for quality. \"First time right\" is also cheapest in the end.",
       "how-title": "How we like to do this:",
       "how": [
-        "Everything in version control",
+        "Ownership, also for AI-generated code",
+        "Pair programming",
+        "Code reviews",
         "Up-to-date tools, frameworks, and libraries",
         "Automation where possible",
         "Strong test coverage",
-        "Code quality controls",
-        "Pair programming",
-        "Code reviews"
+        "Code quality controls"
       ],
       "examples-title": "Concrete examples:",
       "examples": [
+        "AI to help with writing and understanding code",
         "Git (flow chosen per project)",
         "Unit tests, integration tests, end-to-end tests",
         "<a href=\"https://www.sonarqube.org/\" target=\"_blank\">SonarQube</a>, <a href=\"https://eslint.org/\" target=\"_blank\">ESLint</a>, etc.",
@@ -127,14 +128,16 @@
       "subtitle": "Source code is just that: the <em>source</em>. Self-documenting, so usable for <em>any</em> developer, our own or otherwise.",
       "how-title": "How we like to do this:",
       "how": [
-        "Architecture <em>in</em> the source",
+        "<em>Everything</em> in version control",
+        "Codebases made for humans <em>and</em> AI agents",
         "Clone &amp; run repositories",
         "<a href=\"https://en.wikipedia.org/wiki/Continuous_integration\" target=\"_blank\">Continuous integration</a>, <a href=\"https://en.wikipedia.org/wiki/Continuous_delivery\" target=\"_blank\">continuous delivery</a>",
         "<a href=\"https://en.wikipedia.org/wiki/Development,_testing,_acceptance_and_production\" target=\"_blank\">DTAP</a>",
-        "Infra, scripts, and monitoring in code"
+        "Architecture, infra, scripts, and monitoring in code"
       ],
       "examples-title": "Concrete examples:",
       "examples": [
+        "Skills, (sub-)agents, instruction files, MCP's, etc.",
         "<a href=\"https://adr.github.io/\" target=\"_blank\">Architectural Decision Records</a>, <a href=\"https://c4model.com/\" target=\"_blank\">C4 Model</a>",
         "<a href=\"https://www.ansible.com/\" target=\"_blank\">Ansible</a>, <a href=\"https://www.docker.com/\" target=\"_blank\">Docker</a>, <a href=\"https://www.terraform.io/\" target=\"_blank\">Terraform</a>",
         "<a href=\"https://gitlab.com/\" target=\"_blank\">GitLab</a> (SAAS or self-hosted), <a href=\"https://github.com/\" target=\"_blank\">GitHub</a>",
@@ -151,8 +154,8 @@
       "subtitle": "We prefer using \"<em>the best tool for the job</em>\"; we're generalists who can quickly specialize when the need arises.",
       "how-title": "How we like to do this:",
       "how": [
+        "AI as a tool, tailored to the project",
         "OS is a personal choice per developer",
-        "LLM coding assistant is a personal choice per developer",
         "We build custom software and aid with buy-over-build",
         "Hosting in the cloud",
         "Back-end in a modern stack",
@@ -161,6 +164,7 @@
       ],
       "examples-title": "Concrete examples:",
       "examples": [
+        "Claude Code, Copilot, Cursor, OpenCode",
         "<a href=\"https://azure.microsoft.com/\" target=\"_blank\">Azure</a> (via our Microsoft partnership), <a href=\"https://aws.amazon.com/\" target=\"_blank\">AWS</a>, <a href=\"https://cloud.google.com/\" target=\"_blank\">Google Cloud</a>",
         "<a href=\"https://dotnet.microsoft.com/\" target=\"_blank\">.NET Core</a>, <a href=\"https://www.php.net/\" target=\"_blank\">PHP (with a modern framework)</a>, or <a href=\"https://nodejs.org/\" target=\"_blank\">Node (with TypeScript)</a>",
         "<a href=\"https://vuejs.org/\" target=\"_blank\">Vue</a>, <a href=\"https://angular.io/\" target=\"_blank\">Angular</a>, <a href=\"https://reactjs.org/\" target=\"_blank\">React</a>",
