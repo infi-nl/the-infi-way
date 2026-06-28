@@ -25,12 +25,12 @@
         "question": "Wordt code gereviewed?"
       },
       {
-        "topic": "source-code",
-        "question": "Worden er automatische <span lang=\"en\">builds</span> met tests gedraaid?"
+        "topic": "principles",
+        "question": "Neemt het team eigenaarschap van alle code en techniek?"
       },
       {
         "topic": "source-code",
-        "question": "Kun je automatisch uitrollen naar productie?"
+        "question": "Worden er automatische <span lang=\"en\">builds</span> met tests gedraaid?"
       },
       {
         "topic": "source-code",
@@ -41,16 +41,16 @@
         "question": "Kiest het team zelf passende technologie?"
       },
       {
+        "topic": "technology",
+        "question": "Wordt AI in passende mate en wijze gebruikt?"
+      },
+      {
         "topic": "process-and-team",
         "question": "Kiest het team zelf een passend proces?"
       },
       {
         "topic": "process-and-team",
         "question": "Wordt het proces periodiek geëvalueerd?"
-      },
-      {
-        "topic": "process-and-team",
-        "question": "Wordt werk gerefined voordat het gedaan wordt?"
       },
       {
         "topic": "craft",
@@ -96,7 +96,7 @@
     },
     "principles": {
       "title": "Ontwikkel&shy;principes",
-      "subtitle": "We werken op een moderne manier, gericht op kwaliteit. <em>Goed</em> is op de lange termijn <em>ook</em> het goedkoopst.",
+      "subtitle": "We werken op een moderne manier, gericht op kwaliteit, met menselijk eigenaarschap. <em>Goed</em> is op de lange termijn <em>ook</em> het goedkoopst.",
       "how-title": "Hoe we dat graag doen:",
       "how": [
         "<em lang=\"en\">Ownership</em>, ook van AI-generated code",

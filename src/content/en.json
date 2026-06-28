@@ -25,12 +25,12 @@
         "question": "Is code being reviewed?"
       },
       {
-        "topic": "source-code",
-        "question": "Are you running automated builds with tests?"
+        "topic": "principles",
+        "question": "Does the team take ownership of all code and technology?"
       },
       {
         "topic": "source-code",
-        "question": "Can you automatically deploy to production?"
+        "question": "Are you running automated builds with tests?"
       },
       {
         "topic": "source-code",
@@ -41,16 +41,16 @@
         "question": "Does the team autonomously pick fitting technology?"
       },
       {
+        "topic": "technology",
+        "question": "Is AI used in a fitting manner and scale?"
+      },
+      {
         "topic": "process-and-team",
         "question": "Does the team autonomously choose their own process?"
       },
       {
         "topic": "process-and-team",
         "question": "Is the process evaluated periodically?"
-      },
-      {
-        "topic": "process-and-team",
-        "question": "Is work refined before it's being done?"
       },
       {
         "topic": "craft",
@@ -96,7 +96,7 @@
     },
     "principles": {
       "title": "Principles",
-      "subtitle": "We work in a modern way, aiming for quality. \"First time right\" is also cheapest in the end.",
+      "subtitle": "We work in a modern way, aiming for quality, with human ownership. \"First time right\" is also cheapest in the end.",
       "how-title": "How we like to do this:",
       "how": [
         "Ownership, also for AI-generated code",
