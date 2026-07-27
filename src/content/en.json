@@ -129,12 +129,12 @@
       "subtitle": "Source code is just that: the <em>source</em>. Self-documenting, so usable for <em>any</em> developer, our own or otherwise.",
       "how-title": "How we like to do this:",
       "how": [
-        "<em>Everything</em> in version control",
+        "Architecture and documentation in version control",
         "Codebases made for humans <em>and</em> AI agents",
         "Clone &amp; run repositories",
         "<a href=\"https://en.wikipedia.org/wiki/Continuous_integration\" target=\"_blank\">Continuous integration</a>, <a href=\"https://en.wikipedia.org/wiki/Continuous_delivery\" target=\"_blank\">continuous delivery</a>",
         "<a href=\"https://en.wikipedia.org/wiki/Development,_testing,_acceptance_and_production\" target=\"_blank\">DTAP</a>",
-        "Architecture, infra, scripts, and monitoring in code"
+        "Infra, scripts, and monitoring in code"
       ],
       "examples-title": "Concrete examples:",
       "examples": [
