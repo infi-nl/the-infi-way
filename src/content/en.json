@@ -30,7 +30,7 @@
       },
       {
         "topic": "source-code",
-        "question": "Are you running automated builds with tests?"
+        "question": "Are builds, tests, and deployments automated?"
       },
       {
         "topic": "source-code",
