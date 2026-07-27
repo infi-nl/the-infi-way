@@ -96,16 +96,17 @@
     },
     "principles": {
       "title": "Ontwikkel&shy;principes",
-      "subtitle": "We werken op een moderne manier, gericht op kwaliteit, met menselijk eigenaarschap. <em>Goed</em> is op de lange termijn <em>ook</em> het goedkoopst.",
+      "subtitle": "We werken op een moderne manier, met menselijk eigenaarschap, gericht op kwaliteit. <em>Goed</em> is op de lange termijn <em>ook</em> het goedkoopst.",
       "how-title": "Hoe we dat graag doen:",
       "how": [
         "<em lang=\"en\">Ownership</em>, ook van AI-generated code",
-        "<span lang=\"en\">Pair programming</span>",
-        "<span lang=\"en\">Code reviews</span>",
         "<span lang=\"en\">Up-to-date tools, frameworks, libraries</span>",
         "Automatiseren waar mogelijk",
         "Sterke <span lang=\"en\">test coverage</span>",
-        "<span lang=\"en\">Linting</span>"
+        "Codekwaliteit-checks",
+        "<span lang=\"en\">Pair programming</span>",
+        "<span lang=\"en\">Code reviews</span>"
+
       ],
       "examples-title": "Denk aan bijvoorbeeld:",
       "examples": [
@@ -137,11 +138,11 @@
       ],
       "examples-title": "Denk aan bijvoorbeeld:",
       "examples": [
-        "Skills, (sub-)agents, instruction files, MCP's, etc.",
         "<a href=\"https://adr.github.io/\" target=\"_blank\"><span lang=\"en\">Architectural Decision Records</span></a>, <a href=\"https://c4model.com/\" target=\"_blank\">C4 Model</a>",
         "<a href=\"https://www.ansible.com/\" target=\"_blank\">Ansible</a>, <a href=\"https://www.docker.com/\" target=\"_blank\">Docker</a>, <a href=\"https://www.terraform.io/\" target=\"_blank\">Terraform</a>",
         "<a href=\"https://gitlab.com/\" target=\"_blank\">GitLab</a> (SAAS of self-hosted), <a href=\"https://github.com/\" target=\"_blank\">GitHub</a>",
-        "<a href=\"https://docs.gitlab.com/ee/ci/\" target=\"_blank\"><span lang=\"en\">GitLab CI</span></a>, <a href=\"https://github.com/features/actions\" target=\"_blank\"><span lang=\"en\">GitHub Actions</span></a>, <a href=\"https://azure.microsoft.com/en-us/services/devops/\" target=\"_blank\"><span lang=\"en\">Azure DevOps</span></a>, <a href=\"https://circleci.com/\" target=\"_blank\"><span lang=\"en\">CircleCI</span></a>, <a href=\"https://octopus.com/\" target=\"_blank\"><span lang=\"en\">Octopus Deploy</span></a>"
+        "<a href=\"https://docs.gitlab.com/ee/ci/\" target=\"_blank\"><span lang=\"en\">GitLab CI</span></a>, <a href=\"https://github.com/features/actions\" target=\"_blank\"><span lang=\"en\">GitHub Actions</span></a>, <a href=\"https://azure.microsoft.com/en-us/services/devops/\" target=\"_blank\"><span lang=\"en\">Azure DevOps</span></a>, <a href=\"https://circleci.com/\" target=\"_blank\"><span lang=\"en\">CircleCI</span></a>, <a href=\"https://octopus.com/\" target=\"_blank\"><span lang=\"en\">Octopus Deploy</span></a>",
+        "Skills, (sub-)agents, instruction files, MCP's, etc."
       ],
       "by-us-title": "Van onze hand:",
       "by-us": [
@@ -154,9 +155,9 @@
       "subtitle": "We gebruiken bij voorkeur altijd de \"<em>best tool for the job</em>\"; we zijn generalisten die zo nodig snel kunnen specialiseren en verdiepen.",
       "how-title": "Hoe we dat graag doen:",
       "how": [
-        "AI als tool, afgestemd op het project",
         "OS naar keuze voor developers",
         "Wij leveren maatwerk en helpen bij <span lang=\"en\">buy-over-build</span>",
+        "AI als tool, afgestemd op het project",
         "<span lang=\"en\">Hosting</span> in de <span lang=\"en\">cloud</span>",
         "<span lang=\"en\">Back-end</span> in een moderne <span lang=\"en\">stack</span>",
         "<span lang=\"en\">Front-end</span> met volwassen frameworks",
