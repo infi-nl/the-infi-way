@@ -22,15 +22,15 @@
       },
       {
         "topic": "principles",
-        "question": "Wordt code gereviewed?"
+        "question": "Is er van elke code change iemand die eigenaarschap neemt?"
       },
       {
         "topic": "principles",
-        "question": "Neemt het team eigenaarschap van alle code en techniek?"
+        "question": "Wordt code gereviewed?"
       },
       {
         "topic": "source-code",
-        "question": "Worden er automatische <span lang=\"en\">builds</span> met tests gedraaid?"
+        "question": "Zijn builds, tests, en deployments geautomatiseerd?"
       },
       {
         "topic": "source-code",
@@ -42,7 +42,7 @@
       },
       {
         "topic": "technology",
-        "question": "Wordt AI in passende mate en wijze gebruikt?"
+        "question": "Experimenteert het team actief met het gebruik van AI?"
       },
       {
         "topic": "process-and-team",

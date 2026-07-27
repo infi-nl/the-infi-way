@@ -22,11 +22,11 @@
       },
       {
         "topic": "principles",
-        "question": "Is code being reviewed?"
+        "question": "For each code change, does someone take ownership?"
       },
       {
         "topic": "principles",
-        "question": "Does the team take ownership of all code and technology?"
+        "question": "Is code being reviewed?"
       },
       {
         "topic": "source-code",
@@ -42,7 +42,7 @@
       },
       {
         "topic": "technology",
-        "question": "Is AI used in a fitting manner and scale?"
+        "question": "Does the team experiment actively with AI usage?"
       },
       {
         "topic": "process-and-team",
