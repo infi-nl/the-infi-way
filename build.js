@@ -10,7 +10,11 @@ const resourcesDir = path.resolve(srcDir, 'resources');
 const outputDir = path.resolve(__dirname, 'build');
 const outputResourcesDir = path.resolve(outputDir, 'resources');
 
-tryBuild();
+tryBuild().then(() => {
+  if (process.argv.includes('--serve')) {
+    require('./build-serve').serve(outputDir);
+  }
+});
 
 function tryBuild() {
   return build().catch((e) => console.error(`Build failed! ${e.message}`));
