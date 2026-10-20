@@ -12,32 +12,32 @@ To begin development, first [fork](https://docs.github.com/en/get-started/quicks
 
 It is important to contain your changes to 1 (one) PR per issue. This keeps the code easy to review and allows people to work on separate parts of the Infi Way separately.
 
-## 🧑‍💻 Local Development
+## 🧑‍💻 Building and developing
 
 To develop locally you need:
 
 - A clone of this repository
-- [Node.js](https://nodejs.org) 16 (or higher)
+- [Node.js](https://nodejs.org)
 
-In the root you'll find `build.js`, used to build the site.
-Usage is as follows:
+There are purposely no dependencies (dev or runtime) in our `package.json`, at the cost of some hand-crafted build tooling.
+Less stuff to manage and keep up to date.
+
+The scripts use `src/template.html` and the files from the `src/content` folder to generate a `build` folder with one page per language (one of them default as `index.html`).
+All resources (images and svg files) can be found in the `src/resources` directory.
+
+
+### Making a build
+
+Run this to just build output into the the `./build` folder:
 
 ```shell
-# Install packages
-npm install
-
-./build.js
-# Or
-node build.js
-
-# To rebuild whenever content or template changes:
-npm start
+npm run build
 ```
-The packages included are used to host the web page locally and make the http server respond to changes. In `package.json` you can see what files are being watched. You may have to reload the page for the changes to take effect.
 
-This script uses `src/template.html` and the files from the `src/content` folder to generate a `build` folder with one page per language (one of them default as `index.html`).
-All resources (images and svg files) can be found in the `src/resources` directory.
-When the build is done you can open the HTML files in the `build` folder (optionally via a dev server) in your favorite browser, and you're good to go!
+### Local development
 
-The templating is something lightweight and homebrew, inspired by [Handlebars](https://handlebarsjs.com).
-This entire engine is part of `build.js`.
+Run this to serve on localhost:8080, (re)building when watched files change:
+
+```shell
+npm run start
+```

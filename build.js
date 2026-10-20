@@ -10,10 +10,17 @@ const resourcesDir = path.resolve(srcDir, 'resources');
 const outputDir = path.resolve(__dirname, 'build');
 const outputResourcesDir = path.resolve(outputDir, 'resources');
 
-tryBuild();
+tryBuild().then(() => {
+  if (process.argv.includes('--serve')) {
+    require('./build-serve').serve(outputDir);
+  }
+});
 
 function tryBuild() {
-  return build().catch((e) => console.error(`Build failed! ${e.message}`));
+  return build().catch((e) => {
+    console.error(`Build failed! ${e.message}`);
+    process.exitCode = 1;
+  });
 }
 
 async function build() {
@@ -58,7 +65,7 @@ async function build() {
     console.log('    Input processed');
 
     const languageDir = path.join(outputDir, language.outPath);
-    fs.mkdir(languageDir, { recursive: true });
+    await fs.mkdir(languageDir, { recursive: true });
     console.log(`    Writing to ${languageDir}/index.html`);
     await fs.writeFile(path.join(languageDir, 'index.html'), processed);
 

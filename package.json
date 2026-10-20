@@ -1,16 +1,8 @@
 {
   "name": "the-infi-way",
   "repository": "github:infi-nl/the-infi-way",
-  "devDependencies": {
-    "@netlify/plugin-lighthouse": "6.0.4",
-    "concurrently": "10.0.6",
-    "http-server": "14.1.1",
-    "nodemon": "3.1.14"
-  },
   "scripts": {
     "build": "node build.js",
-    "build:watch": "nodemon -L -w src/template.html -w src/content build.js -w src/style.css",
-    "start": "concurrently \"npm run build:watch\" \"npm run serve\"",
-    "serve": "http-server build"
+    "start": "node --watch-path=src build.js --serve"
   }
 }
