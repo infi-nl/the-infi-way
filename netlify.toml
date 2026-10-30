@@ -11,6 +11,3 @@
   to = "https://way.infi.nl"
   status = 301
   force = true
-
-[[plugins]]
-  package = "@netlify/plugin-lighthouse"
